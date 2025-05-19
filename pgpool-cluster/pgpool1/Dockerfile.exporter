@@ -1,0 +1,20 @@
+FROM golang:1.22-bullseye
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  make \
+  gcc \
+  git \
+  && rm -rf /var/lib/apt/lists/*
+
+# Baixar e compilar o pgpool-exporter corretamente
+RUN git clone https://github.com/pgpool/pgpool2_exporter.git /go/src/github.com/pgpool/pgpool2_exporter && \
+  cd /go/src/github.com/pgpool/pgpool2_exporter && \
+  make build && \
+  mv pgpool2_exporter /usr/local/bin/
+
+# O IP do servidor é passado como variavel de ambiente SERVER_IP
+ENV DATA_SOURCE_NAME="postgresql://${PGPOOL_USER}:${PGPOOL_PASSWORD}@${SERVER_IP}:${PGPOOL_PORT:-5431}/${POSTGRES_DB}?sslmode=disable"
+
+EXPOSE 9719
+
+CMD ["pgpool2_exporter"]

@@ -1,0 +1,239 @@
+services:
+  # Serviço etcd (backend para o Patroni)
+  etcd:
+    image: quay.io/coreos/etcd:v3.5.0
+    hostname: etcd
+    container_name: etcd
+    environment:
+      - ETCD_NAME=etcd1
+      - ETCD_DATA_DIR=/etcd-data
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_INITIAL_CLUSTER=etcd1=http://etcd:2380
+      - ETCD_INITIAL_ADVERTISE_PEER_URLS=http://etcd:2380
+    ports:
+      - "2379:2379" # Porta para clientes
+      # - "2380:2380" # Porta para comunicação entre nós etcd (se tiver cluster)
+    networks:
+      - postgresql_network
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+
+  postgresql0:
+    build:
+      context: ./postgresql-cluster/postgresql0/
+      dockerfile: ./Dockerfile.patroni
+    hostname: postgresql0
+    container_name: postgresql0
+    privileged: true
+    volumes:
+      - postgres-data0:/var/lib/postgresql/data
+    ports:
+      - "5433:5433" # Porta do PostgreSQL
+      - "8008:8008" # Porta da API REST do Patroni
+    networks:
+      - postgresql_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8008/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      etcd:
+        condition: service_healthy
+
+  postgresql1:
+    build:
+      context: ./postgresql-cluster/postgresql1/
+      dockerfile: ./Dockerfile.patroni
+    hostname: postgresql1
+    container_name: postgresql1
+    privileged: true
+    volumes:
+      - postgres-data1:/var/lib/postgresql/data
+    ports:
+      - "5434:5434" # Porta do PostgreSQL
+      - "8009:8009" # Porta da API REST do Patroni
+    networks:
+      - postgresql_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8009/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      etcd:
+        condition: service_healthy
+      postgresql0:
+        condition: service_healthy
+
+  pgpool0:
+    hostname: pgpool0
+    container_name: pgpool0
+    build: 
+      context: ./pgpool-cluster/pgpool0
+      dockerfile: Dockerfile.pgpool
+    privileged: true
+    ports:
+      - "5430:5430"
+      - "9000:9000" # watchdog
+      # - "9898:9898" # Porta UNIX socket (pgpool-exporter le dela, e expoe na 9719 internamente)
+      # - "9719:9719" # exporter API
+    volumes:
+      - ./pgpool-cluster/pgpool0/config/pgpool.conf:/etc/pgpool2/pgpool.conf
+      - ./pgpool-cluster/pgpool0/config/pool_passwd:/etc/pgpool2/pool_passwd
+      - ./pgpool-cluster/pgpool0/config/pool_hba.conf:/etc/pgpool2/pool_hba.conf
+      - ./pgpool-cluster/pgpool0/config/pgpool_node_id:/etc/pgpool2/pgpool_node_id
+      - ./pgpool-cluster/pgpool0/config/pcp.conf:/etc/pgpool2/pcp.conf
+      - ./pgpool-cluster/pgpool0/log/pgpool.log:/etc/pgpool2/logs/pgpool.log
+      - ./pgpool-cluster/pgpool0/log/follow_master.log:/var/log/pgpool/follow_master.log
+      - ./pgpool-cluster/pgpool0/log/failover.log:/var/log/pgpool/failover.log    
+    networks:
+      - postgresql_network
+    healthcheck:
+      test: ["CMD", "pg_ping", "-h", "localhost", "-p", "5430", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    depends_on:
+      postgresql0:
+        condition: service_healthy
+      postgresql1:
+        condition: service_healthy
+
+  pgpool1:
+    hostname: pgpool1
+    container_name: pgpool1
+    build: 
+      context: ./pgpool-cluster/pgpool1
+      dockerfile: Dockerfile.pgpool
+    privileged: true
+    ports:
+      - "5431:5431"
+      - "9001:9001" # watchdog
+      # - "9899:9898" # Porta UNIX socket (pgpool-exporter le dela, e expoe na 9719 internamente)
+      # - "9720:9719" # exporter API
+    volumes:
+      - ./pgpool-cluster/pgpool1/config/pgpool.conf:/etc/pgpool2/pgpool.conf
+      - ./pgpool-cluster/pgpool1/config/pool_passwd:/etc/pgpool2/pool_passwd
+      - ./pgpool-cluster/pgpool1/config/pool_hba.conf:/etc/pgpool2/pool_hba.conf
+      - ./pgpool-cluster/pgpool1/config/pgpool_node_id:/etc/pgpool2/pgpool_node_id
+      - ./pgpool-cluster/pgpool1/config/pcp.conf:/etc/pgpool2/pcp.conf
+      - ./pgpool-cluster/pgpool1/log/pgpool.log:/etc/pgpool2/logs/pgpool.log
+      - ./pgpool-cluster/pgpool1/log/follow_master.log:/var/log/pgpool/follow_master.log
+      - ./pgpool-cluster/pgpool1/log/failover.log:/var/log/pgpool/failover.log
+    healthcheck:
+      test: ["CMD", "pg_ping", "-h", "localhost", "-p", "5431", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    networks:
+      - postgresql_network
+    depends_on:
+      pgpool0:
+        condition: service_healthy
+      postgresql0:
+        condition: service_healthy
+      postgresql1:
+        condition: service_healthy
+
+  pgpool0-exporter:
+    hostname: pgpool0-exporter
+    container_name: pgpool0-exporter
+    build: 
+      context: ./pgpool-cluster/pgpool0
+      dockerfile: Dockerfile.exporter
+    ports:
+      - "9719:9719" # exporter API
+    networks:
+      - postgresql_network
+    depends_on:
+      pgpool0:
+        condition: service_healthy
+      pgpool1:
+        condition: service_healthy
+
+  pgpool1-exporter:
+    hostname: pgpool1-exporter
+    container_name: pgpool1-exporter
+    build: 
+      context: ./pgpool-cluster/pgpool1
+      dockerfile: Dockerfile.exporter
+    ports:
+      - "9720:9719" # exporter API
+    networks:
+      - postgresql_network
+    depends_on:
+      pgpool0:
+        condition: service_healthy
+      pgpool1:
+        condition: service_healthy
+
+  postgresql0-exporter:
+    hostname: postgresql0-exporter
+    container_name: postgresql0-exporter
+    image: prometheuscommunity/postgres-exporter:latest
+    environment:
+      - DATA_SOURCE_NAME=postgresql://${POSTGRES_EXPORTER_USER}:${POSTGRES_EXPORTER_PASSWORD}@${SERVER_IP}:${POSTGRESQL0_PORT}/${POSTGRES_EXPORTER_DB}?sslmode=disable
+    ports:
+      - "9187:9187"
+    volumes:
+      - ./postgresql-cluster/postgresql0/config/postgres_exporter.yml:/etc/postgres_exporter/postgres_exporter.yml
+    command:
+      - "--config.file=/etc/postgres_exporter/postgres_exporter.yml"
+    depends_on:
+        postgresql0:
+          condition: service_healthy
+    networks:
+      - postgresql_network
+
+        
+  postgresql1-exporter:
+    hostname: postgresql1-exporter
+    container_name: postgresql1-exporter
+    image: prometheuscommunity/postgres-exporter:latest
+    environment:
+      - DATA_SOURCE_NAME=postgresql://${POSTGRES_EXPORTER_USER}:${POSTGRES_EXPORTER_PASSWORD}@${SERVER_IP}:${POSTGRESQL1_PORT}/${POSTGRES_EXPORTER_DB}?sslmode=disable
+    ports:
+      - "9188:9187"
+    volumes:
+      - ./postgresql-cluster/postgresql1/config/postgres_exporter.yml:/etc/postgres_exporter/postgres_exporter.yml
+    depends_on:
+      postgresql1:
+        condition: service_healthy
+    networks:
+      - postgresql_network
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/stream_access.log:/var/log/nginx/stream-access.log
+    ports:
+      - "5432:5432" # Porta de entrada para o cliente
+    # restart: unless-stopped
+    networks:
+      - postgresql_network
+    depends_on:
+      pgpool0:
+        condition: service_healthy
+      pgpool1:
+        condition: service_healthy
+
+volumes:
+  postgres-data0:
+  postgres-data1:
+  
+networks:
+  postgresql_network:
+    driver: bridge

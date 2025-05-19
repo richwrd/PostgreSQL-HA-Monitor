@@ -1,0 +1,85 @@
+FROM debian:bullseye
+
+# Definir o ambiente para evitar prompts interativos
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  wget \
+  gnupg \
+  lsb-release \
+  ca-certificates \
+  curl \
+  vim \
+  netcat \
+  jq \
+  && rm -rf /var/lib/apt/lists/*
+
+# Adicionar repositório do PostgreSQL
+RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+
+# Atualizar pacotes e instalar apenas os necessários
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  postgresql-client-17 \
+  pgpool2 \
+  libpgpool2 \
+  postgresql-17-pgpool2 \
+  && rm -rf /var/lib/apt/lists/*
+
+# Criar o usuário e grupo pgpool
+RUN groupadd -r pgpool && useradd -r -g pgpool pgpool \
+  && usermod -aG postgres pgpool
+
+# Copiar os arquivos de configuração
+COPY ./config/ /etc/pgpool2/ 
+COPY ./scripts/ /etc/pgpool2/
+
+# Criar o diretório /home/pgpool e definir as permissões
+RUN mkdir -p /home/pgpool && chown pgpool:pgpool /home/pgpool && chmod 750 /home/pgpool
+
+# Copiar o .pcppass para o diretório home do usuário pgpool e para raiz
+COPY --chown=pgpool:pgpool ./config/.pcppass /home/pgpool/.pcppass
+# SOMENTE ESSA PERMISSAO (nao alterar)
+RUN chmod 600 /home/pgpool/.pcppass
+
+# Criar diretórios de configuração e log do pgpool2 com permissões corretas
+RUN mkdir -p /etc/pgpool2/tmp /etc/pgpool2/logs && \
+  chown -R pgpool:pgpool /etc/pgpool2 && chmod -R 750 /etc/pgpool2
+
+# Criar diretório de log PostgreSQL (compartilhado) com permissões para postgres
+RUN mkdir -p /var/log/postgresql && chown -R postgres:postgres /var/log/postgresql && chmod -R 775 /var/log/postgresql
+
+# Criar arquivos de log usados pelo pgpool
+RUN touch /var/log/postgresql/pgpool_status && \
+  chown pgpool:pgpool /var/log/postgresql/pgpool_status && chmod 755 /var/log/postgresql/pgpool_status
+
+# Criar diretórios de socket para pgpool
+RUN mkdir -p /var/run/pgpool2/unix /var/run/pgpool2/pcp && \
+  chown -R pgpool:pgpool /var/run/pgpool2 && chmod -R 750 /var/run/pgpool2
+
+# Criar diretório de socket do PostgreSQL com acesso compartilhado
+RUN mkdir -p /var/run/postgresql && chown postgres:postgres /var/run/postgresql && chmod 775 /var/run/postgresql
+
+# Garantir permissões adequadas nos arquivos de configuração
+RUN chmod 640 /etc/pgpool2/pgpool.conf \
+  /etc/pgpool2/pgpool_node_id \
+  /etc/pgpool2/pcp.conf \
+  /etc/pgpool2/pool_passwd \
+  /etc/pgpool2/pool_hba.conf && \
+  chown pgpool:pgpool /etc/pgpool2/pgpool.conf \
+  /etc/pgpool2/pgpool_node_id \
+  /etc/pgpool2/pcp.conf \
+  /etc/pgpool2/pool_passwd \
+  /etc/pgpool2/pool_hba.conf
+
+
+USER pgpool
+
+ENV PCPPASSFILE="/home/pgpool/.pcppass"
+ENV HOME="/home/pgpool"
+
+WORKDIR /home/pgpool
+
+EXPOSE 5430 9000
+
+CMD ["sh", "-c", "pgpool -n -f /etc/pgpool2/pgpool.conf -F /etc/pgpool2/pcp.conf"]

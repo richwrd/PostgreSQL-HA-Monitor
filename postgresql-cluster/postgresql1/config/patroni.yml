@@ -1,0 +1,83 @@
+scope: pg-cluster
+namespace: /db/
+name: postgresql1
+
+restapi:
+  listen: "0.0.0.0:8009"
+  connect_address: "192.168.1.5:8009"
+  authentication:
+    username: admin
+    password: strongpassword
+  certfile: null
+  keyfile: null
+  cafile: null
+
+etcd3:
+  hosts: 192.168.1.5:2379
+
+postgresql:
+  listen: "0.0.0.0:5434"
+  connect_address: "192.168.1.5:5434"
+  data_dir: "/var/lib/postgresql/data/pgdata"
+  bin_dir: "/usr/lib/postgresql/17/bin/"
+  authentication:
+    superuser:
+      username: "postgres"
+      password: "postgres"
+    replication:
+      username: "replicator"
+      password: "r3pl1c4#2025!"
+    monitoring:
+      username: "monitor"
+      password: "m$$n3yt0r4"
+      scram-sha-256: true
+  parameters:
+    use_slots: true
+    max_replication_slots: 5
+    wal_level: replica
+    max_wal_senders: 10
+    synchronous_commit: on
+    synchronous_standby_names: "*"
+    hot_standby: on
+    archive_mode: on
+    archive_command: "/bin/true"
+  pg_hba:
+    - local all all trust
+    - host all all 127.0.0.1/32 trust
+    - host all all 192.168.1.5/32 trust
+    - host all all 0.0.0.0/0 md5
+    - host replication replicator 0.0.0.0/0 scram-sha-256
+
+healthcheck:
+  enabled: true # Habilita o health check
+  interval: 10 # Intervalo em segundos entre as verificações de saúde
+  retries: 3 # Número de tentativas antes de considerar o nó como não saudável
+  timeout: 5 # Tempo máximo (em segundos) para aguardar uma resposta do health check
+
+watchdog:
+  enabled: true
+  ttl: 10
+  failover_timeout: 30
+  node_name: postgresql1
+  master_start_timeout: 300
+  synchronous_mode: false
+  script_max_timeout: 30
+  script_timeout: 10
+  loop_wait: 10
+  retry_timeout: 10
+  maximum_lag_on_failover: 1048576
+
+log:
+  level: DEBUG
+  dir: /var/log/patroni
+  file_num: 5
+  loggers:
+    patroni: DEBUG
+    urllib3: WARNING
+    requests: WARNING
+    asyncio: WARNING
+  format: "%(asctime)s %(levelname)s: %(message)s"
+  # Ativa o log para o console também
+  stdout_handler:
+    enabled: true
+    level: DEBUG

@@ -1,0 +1,36 @@
+2025-05-19 03:03:49 - Failover iniciado:
+- Nó falho: 1 (192.168.1.5:5434)
+- Novo primário: 192.168.1.5 (0)
+- Primário antigo: 5433
+2025-05-19 03:03:49 - Failover iniciado:
+- Nó falho: 0 (192.168.1.5:5433)
+- Novo primário:  (0)
+- Primário antigo: 
+2025-05-19 03:03:49 - Failover iniciado:
+- Nó falho: 1 (192.168.1.5:5434)
+- Novo primário:  (0)
+- Primário antigo: 
+2025-05-19 03:09:39 - Failover iniciado:
+- Nó falho: 1 (192.168.1.5:5434)
+- Novo primário: 192.168.1.5 (0)
+- Primário antigo: 5433
+2025-05-19 03:09:39 - Failover iniciado:
+- Nó falho: 0 (192.168.1.5:5433)
+- Novo primário:  (0)
+- Primário antigo: 
+2025-05-19 03:09:39 - Failover iniciado:
+- Nó falho: 1 (192.168.1.5:5434)
+- Novo primário:  (0)
+- Primário antigo: 
+2025-05-19 03:33:25 - Failover iniciado:
+- Nó falho: 1 (192.168.1.5:5434)
+- Novo primário: 192.168.1.5 (0)
+- Primário antigo: 5433
+2025-05-19 03:33:25 - Failover iniciado:
+- Nó falho: 0 (192.168.1.5:5433)
+- Novo primário:  (0)
+- Primário antigo: 
+2025-05-19 03:33:25 - Failover iniciado:
+- Nó falho: 1 (192.168.1.5:5434)
+- Novo primário:  (0)
+- Primário antigo: 
