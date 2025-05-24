@@ -1,0 +1,473 @@
+2025-05-24 15:31:49.067: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:31:49.067: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:31:49.067: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:31:49.067: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:31:49.067: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:31:51.348: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:31:51.348: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:31:51.348: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:31:51.348: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:31:51.350: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:31:51.361: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 15:31:51.361: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 15:31:51.361: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:31:51.361: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 15:31:51.361: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:31:51.363: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:31:56.367: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:32:00.372: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:32:01.373: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:32:01.373: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 15:32:01.373: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:32:01.373: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 15:32:01.373: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:32:05.382: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 15:32:05.382: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:32:05.382: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 15:32:05.382: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:32:05.382: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:32:05.382: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:32:05.382: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 15:32:05.382: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:32:05.383: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:32:05.383: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:32:05.384: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 15:32:05.384: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:32:05.384: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 15:32:05.384: life_check pid 30: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:32:05.384: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 15:32:05.384: life_check pid 30: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:32:05.394: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:32:05.394: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 15:32:05.394: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-24 15:32:06.184: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:32:06.280: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:32:06.280: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:32:06.283: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:32:06.293: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:32:06.294: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:32:06.294: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 15:32:06.299: pcp_main pid 133: LOG:  PCP process: 133 started
+2025-05-24 15:32:06.298: health_check pid 135: LOG:  process started
+2025-05-24 15:32:06.299: sr_check_worker pid 134: LOG:  process started
+2025-05-24 15:32:06.301: health_check pid 136: LOG:  process started
+2025-05-24 15:32:06.301: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:32:06.301: main pid 7: LOG:  node status[0]: 1
+2025-05-24 15:32:06.301: main pid 7: LOG:  node status[1]: 2
+2025-05-24 15:32:06.386: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:32:06.386: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:32:06.386: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9695
+2025-05-24 15:32:06.386: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:32:06.386: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:32:06.386: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 15:32:06.404: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:32:06.404: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
+2025-05-24 15:32:06.404: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:43:58.130: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:43:58.130: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:43:58.130: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:43:58.130: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:43:58.130: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:44:00.624: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:44:00.624: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:44:00.624: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:44:00.624: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:44:00.633: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:44:00.645: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 15:44:00.645: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 15:44:00.645: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:44:00.645: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 15:44:00.645: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:44:00.647: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:44:05.652: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:44:09.657: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:44:10.658: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:44:10.658: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 15:44:10.658: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:44:10.658: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 15:44:10.658: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:44:14.662: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 15:44:14.662: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:44:14.662: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 15:44:14.662: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:44:14.662: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:44:14.662: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:44:14.663: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 15:44:14.663: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:44:14.664: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:44:14.664: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:44:14.664: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 15:44:14.664: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:44:14.664: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 15:44:14.664: life_check pid 30: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:44:14.665: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 15:44:14.665: life_check pid 30: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:44:14.671: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:44:14.672: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 15:44:14.672: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-24 15:44:14.949: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:44:15.167: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:44:15.167: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:44:15.175: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:44:15.197: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:44:15.198: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:44:15.198: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 15:44:15.203: pcp_main pid 133: LOG:  PCP process: 133 started
+2025-05-24 15:44:15.204: sr_check_worker pid 134: LOG:  process started
+2025-05-24 15:44:15.207: health_check pid 135: LOG:  process started
+2025-05-24 15:44:15.220: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:44:15.220: main pid 7: LOG:  node status[0]: 1
+2025-05-24 15:44:15.220: main pid 7: LOG:  node status[1]: 2
+2025-05-24 15:44:15.226: health_check pid 136: LOG:  process started
+2025-05-24 15:44:15.666: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:44:15.666: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:44:15.666: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9695
+2025-05-24 15:44:15.666: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:44:15.666: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:44:15.666: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 15:44:15.668: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:44:15.668: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
+2025-05-24 15:44:15.668: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:45:19.409: child pid 122: ERROR:  authentication failed
+2025-05-24 15:45:19.409: child pid 122: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:48:56.555: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:48:56.555: main pid 6: LOG:  memory cache initialized
+2025-05-24 15:48:56.555: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 15:48:56.555: main pid 6: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:48:56.555: main pid 6: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:48:58.801: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:48:58.801: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:48:58.801: main pid 6: LOG:  memory cache initialized
+2025-05-24 15:48:58.801: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 15:48:58.810: main pid 6: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:48:58.820: main pid 6: LOG:  waiting for watchdog to initialize
+2025-05-24 15:48:58.820: watchdog pid 10: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 15:48:58.820: watchdog pid 10: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:48:58.820: watchdog pid 10: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 15:48:58.820: watchdog pid 10: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:48:58.821: watchdog pid 10: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:49:03.826: watchdog pid 10: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:49:07.831: watchdog pid 10: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:49:08.833: watchdog pid 10: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:49:08.833: watchdog pid 10: HINT:  skipping stand for coordinator state
+2025-05-24 15:49:08.833: watchdog pid 10: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:49:08.833: watchdog pid 10: LOG:  Setting failover command timeout to 7
+2025-05-24 15:49:08.833: watchdog pid 10: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:49:12.836: watchdog pid 10: LOG:  I am the cluster leader node
+2025-05-24 15:49:12.836: watchdog pid 10: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:49:12.836: watchdog pid 10: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 15:49:12.836: watchdog pid 10: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:49:12.837: watchdog pid 10: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:49:12.837: watchdog pid 10: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:49:12.837: main pid 6: LOG:  watchdog process is initialized
+2025-05-24 15:49:12.837: main pid 6: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:49:12.838: main pid 6: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:49:12.838: main pid 6: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:49:12.838: main pid 6: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 15:49:12.838: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:49:12.838: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 15:49:12.838: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:49:12.838: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 15:49:12.838: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:49:12.845: main pid 6: LOG:  listen address[0]: *
+2025-05-24 15:49:12.846: main pid 6: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 15:49:12.846: main pid 6: LOG:  Setting up socket for :::5431
+2025-05-24 15:49:13.242: main pid 6: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:49:13.307: main pid 6: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:49:13.307: main pid 6: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:49:13.316: main pid 6: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:49:13.381: main pid 6: LOG:  listen address[0]: *
+2025-05-24 15:49:13.381: main pid 6: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:49:13.381: main pid 6: LOG:  Setting up socket for :::9898
+2025-05-24 15:49:13.387: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-24 15:49:13.389: sr_check_worker pid 133: LOG:  process started
+2025-05-24 15:49:13.405: health_check pid 134: LOG:  process started
+2025-05-24 15:49:13.444: main pid 6: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:49:13.445: main pid 6: LOG:  node status[0]: 1
+2025-05-24 15:49:13.445: main pid 6: LOG:  node status[1]: 2
+2025-05-24 15:49:13.456: health_check pid 135: LOG:  process started
+2025-05-24 15:49:13.840: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:49:13.840: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:49:13.840: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9695
+2025-05-24 15:49:13.840: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:49:13.840: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:49:13.840: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 15:49:13.841: heart_beat_sender pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:49:13.841: heart_beat_sender pid 31: LOG:  creating socket for sending heartbeat
+2025-05-24 15:49:13.841: heart_beat_sender pid 31: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:49:21.639: child pid 76: ERROR:  authentication failed
+2025-05-24 15:49:21.639: child pid 76: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:50:03.528: child pid 90: ERROR:  authentication failed
+2025-05-24 15:50:03.528: child pid 90: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:50:15.366: child pid 41: ERROR:  authentication failed
+2025-05-24 15:50:15.366: child pid 41: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:50:30.367: child pid 86: ERROR:  authentication failed
+2025-05-24 15:50:30.367: child pid 86: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:57:23.077: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:57:23.077: main pid 6: LOG:  memory cache initialized
+2025-05-24 15:57:23.077: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 15:57:23.077: main pid 6: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:57:23.077: main pid 6: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:57:25.217: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:57:25.217: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:57:25.217: main pid 6: LOG:  memory cache initialized
+2025-05-24 15:57:25.217: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 15:57:25.225: main pid 6: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:57:25.238: main pid 6: LOG:  waiting for watchdog to initialize
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:57:25.240: watchdog pid 10: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:57:30.245: watchdog pid 10: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:57:34.250: watchdog pid 10: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:57:35.251: watchdog pid 10: HINT:  skipping stand for coordinator state
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  Setting failover command timeout to 7
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  I am the cluster leader node
+2025-05-24 15:57:39.255: watchdog pid 10: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:57:39.255: watchdog pid 10: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:57:39.255: main pid 6: LOG:  watchdog process is initialized
+2025-05-24 15:57:39.255: main pid 6: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:57:39.256: main pid 6: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:57:39.256: main pid 6: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:57:39.257: main pid 6: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 15:57:39.258: life_check pid 27: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:57:39.258: life_check pid 27: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 15:57:39.258: life_check pid 27: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:57:39.258: life_check pid 27: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 15:57:39.258: life_check pid 27: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:57:39.265: main pid 6: LOG:  listen address[0]: *
+2025-05-24 15:57:39.266: main pid 6: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 15:57:39.266: main pid 6: LOG:  Setting up socket for :::5431
+2025-05-24 15:57:39.912: main pid 6: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:57:40.030: main pid 6: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:57:40.030: main pid 6: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:57:40.032: main pid 6: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:57:40.041: main pid 6: LOG:  listen address[0]: *
+2025-05-24 15:57:40.041: main pid 6: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:57:40.041: main pid 6: LOG:  Setting up socket for :::9898
+2025-05-24 15:57:40.043: pcp_main pid 130: LOG:  PCP process: 130 started
+2025-05-24 15:57:40.043: sr_check_worker pid 131: LOG:  process started
+2025-05-24 15:57:40.043: health_check pid 132: LOG:  process started
+2025-05-24 15:57:40.044: health_check pid 133: LOG:  process started
+2025-05-24 15:57:40.044: main pid 6: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:57:40.044: main pid 6: LOG:  node status[0]: 1
+2025-05-24 15:57:40.044: main pid 6: LOG:  node status[1]: 2
+2025-05-24 15:57:40.260: heart_beat_receiver pid 28: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:57:40.260: heart_beat_receiver pid 28: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:57:40.260: heart_beat_receiver pid 28: DETAIL:  creating socket on ::1:9695
+2025-05-24 15:57:40.260: heart_beat_receiver pid 28: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:57:40.260: heart_beat_receiver pid 28: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:57:40.260: heart_beat_receiver pid 28: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 15:57:40.261: heart_beat_sender pid 29: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:57:40.261: heart_beat_sender pid 29: LOG:  creating socket for sending heartbeat
+2025-05-24 15:57:40.261: heart_beat_sender pid 29: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:57:47.561: child pid 88: ERROR:  authentication failed
+2025-05-24 15:57:47.561: child pid 88: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 16:04:30.980: child pid 80: ERROR:  authentication failed
+2025-05-24 16:04:30.980: child pid 80: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 16:06:28.573: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:06:28.573: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:06:28.573: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:06:28.573: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 16:06:28.573: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 16:06:30.968: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:06:30.968: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:06:30.968: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:06:30.968: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:06:30.971: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 16:06:30.985: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 16:06:30.985: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 16:06:30.985: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 16:06:30.985: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 16:06:30.985: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 16:06:30.987: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 16:06:35.991: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 16:06:39.995: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 16:06:40.996: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 16:06:40.996: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 16:06:40.996: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 16:06:40.996: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 16:06:40.996: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 16:06:45.000: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 16:06:45.000: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 16:06:45.000: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 16:06:45.000: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 16:06:45.000: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 16:06:45.000: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 16:06:45.000: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 16:06:45.000: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 16:06:45.001: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 16:06:45.001: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 16:06:45.004: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 16:06:45.004: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 16:06:45.005: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 16:06:45.005: life_check pid 30: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 16:06:45.005: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 16:06:45.005: life_check pid 30: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 16:06:45.007: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:06:45.007: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 16:06:45.007: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-24 16:06:45.707: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 16:06:45.802: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 16:06:45.802: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 16:06:45.802: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 16:06:45.805: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:06:45.805: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 16:06:45.805: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 16:06:45.807: pcp_main pid 133: LOG:  PCP process: 133 started
+2025-05-24 16:06:45.808: sr_check_worker pid 134: LOG:  process started
+2025-05-24 16:06:45.808: health_check pid 135: LOG:  process started
+2025-05-24 16:06:45.809: health_check pid 136: LOG:  process started
+2025-05-24 16:06:45.810: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 16:06:45.810: main pid 7: LOG:  node status[0]: 1
+2025-05-24 16:06:45.810: main pid 7: LOG:  node status[1]: 2
+2025-05-24 16:06:46.006: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:06:46.006: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:06:46.006: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9695
+2025-05-24 16:06:46.007: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:06:46.007: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:06:46.007: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 16:06:46.018: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:06:46.018: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
+2025-05-24 16:06:46.018: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
+2025-05-24 16:06:53.094: child pid 116: ERROR:  authentication failed
+2025-05-24 16:06:53.094: child pid 116: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 16:10:23.076: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:10:23.076: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:10:23.076: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:10:23.076: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 16:10:23.076: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 16:10:25.183: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:10:25.183: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:10:25.183: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:10:25.183: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:10:25.185: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 16:10:25.195: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 16:10:25.196: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 16:10:25.196: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 16:10:25.196: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 16:10:25.196: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 16:10:25.197: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 16:10:30.202: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 16:10:34.207: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 16:10:35.208: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 16:10:35.208: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 16:10:35.208: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 16:10:35.208: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 16:10:35.208: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 16:10:39.212: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 16:10:39.212: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 16:10:39.212: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 16:10:39.212: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 16:10:39.212: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 16:10:39.212: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 16:10:39.212: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 16:10:39.212: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 16:10:39.213: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 16:10:39.213: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 16:10:39.213: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 16:10:39.214: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 16:10:39.214: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 16:10:39.214: life_check pid 30: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 16:10:39.214: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 16:10:39.214: life_check pid 30: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 16:10:39.221: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:10:39.221: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 16:10:39.221: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-24 16:10:39.679: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 16:10:39.779: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 16:10:39.779: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 16:10:39.784: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 16:10:39.799: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:10:39.799: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 16:10:39.800: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 16:10:39.804: sr_check_worker pid 134: LOG:  process started
+2025-05-24 16:10:39.805: pcp_main pid 133: LOG:  PCP process: 133 started
+2025-05-24 16:10:39.831: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 16:10:39.831: main pid 7: LOG:  node status[0]: 1
+2025-05-24 16:10:39.831: main pid 7: LOG:  node status[1]: 2
+2025-05-24 16:10:39.833: health_check pid 135: LOG:  process started
+2025-05-24 16:10:39.835: health_check pid 136: LOG:  process started
+2025-05-24 16:10:40.215: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:10:40.215: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:10:40.215: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9695
+2025-05-24 16:10:40.215: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:10:40.215: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:10:40.215: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 16:10:40.217: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:10:40.217: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
+2025-05-24 16:10:40.217: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
+2025-05-24 16:11:49.532: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:11:49.532: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:11:49.532: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:11:49.532: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 16:11:49.532: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 16:11:51.797: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:11:51.797: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:11:51.797: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:11:51.797: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:11:51.799: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 16:11:51.810: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 16:11:51.811: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-24 16:11:51.811: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 16:11:51.811: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-24 16:11:51.811: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 16:11:51.812: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 16:11:56.817: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 16:12:00.822: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 16:12:01.823: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 16:12:01.823: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 16:12:01.823: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 16:12:01.823: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 16:12:01.823: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 16:12:05.826: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 16:12:05.826: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 16:12:05.826: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-24 16:12:05.826: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 16:12:05.826: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 16:12:05.826: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 16:12:05.827: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 16:12:05.827: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 16:12:05.828: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 16:12:05.828: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 16:12:05.828: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-24 16:12:05.828: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 16:12:05.828: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-24 16:12:05.828: life_check pid 30: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 16:12:05.828: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-24 16:12:05.828: life_check pid 30: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 16:12:05.835: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:12:05.835: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-24 16:12:05.836: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-24 16:12:06.604: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 16:12:06.685: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 16:12:06.685: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 16:12:06.685: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 16:12:06.690: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:12:06.690: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 16:12:06.690: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 16:12:06.692: pcp_main pid 133: LOG:  PCP process: 133 started
+2025-05-24 16:12:06.692: sr_check_worker pid 134: LOG:  process started
+2025-05-24 16:12:06.693: health_check pid 135: LOG:  process started
+2025-05-24 16:12:06.693: health_check pid 136: LOG:  process started
+2025-05-24 16:12:06.694: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 16:12:06.694: main pid 7: LOG:  node status[0]: 1
+2025-05-24 16:12:06.694: main pid 7: LOG:  node status[1]: 2
+2025-05-24 16:12:06.830: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:12:06.830: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:12:06.830: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9695
+2025-05-24 16:12:06.830: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:12:06.830: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:12:06.830: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-24 16:12:06.831: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:12:06.831: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
+2025-05-24 16:12:06.831: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
+2025-05-24 16:12:31.554: child pid 106: ERROR:  authentication failed
+2025-05-24 16:12:31.554: child pid 106: DETAIL:  username "postgres" or password does not exist in backend

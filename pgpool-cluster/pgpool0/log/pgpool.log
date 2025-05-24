@@ -1,947 +1,463 @@
-2025-05-19 03:03:29.568: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:03:29.568: main pid 7: LOG:  memory cache initialized
-2025-05-19 03:03:29.568: main pid 7: DETAIL:  memcache blocks :64
-2025-05-19 03:03:29.568: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
-2025-05-19 03:03:29.568: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
-2025-05-19 03:03:32.930: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:03:32.931: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:03:32.931: main pid 7: LOG:  memory cache initialized
-2025-05-19 03:03:32.931: main pid 7: DETAIL:  memcache blocks :64
-2025-05-19 03:03:32.933: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
-2025-05-19 03:03:32.947: watchdog pid 11: LOG:  setting the local watchdog node name to "192.168.1.5:5430 Linux pgpool0"
-2025-05-19 03:03:32.947: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
-2025-05-19 03:03:32.947: watchdog pid 11: LOG:  watchdog remote node:0 on 192.168.1.5:9001
-2025-05-19 03:03:32.947: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
-2025-05-19 03:03:32.947: main pid 7: LOG:  waiting for watchdog to initialize
-2025-05-19 03:03:32.948: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
-2025-05-19 03:03:38.260: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
-2025-05-19 03:03:42.428: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
-2025-05-19 03:03:43.429: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
-2025-05-19 03:03:43.429: watchdog pid 11: HINT:  skipping stand for coordinator state
-2025-05-19 03:03:43.429: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
-2025-05-19 03:03:43.429: watchdog pid 11: LOG:  Setting failover command timeout to 7
-2025-05-19 03:03:43.429: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
-2025-05-19 03:03:47.431: watchdog pid 11: LOG:  I am the cluster leader node
-2025-05-19 03:03:47.431: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
-2025-05-19 03:03:47.431: watchdog pid 11: LOG:  setting the local node "192.168.1.5:5430 Linux pgpool0" as watchdog cluster leader
-2025-05-19 03:03:47.431: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
-2025-05-19 03:03:47.431: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
-2025-05-19 03:03:47.431: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
-2025-05-19 03:03:47.431: main pid 7: LOG:  watchdog process is initialized
-2025-05-19 03:03:47.431: main pid 7: DETAIL:  watchdog messaging data version: 1.2
-2025-05-19 03:03:47.456: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:03:47.456: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
-2025-05-19 03:03:47.456: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
-2025-05-19 03:03:47.456: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
-2025-05-19 03:03:47.456: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"192.168.1.5:5430 Linux pgpool0"
-2025-05-19 03:03:47.456: life_check pid 30: DETAIL:  Host:"192.168.1.5" WD Port:9000 pgpool-II port:5430
-2025-05-19 03:03:47.456: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"Not_Set"
-2025-05-19 03:03:47.456: life_check pid 30: DETAIL:  Host:"192.168.1.5" WD Port:9001 pgpool-II port:5431
-2025-05-19 03:03:47.457: main pid 7: LOG:  listen address[0]: *
-2025-05-19 03:03:47.457: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
-2025-05-19 03:03:47.457: main pid 7: LOG:  Setting up socket for :::5430
-2025-05-19 03:03:47.526: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
-2025-05-19 03:03:47.862: main pid 7: LOG:  find_primary_node: primary node is 0
-2025-05-19 03:03:47.862: main pid 7: LOG:  find_primary_node: standby node is 1
-2025-05-19 03:03:47.862: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
-2025-05-19 03:03:47.863: main pid 7: LOG:  listen address[0]: *
-2025-05-19 03:03:47.863: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
-2025-05-19 03:03:47.863: main pid 7: LOG:  Setting up socket for :::9898
-2025-05-19 03:03:47.864: pcp_main pid 133: LOG:  PCP process: 133 started
-2025-05-19 03:03:47.864: health_check pid 135: LOG:  process started
-2025-05-19 03:03:47.865: health_check pid 136: LOG:  process started
-2025-05-19 03:03:47.865: sr_check_worker pid 134: LOG:  process started
-2025-05-19 03:03:47.878: main pid 7: LOG:  pgpool-II successfully started. version 4.6.0 (chirikoboshi)
-2025-05-19 03:03:47.879: main pid 7: LOG:  node status[0]: 1
-2025-05-19 03:03:47.879: main pid 7: LOG:  node status[1]: 2
-2025-05-19 03:03:47.898: health_check0 pid 135: LOG:  health check retrying on DB node: 0 (round:1)
-2025-05-19 03:03:47.898: health_check1 pid 136: LOG:  health check retrying on DB node: 1 (round:1)
-2025-05-19 03:03:48.457: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:03:48.457: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
-2025-05-19 03:03:48.457: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9694
-2025-05-19 03:03:48.457: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:03:48.457: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
-2025-05-19 03:03:48.457: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9694
-2025-05-19 03:03:48.457: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:03:48.457: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
-2025-05-19 03:03:48.457: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
-2025-05-19 03:03:48.910: health_check1 pid 136: LOG:  health check retrying on DB node: 1 (round:2)
-2025-05-19 03:03:48.912: health_check0 pid 135: LOG:  health check retrying on DB node: 0 (round:2)
-2025-05-19 03:03:49.926: health_check1 pid 136: LOG:  health check failed on node 1 (timeout:0)
-2025-05-19 03:03:49.926: health_check1 pid 136: LOG:  received degenerate backend request for node_id: 1 from pid [136]
-2025-05-19 03:03:49.926: watchdog pid 11: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
-2025-05-19 03:03:49.926: watchdog pid 11: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
-2025-05-19 03:03:49.926: watchdog pid 11: LOG:  we do not need quorum to hold to proceed with failover
-2025-05-19 03:03:49.926: watchdog pid 11: DETAIL:  proceeding with the failover
-2025-05-19 03:03:49.926: watchdog pid 11: HINT:  failover_when_quorum_exists is set to false
-2025-05-19 03:03:49.926: health_check1 pid 136: LOG:  signal_user1_to_parent_with_reason(0)
-2025-05-19 03:03:49.926: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:03:49.926: main pid 7: LOG:  Pgpool-II parent process has received failover request
-2025-05-19 03:03:49.926: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:03:49.926: watchdog pid 11: LOG:  watchdog is informed of failover start by the main process
-2025-05-19 03:03:49.926: main pid 7: LOG:  === Starting degeneration. shutdown host 192.168.1.5(5434) ===
-2025-05-19 03:03:49.928: health_check0 pid 135: LOG:  health check failed on node 0 (timeout:0)
-2025-05-19 03:03:49.928: health_check0 pid 135: LOG:  received degenerate backend request for node_id: 0 from pid [135]
-2025-05-19 03:03:49.928: watchdog pid 11: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
-2025-05-19 03:03:49.928: watchdog pid 11: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
-2025-05-19 03:03:49.928: watchdog pid 11: LOG:  we do not need quorum to hold to proceed with failover
-2025-05-19 03:03:49.928: watchdog pid 11: DETAIL:  proceeding with the failover
-2025-05-19 03:03:49.928: watchdog pid 11: HINT:  failover_when_quorum_exists is set to false
-2025-05-19 03:03:49.929: main pid 7: LOG:  Do not restart children because we are switching over node id 1 host: 192.168.1.5 port: 5434 and we are in streaming replication mode
-2025-05-19 03:03:49.937: main pid 7: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  1 192.168.1.5  5434  192.168.1.5 0 5433 
-2025-05-19 03:03:49.941: main pid 7: LOG:  failover: set new primary node: 0
-2025-05-19 03:03:49.941: main pid 7: LOG:  failover: set new main node: 0
-2025-05-19 03:03:49.950: sr_check_worker pid 134: LOG:  worker process received restart request
-2025-05-19 03:03:49.950: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:03:49.951: watchdog pid 11: LOG:  watchdog is informed of failover end by the main process
-2025-05-19 03:03:49.951: main pid 7: LOG:  === Failover done. shutdown host 192.168.1.5(5434) ===
-2025-05-19 03:03:49.951: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:03:49.951: watchdog pid 11: LOG:  watchdog is informed of failover start by the main process
-2025-05-19 03:03:49.951: main pid 7: LOG:  === Starting degeneration. shutdown host 192.168.1.5(5433) ===
-2025-05-19 03:03:49.951: main pid 7: WARNING:  All the DB nodes are in down status and skip writing status file.
-2025-05-19 03:03:49.951: main pid 7: LOG:  failover: no valid backend node found
-2025-05-19 03:03:49.951: main pid 7: LOG:  Restart all children
-2025-05-19 03:03:49.978: main pid 7: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  0 192.168.1.5  5433  "" 0 "" ""
-2025-05-19 03:03:49.986: main pid 7: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  1 192.168.1.5  5434  "" 0 "" ""
-2025-05-19 03:03:49.993: main pid 7: LOG:  find_primary_node_repeatedly: all of the backends are down. Giving up finding primary node
-2025-05-19 03:03:49.993: main pid 7: LOG:  failover: set new primary node: -1
-2025-05-19 03:03:50.012: child pid 154: LOG:  failover or failback event detected
-2025-05-19 03:03:50.012: child pid 154: DETAIL:  restarting myself
-2025-05-19 03:03:50.027: child pid 162: LOG:  failover or failback event detected
-2025-05-19 03:03:50.027: child pid 162: DETAIL:  restarting myself
-2025-05-19 03:03:50.101: child pid 190: LOG:  failover or failback event detected
-2025-05-19 03:03:50.101: child pid 190: DETAIL:  restarting myself
-2025-05-19 03:03:50.101: child pid 161: LOG:  failover or failback event detected
-2025-05-19 03:03:50.101: child pid 161: DETAIL:  restarting myself
-2025-05-19 03:03:50.077: child pid 152: LOG:  failover or failback event detected
-2025-05-19 03:03:50.102: child pid 152: DETAIL:  restarting myself
-2025-05-19 03:03:50.102: child pid 164: LOG:  failover or failback event detected
-2025-05-19 03:03:50.102: child pid 164: DETAIL:  restarting myself
-2025-05-19 03:03:50.107: child pid 182: LOG:  failover or failback event detected
-2025-05-19 03:03:50.107: child pid 182: DETAIL:  restarting myself
-2025-05-19 03:03:50.112: child pid 186: LOG:  failover or failback event detected
-2025-05-19 03:03:50.112: child pid 186: DETAIL:  restarting myself
-2025-05-19 03:03:50.117: child pid 170: LOG:  failover or failback event detected
-2025-05-19 03:03:50.117: child pid 170: DETAIL:  restarting myself
-2025-05-19 03:03:50.117: child pid 155: LOG:  failover or failback event detected
-2025-05-19 03:03:50.117: child pid 155: DETAIL:  restarting myself
-2025-05-19 03:03:50.122: child pid 160: LOG:  failover or failback event detected
-2025-05-19 03:03:50.122: child pid 160: DETAIL:  restarting myself
-2025-05-19 03:03:50.124: child pid 153: LOG:  failover or failback event detected
-2025-05-19 03:03:50.124: child pid 153: DETAIL:  restarting myself
-2025-05-19 03:03:50.125: child pid 166: LOG:  failover or failback event detected
-2025-05-19 03:03:50.125: child pid 166: DETAIL:  restarting myself
-2025-05-19 03:03:50.125: child pid 189: LOG:  failover or failback event detected
-2025-05-19 03:03:50.125: child pid 189: DETAIL:  restarting myself
-2025-05-19 03:03:50.134: child pid 157: LOG:  failover or failback event detected
-2025-05-19 03:03:50.134: child pid 157: DETAIL:  restarting myself
-2025-05-19 03:03:50.134: child pid 187: LOG:  failover or failback event detected
-2025-05-19 03:03:50.134: child pid 187: DETAIL:  restarting myself
-2025-05-19 03:03:50.138: child pid 158: LOG:  failover or failback event detected
-2025-05-19 03:03:50.138: child pid 158: DETAIL:  restarting myself
-2025-05-19 03:03:50.138: child pid 172: LOG:  failover or failback event detected
-2025-05-19 03:03:50.139: child pid 172: DETAIL:  restarting myself
-2025-05-19 03:03:50.139: child pid 179: LOG:  failover or failback event detected
-2025-05-19 03:03:50.139: child pid 179: DETAIL:  restarting myself
-2025-05-19 03:03:50.155: child pid 176: LOG:  failover or failback event detected
-2025-05-19 03:03:50.155: child pid 176: DETAIL:  restarting myself
-2025-05-19 03:03:50.158: child pid 184: LOG:  failover or failback event detected
-2025-05-19 03:03:50.158: child pid 184: DETAIL:  restarting myself
-2025-05-19 03:03:50.159: child pid 183: LOG:  failover or failback event detected
-2025-05-19 03:03:50.159: child pid 183: DETAIL:  restarting myself
-2025-05-19 03:03:50.160: child pid 191: LOG:  failover or failback event detected
-2025-05-19 03:03:50.160: child pid 191: DETAIL:  restarting myself
-2025-05-19 03:03:50.161: child pid 181: LOG:  failover or failback event detected
-2025-05-19 03:03:50.161: child pid 181: DETAIL:  restarting myself
-2025-05-19 03:03:50.172: child pid 199: LOG:  failover or failback event detected
-2025-05-19 03:03:50.172: child pid 199: DETAIL:  restarting myself
-2025-05-19 03:03:50.172: child pid 159: LOG:  failover or failback event detected
-2025-05-19 03:03:50.172: child pid 159: DETAIL:  restarting myself
-2025-05-19 03:03:50.170: child pid 173: LOG:  failover or failback event detected
-2025-05-19 03:03:50.170: child pid 173: DETAIL:  restarting myself
-2025-05-19 03:03:50.172: child pid 200: LOG:  failover or failback event detected
-2025-05-19 03:03:50.172: child pid 200: DETAIL:  restarting myself
-2025-05-19 03:03:50.174: child pid 185: LOG:  failover or failback event detected
-2025-05-19 03:03:50.174: child pid 185: DETAIL:  restarting myself
-2025-05-19 03:03:50.170: child pid 210: LOG:  failover or failback event detected
-2025-05-19 03:03:50.171: child pid 210: DETAIL:  restarting myself
-2025-05-19 03:03:50.177: child pid 175: LOG:  failover or failback event detected
-2025-05-19 03:03:50.177: child pid 175: DETAIL:  restarting myself
-2025-05-19 03:03:50.177: child pid 171: LOG:  failover or failback event detected
-2025-05-19 03:03:50.177: child pid 171: DETAIL:  restarting myself
-2025-05-19 03:03:50.180: child pid 174: LOG:  failover or failback event detected
-2025-05-19 03:03:50.180: child pid 174: DETAIL:  restarting myself
-2025-05-19 03:03:50.183: child pid 169: LOG:  failover or failback event detected
-2025-05-19 03:03:50.183: child pid 169: DETAIL:  restarting myself
-2025-05-19 03:03:50.184: child pid 156: LOG:  failover or failback event detected
-2025-05-19 03:03:50.184: child pid 156: DETAIL:  restarting myself
-2025-05-19 03:03:50.185: child pid 215: LOG:  failover or failback event detected
-2025-05-19 03:03:50.185: child pid 215: DETAIL:  restarting myself
-2025-05-19 03:03:50.185: child pid 180: LOG:  failover or failback event detected
-2025-05-19 03:03:50.185: child pid 180: DETAIL:  restarting myself
-2025-05-19 03:03:50.188: child pid 204: LOG:  failover or failback event detected
-2025-05-19 03:03:50.188: child pid 204: DETAIL:  restarting myself
-2025-05-19 03:03:50.190: child pid 206: LOG:  failover or failback event detected
-2025-05-19 03:03:50.190: child pid 206: DETAIL:  restarting myself
-2025-05-19 03:03:50.193: child pid 196: LOG:  failover or failback event detected
-2025-05-19 03:03:50.193: child pid 196: DETAIL:  restarting myself
-2025-05-19 03:03:50.194: child pid 211: LOG:  failover or failback event detected
-2025-05-19 03:03:50.194: child pid 211: DETAIL:  restarting myself
-2025-05-19 03:03:50.195: child pid 212: LOG:  failover or failback event detected
-2025-05-19 03:03:50.195: child pid 212: DETAIL:  restarting myself
-2025-05-19 03:03:50.199: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:03:50.199: watchdog pid 11: LOG:  watchdog is informed of failover end by the main process
-2025-05-19 03:03:50.202: child pid 201: LOG:  failover or failback event detected
-2025-05-19 03:03:50.203: child pid 201: DETAIL:  restarting myself
-2025-05-19 03:03:50.204: child pid 220: LOG:  failover or failback event detected
-2025-05-19 03:03:50.204: child pid 220: DETAIL:  restarting myself
-2025-05-19 03:03:50.204: child pid 222: LOG:  failover or failback event detected
-2025-05-19 03:03:50.204: child pid 222: DETAIL:  restarting myself
-2025-05-19 03:03:50.207: child pid 205: LOG:  failover or failback event detected
-2025-05-19 03:03:50.207: child pid 205: DETAIL:  restarting myself
-2025-05-19 03:03:50.210: child pid 194: LOG:  failover or failback event detected
-2025-05-19 03:03:50.210: child pid 194: DETAIL:  restarting myself
-2025-05-19 03:03:50.211: child pid 203: LOG:  failover or failback event detected
-2025-05-19 03:03:50.211: child pid 203: DETAIL:  restarting myself
-2025-05-19 03:03:50.213: main pid 7: LOG:  === Failover done. shutdown host 192.168.1.5(5433) ===
-2025-05-19 03:03:50.224: child pid 228: LOG:  failover or failback event detected
-2025-05-19 03:03:50.224: child pid 228: DETAIL:  restarting myself
-2025-05-19 03:03:50.224: child pid 224: LOG:  failover or failback event detected
-2025-05-19 03:03:50.224: child pid 224: DETAIL:  restarting myself
-2025-05-19 03:03:50.229: child pid 165: LOG:  failover or failback event detected
-2025-05-19 03:03:50.229: child pid 165: DETAIL:  restarting myself
-2025-05-19 03:03:50.246: child pid 223: LOG:  failover or failback event detected
-2025-05-19 03:03:50.246: child pid 223: DETAIL:  restarting myself
-2025-05-19 03:03:50.254: child pid 230: LOG:  failover or failback event detected
-2025-05-19 03:03:50.254: child pid 230: DETAIL:  restarting myself
-2025-05-19 03:03:50.258: child pid 226: LOG:  failover or failback event detected
-2025-05-19 03:03:50.258: child pid 226: DETAIL:  restarting myself
-2025-05-19 03:03:50.267: child pid 245: LOG:  failover or failback event detected
-2025-05-19 03:03:50.267: child pid 245: DETAIL:  restarting myself
-2025-05-19 03:03:50.275: child pid 234: LOG:  failover or failback event detected
-2025-05-19 03:03:50.275: child pid 234: DETAIL:  restarting myself
-2025-05-19 03:03:50.276: child pid 193: LOG:  failover or failback event detected
-2025-05-19 03:03:50.276: child pid 193: DETAIL:  restarting myself
-2025-05-19 03:03:50.277: child pid 195: LOG:  failover or failback event detected
-2025-05-19 03:03:50.277: child pid 195: DETAIL:  restarting myself
-2025-05-19 03:03:50.277: child pid 251: LOG:  failover or failback event detected
-2025-05-19 03:03:50.277: child pid 251: DETAIL:  restarting myself
-2025-05-19 03:03:50.277: child pid 216: LOG:  failover or failback event detected
-2025-05-19 03:03:50.277: child pid 216: DETAIL:  restarting myself
-2025-05-19 03:03:50.279: child pid 168: LOG:  failover or failback event detected
-2025-05-19 03:03:50.279: child pid 168: DETAIL:  restarting myself
-2025-05-19 03:03:50.281: child pid 244: LOG:  failover or failback event detected
-2025-05-19 03:03:50.281: child pid 244: DETAIL:  restarting myself
-2025-05-19 03:03:50.285: child pid 219: LOG:  failover or failback event detected
-2025-05-19 03:03:50.285: child pid 219: DETAIL:  restarting myself
-2025-05-19 03:03:50.285: child pid 229: LOG:  failover or failback event detected
-2025-05-19 03:03:50.285: child pid 229: DETAIL:  restarting myself
-2025-05-19 03:03:50.285: child pid 233: LOG:  failover or failback event detected
-2025-05-19 03:03:50.285: child pid 233: DETAIL:  restarting myself
-2025-05-19 03:03:50.287: child pid 167: LOG:  failover or failback event detected
-2025-05-19 03:03:50.287: child pid 167: DETAIL:  restarting myself
-2025-05-19 03:03:50.287: child pid 163: LOG:  failover or failback event detected
-2025-05-19 03:03:50.287: child pid 163: DETAIL:  restarting myself
-2025-05-19 03:03:50.292: child pid 227: LOG:  failover or failback event detected
-2025-05-19 03:03:50.292: child pid 227: DETAIL:  restarting myself
-2025-05-19 03:03:50.294: child pid 202: LOG:  failover or failback event detected
-2025-05-19 03:03:50.294: child pid 202: DETAIL:  restarting myself
-2025-05-19 03:03:50.294: child pid 238: LOG:  failover or failback event detected
-2025-05-19 03:03:50.294: child pid 238: DETAIL:  restarting myself
-2025-05-19 03:03:50.296: child pid 225: LOG:  failover or failback event detected
-2025-05-19 03:03:50.296: child pid 225: DETAIL:  restarting myself
-2025-05-19 03:03:50.298: child pid 221: LOG:  failover or failback event detected
-2025-05-19 03:03:50.298: child pid 221: DETAIL:  restarting myself
-2025-05-19 03:03:50.303: child pid 247: LOG:  failover or failback event detected
-2025-05-19 03:03:50.303: child pid 247: DETAIL:  restarting myself
-2025-05-19 03:03:50.303: child pid 236: LOG:  failover or failback event detected
-2025-05-19 03:03:50.304: child pid 236: DETAIL:  restarting myself
-2025-05-19 03:03:50.305: child pid 217: LOG:  failover or failback event detected
-2025-05-19 03:03:50.305: child pid 217: DETAIL:  restarting myself
-2025-05-19 03:03:50.306: child pid 249: LOG:  failover or failback event detected
-2025-05-19 03:03:50.306: child pid 249: DETAIL:  restarting myself
-2025-05-19 03:03:50.307: child pid 231: LOG:  failover or failback event detected
-2025-05-19 03:03:50.307: child pid 231: DETAIL:  restarting myself
-2025-05-19 03:03:50.308: child pid 198: LOG:  failover or failback event detected
-2025-05-19 03:03:50.308: child pid 198: DETAIL:  restarting myself
-2025-05-19 03:03:50.311: child pid 248: LOG:  failover or failback event detected
-2025-05-19 03:03:50.311: child pid 248: DETAIL:  restarting myself
-2025-05-19 03:03:50.305: child pid 207: LOG:  failover or failback event detected
-2025-05-19 03:03:50.312: child pid 207: DETAIL:  restarting myself
-2025-05-19 03:03:50.318: child pid 243: LOG:  failover or failback event detected
-2025-05-19 03:03:50.318: child pid 243: DETAIL:  restarting myself
-2025-05-19 03:03:50.319: child pid 192: LOG:  failover or failback event detected
-2025-05-19 03:03:50.319: child pid 192: DETAIL:  restarting myself
-2025-05-19 03:03:50.319: child pid 188: LOG:  failover or failback event detected
-2025-05-19 03:03:50.319: child pid 188: DETAIL:  restarting myself
-2025-05-19 03:03:50.319: child pid 250: LOG:  failover or failback event detected
-2025-05-19 03:03:50.319: child pid 250: DETAIL:  restarting myself
-2025-05-19 03:03:50.319: child pid 218: LOG:  failover or failback event detected
-2025-05-19 03:03:50.319: child pid 218: DETAIL:  restarting myself
-2025-05-19 03:03:50.322: child pid 237: LOG:  failover or failback event detected
-2025-05-19 03:03:50.323: child pid 237: DETAIL:  restarting myself
-2025-05-19 03:03:50.324: child pid 246: LOG:  failover or failback event detected
-2025-05-19 03:03:50.324: child pid 246: DETAIL:  restarting myself
-2025-05-19 03:03:50.331: child pid 235: LOG:  failover or failback event detected
-2025-05-19 03:03:50.331: child pid 235: DETAIL:  restarting myself
-2025-05-19 03:03:50.331: child pid 240: LOG:  failover or failback event detected
-2025-05-19 03:03:50.331: child pid 240: DETAIL:  restarting myself
-2025-05-19 03:03:50.331: child pid 214: LOG:  failover or failback event detected
-2025-05-19 03:03:50.331: child pid 214: DETAIL:  restarting myself
-2025-05-19 03:03:50.332: child pid 209: LOG:  failover or failback event detected
-2025-05-19 03:03:50.332: child pid 209: DETAIL:  restarting myself
-2025-05-19 03:03:50.332: child pid 197: LOG:  failover or failback event detected
-2025-05-19 03:03:50.332: child pid 197: DETAIL:  restarting myself
-2025-05-19 03:03:50.335: child pid 178: LOG:  failover or failback event detected
-2025-05-19 03:03:50.335: child pid 178: DETAIL:  restarting myself
-2025-05-19 03:03:50.335: child pid 232: LOG:  failover or failback event detected
-2025-05-19 03:03:50.335: child pid 232: DETAIL:  restarting myself
-2025-05-19 03:03:50.335: child pid 208: LOG:  failover or failback event detected
-2025-05-19 03:03:50.335: child pid 208: DETAIL:  restarting myself
-2025-05-19 03:03:50.338: child pid 239: LOG:  failover or failback event detected
-2025-05-19 03:03:50.338: child pid 239: DETAIL:  restarting myself
-2025-05-19 03:03:50.338: child pid 177: LOG:  failover or failback event detected
-2025-05-19 03:03:50.338: child pid 177: DETAIL:  restarting myself
-2025-05-19 03:03:50.340: child pid 241: LOG:  failover or failback event detected
-2025-05-19 03:03:50.340: child pid 241: DETAIL:  restarting myself
-2025-05-19 03:03:50.338: child pid 213: LOG:  failover or failback event detected
-2025-05-19 03:03:50.338: child pid 213: DETAIL:  restarting myself
-2025-05-19 03:03:50.342: child pid 242: LOG:  failover or failback event detected
-2025-05-19 03:03:50.342: child pid 242: DETAIL:  restarting myself
-2025-05-19 03:03:51.214: pcp_main pid 133: LOG:  restart request received in pcp child process
-2025-05-19 03:03:51.214: main pid 7: LOG:  PCP child 133 exits with status 0 in failover()
-2025-05-19 03:03:51.215: main pid 7: LOG:  fork a new PCP child pid 252 in failover()
-2025-05-19 03:03:51.215: pcp_main pid 252: LOG:  PCP process: 252 started
-2025-05-19 03:03:51.215: sr_check_worker pid 253: LOG:  process started
-2025-05-19 03:09:18.144: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:09:18.144: main pid 7: LOG:  memory cache initialized
-2025-05-19 03:09:18.144: main pid 7: DETAIL:  memcache blocks :64
-2025-05-19 03:09:18.144: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
-2025-05-19 03:09:18.144: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
-2025-05-19 03:09:20.734: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:09:20.734: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:09:20.734: main pid 7: LOG:  memory cache initialized
-2025-05-19 03:09:20.734: main pid 7: DETAIL:  memcache blocks :64
-2025-05-19 03:09:20.735: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
-2025-05-19 03:09:20.745: main pid 7: LOG:  waiting for watchdog to initialize
-2025-05-19 03:09:20.745: watchdog pid 11: LOG:  setting the local watchdog node name to "192.168.1.5:5430 Linux pgpool0"
-2025-05-19 03:09:20.745: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
-2025-05-19 03:09:20.745: watchdog pid 11: LOG:  watchdog remote node:0 on 192.168.1.5:9001
-2025-05-19 03:09:20.745: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
-2025-05-19 03:09:20.745: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
-2025-05-19 03:09:26.684: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
-2025-05-19 03:09:31.601: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
-2025-05-19 03:09:32.602: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
-2025-05-19 03:09:32.602: watchdog pid 11: HINT:  skipping stand for coordinator state
-2025-05-19 03:09:32.602: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
-2025-05-19 03:09:32.602: watchdog pid 11: LOG:  Setting failover command timeout to 7
-2025-05-19 03:09:32.602: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
-2025-05-19 03:09:36.605: watchdog pid 11: LOG:  I am the cluster leader node
-2025-05-19 03:09:36.605: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
-2025-05-19 03:09:36.605: watchdog pid 11: LOG:  setting the local node "192.168.1.5:5430 Linux pgpool0" as watchdog cluster leader
-2025-05-19 03:09:36.605: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
-2025-05-19 03:09:36.606: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
-2025-05-19 03:09:36.606: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
-2025-05-19 03:09:36.606: main pid 7: LOG:  watchdog process is initialized
-2025-05-19 03:09:36.606: main pid 7: DETAIL:  watchdog messaging data version: 1.2
-2025-05-19 03:09:36.606: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:09:36.606: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
-2025-05-19 03:09:36.606: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
-2025-05-19 03:09:36.606: main pid 7: LOG:  listen address[0]: *
-2025-05-19 03:09:36.606: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
-2025-05-19 03:09:36.606: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"192.168.1.5:5430 Linux pgpool0"
-2025-05-19 03:09:36.606: life_check pid 30: DETAIL:  Host:"192.168.1.5" WD Port:9000 pgpool-II port:5430
-2025-05-19 03:09:36.606: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"Not_Set"
-2025-05-19 03:09:36.606: life_check pid 30: DETAIL:  Host:"192.168.1.5" WD Port:9001 pgpool-II port:5431
-2025-05-19 03:09:36.606: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
-2025-05-19 03:09:36.606: main pid 7: LOG:  Setting up socket for :::5430
-2025-05-19 03:09:36.840: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
-2025-05-19 03:09:36.972: main pid 7: LOG:  find_primary_node: primary node is 0
-2025-05-19 03:09:36.972: main pid 7: LOG:  find_primary_node: standby node is 1
-2025-05-19 03:09:36.972: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
-2025-05-19 03:09:36.973: main pid 7: LOG:  listen address[0]: *
-2025-05-19 03:09:36.973: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
-2025-05-19 03:09:36.973: main pid 7: LOG:  Setting up socket for :::9898
-2025-05-19 03:09:36.974: pcp_main pid 133: LOG:  PCP process: 133 started
-2025-05-19 03:09:36.975: health_check pid 135: LOG:  process started
-2025-05-19 03:09:36.975: sr_check_worker pid 134: LOG:  process started
-2025-05-19 03:09:36.975: health_check pid 136: LOG:  process started
-2025-05-19 03:09:36.986: main pid 7: LOG:  pgpool-II successfully started. version 4.6.0 (chirikoboshi)
-2025-05-19 03:09:36.986: main pid 7: LOG:  node status[0]: 1
-2025-05-19 03:09:36.986: main pid 7: LOG:  node status[1]: 2
-2025-05-19 03:09:37.019: health_check0 pid 135: LOG:  health check retrying on DB node: 0 (round:1)
-2025-05-19 03:09:37.019: health_check1 pid 136: LOG:  health check retrying on DB node: 1 (round:1)
-2025-05-19 03:09:37.607: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:09:37.607: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
-2025-05-19 03:09:37.607: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9694
-2025-05-19 03:09:37.607: heart_beat_sender pid 34: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:09:37.607: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:09:37.607: heart_beat_sender pid 34: LOG:  creating socket for sending heartbeat
-2025-05-19 03:09:37.607: heart_beat_sender pid 34: DETAIL:  set SO_REUSEPORT
-2025-05-19 03:09:37.607: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
-2025-05-19 03:09:37.607: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9694
-2025-05-19 03:09:38.035: health_check0 pid 135: LOG:  health check retrying on DB node: 0 (round:2)
-2025-05-19 03:09:38.036: health_check1 pid 136: LOG:  health check retrying on DB node: 1 (round:2)
-2025-05-19 03:09:39.253: health_check1 pid 136: LOG:  health check failed on node 1 (timeout:0)
-2025-05-19 03:09:39.254: health_check1 pid 136: LOG:  received degenerate backend request for node_id: 1 from pid [136]
-2025-05-19 03:09:39.254: watchdog pid 11: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
-2025-05-19 03:09:39.254: watchdog pid 11: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
-2025-05-19 03:09:39.254: watchdog pid 11: LOG:  we do not need quorum to hold to proceed with failover
-2025-05-19 03:09:39.254: watchdog pid 11: DETAIL:  proceeding with the failover
-2025-05-19 03:09:39.254: watchdog pid 11: HINT:  failover_when_quorum_exists is set to false
-2025-05-19 03:09:39.255: health_check1 pid 136: LOG:  signal_user1_to_parent_with_reason(0)
-2025-05-19 03:09:39.264: health_check0 pid 135: LOG:  health check failed on node 0 (timeout:0)
-2025-05-19 03:09:39.264: health_check0 pid 135: LOG:  received degenerate backend request for node_id: 0 from pid [135]
-2025-05-19 03:09:39.264: watchdog pid 11: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
-2025-05-19 03:09:39.264: watchdog pid 11: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
-2025-05-19 03:09:39.264: watchdog pid 11: LOG:  we do not need quorum to hold to proceed with failover
-2025-05-19 03:09:39.264: watchdog pid 11: DETAIL:  proceeding with the failover
-2025-05-19 03:09:39.264: watchdog pid 11: HINT:  failover_when_quorum_exists is set to false
-2025-05-19 03:09:39.264: health_check0 pid 135: LOG:  signal_user1_to_parent_with_reason(0)
-2025-05-19 03:09:39.270: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:09:39.270: main pid 7: LOG:  Pgpool-II parent process has received failover request
-2025-05-19 03:09:39.270: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:09:39.270: watchdog pid 11: LOG:  watchdog is informed of failover start by the main process
-2025-05-19 03:09:39.270: main pid 7: LOG:  === Starting degeneration. shutdown host 192.168.1.5(5434) ===
-2025-05-19 03:09:39.298: main pid 7: LOG:  Do not restart children because we are switching over node id 1 host: 192.168.1.5 port: 5434 and we are in streaming replication mode
-2025-05-19 03:09:39.334: main pid 7: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  1 192.168.1.5  5434  192.168.1.5 0 5433 
-2025-05-19 03:09:39.357: main pid 7: LOG:  failover: set new primary node: 0
-2025-05-19 03:09:39.357: main pid 7: LOG:  failover: set new main node: 0
-2025-05-19 03:09:39.366: sr_check_worker pid 134: LOG:  worker process received restart request
-2025-05-19 03:09:39.366: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:09:39.366: watchdog pid 11: LOG:  watchdog is informed of failover end by the main process
-2025-05-19 03:09:39.366: main pid 7: LOG:  === Failover done. shutdown host 192.168.1.5(5434) ===
-2025-05-19 03:09:39.366: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:09:39.366: watchdog pid 11: LOG:  watchdog is informed of failover start by the main process
-2025-05-19 03:09:39.366: main pid 7: LOG:  === Starting degeneration. shutdown host 192.168.1.5(5433) ===
-2025-05-19 03:09:39.367: main pid 7: WARNING:  All the DB nodes are in down status and skip writing status file.
-2025-05-19 03:09:39.367: main pid 7: LOG:  failover: no valid backend node found
-2025-05-19 03:09:39.367: main pid 7: LOG:  Restart all children
-2025-05-19 03:09:39.501: main pid 7: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  0 192.168.1.5  5433  "" 0 "" ""
-2025-05-19 03:09:39.514: main pid 7: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  1 192.168.1.5  5434  "" 0 "" ""
-2025-05-19 03:09:39.546: main pid 7: LOG:  find_primary_node_repeatedly: all of the backends are down. Giving up finding primary node
-2025-05-19 03:09:39.551: main pid 7: LOG:  failover: set new primary node: -1
-2025-05-19 03:09:39.592: child pid 160: LOG:  failover or failback event detected
-2025-05-19 03:09:39.592: child pid 160: DETAIL:  restarting myself
-2025-05-19 03:09:39.599: child pid 166: LOG:  failover or failback event detected
-2025-05-19 03:09:39.599: child pid 166: DETAIL:  restarting myself
-2025-05-19 03:09:39.602: child pid 164: LOG:  failover or failback event detected
-2025-05-19 03:09:39.602: child pid 164: DETAIL:  restarting myself
-2025-05-19 03:09:39.640: child pid 162: LOG:  failover or failback event detected
-2025-05-19 03:09:39.640: child pid 162: DETAIL:  restarting myself
-2025-05-19 03:09:39.656: child pid 165: LOG:  failover or failback event detected
-2025-05-19 03:09:39.656: child pid 165: DETAIL:  restarting myself
-2025-05-19 03:09:39.659: child pid 161: LOG:  failover or failback event detected
-2025-05-19 03:09:39.659: child pid 161: DETAIL:  restarting myself
-2025-05-19 03:09:39.669: child pid 163: LOG:  failover or failback event detected
-2025-05-19 03:09:39.669: child pid 163: DETAIL:  restarting myself
-2025-05-19 03:09:39.684: child pid 169: LOG:  failover or failback event detected
-2025-05-19 03:09:39.684: child pid 169: DETAIL:  restarting myself
-2025-05-19 03:09:39.686: child pid 159: LOG:  failover or failback event detected
-2025-05-19 03:09:39.686: child pid 159: DETAIL:  restarting myself
-2025-05-19 03:09:39.700: child pid 170: LOG:  failover or failback event detected
-2025-05-19 03:09:39.700: child pid 170: DETAIL:  restarting myself
-2025-05-19 03:09:39.720: child pid 173: LOG:  failover or failback event detected
-2025-05-19 03:09:39.720: child pid 173: DETAIL:  restarting myself
-2025-05-19 03:09:39.732: child pid 179: LOG:  failover or failback event detected
-2025-05-19 03:09:39.732: child pid 179: DETAIL:  restarting myself
-2025-05-19 03:09:39.734: child pid 171: LOG:  failover or failback event detected
-2025-05-19 03:09:39.734: child pid 171: DETAIL:  restarting myself
-2025-05-19 03:09:39.736: child pid 181: LOG:  failover or failback event detected
-2025-05-19 03:09:39.736: child pid 181: DETAIL:  restarting myself
-2025-05-19 03:09:39.737: child pid 180: LOG:  failover or failback event detected
-2025-05-19 03:09:39.737: child pid 180: DETAIL:  restarting myself
-2025-05-19 03:09:39.752: child pid 205: LOG:  failover or failback event detected
-2025-05-19 03:09:39.752: child pid 205: DETAIL:  restarting myself
-2025-05-19 03:09:39.762: child pid 217: LOG:  failover or failback event detected
-2025-05-19 03:09:39.762: child pid 217: DETAIL:  restarting myself
-2025-05-19 03:09:39.762: child pid 157: LOG:  failover or failback event detected
-2025-05-19 03:09:39.762: child pid 157: DETAIL:  restarting myself
-2025-05-19 03:09:39.765: child pid 219: LOG:  failover or failback event detected
-2025-05-19 03:09:39.765: child pid 219: DETAIL:  restarting myself
-2025-05-19 03:09:39.767: child pid 154: LOG:  failover or failback event detected
-2025-05-19 03:09:39.767: child pid 154: DETAIL:  restarting myself
-2025-05-19 03:09:39.793: child pid 176: LOG:  failover or failback event detected
-2025-05-19 03:09:39.793: child pid 176: DETAIL:  restarting myself
-2025-05-19 03:09:39.824: child pid 198: LOG:  failover or failback event detected
-2025-05-19 03:09:39.825: child pid 198: DETAIL:  restarting myself
-2025-05-19 03:09:39.830: child pid 200: LOG:  failover or failback event detected
-2025-05-19 03:09:39.830: child pid 200: DETAIL:  restarting myself
-2025-05-19 03:09:39.833: child pid 214: LOG:  failover or failback event detected
-2025-05-19 03:09:39.833: child pid 214: DETAIL:  restarting myself
-2025-05-19 03:09:39.838: child pid 174: LOG:  failover or failback event detected
-2025-05-19 03:09:39.838: child pid 174: DETAIL:  restarting myself
-2025-05-19 03:09:39.838: child pid 197: LOG:  failover or failback event detected
-2025-05-19 03:09:39.838: child pid 197: DETAIL:  restarting myself
-2025-05-19 03:09:39.852: child pid 168: LOG:  failover or failback event detected
-2025-05-19 03:09:39.852: child pid 168: DETAIL:  restarting myself
-2025-05-19 03:09:39.856: child pid 212: LOG:  failover or failback event detected
-2025-05-19 03:09:39.856: child pid 212: DETAIL:  restarting myself
-2025-05-19 03:09:39.856: child pid 178: LOG:  failover or failback event detected
-2025-05-19 03:09:39.856: child pid 178: DETAIL:  restarting myself
-2025-05-19 03:09:39.856: child pid 156: LOG:  failover or failback event detected
-2025-05-19 03:09:39.857: child pid 156: DETAIL:  restarting myself
-2025-05-19 03:09:39.859: child pid 172: LOG:  failover or failback event detected
-2025-05-19 03:09:39.859: child pid 172: DETAIL:  restarting myself
-2025-05-19 03:09:39.859: child pid 193: LOG:  failover or failback event detected
-2025-05-19 03:09:39.859: child pid 193: DETAIL:  restarting myself
-2025-05-19 03:09:39.860: child pid 211: LOG:  failover or failback event detected
-2025-05-19 03:09:39.860: child pid 211: DETAIL:  restarting myself
-2025-05-19 03:09:39.867: child pid 177: LOG:  failover or failback event detected
-2025-05-19 03:09:39.867: child pid 177: DETAIL:  restarting myself
-2025-05-19 03:09:39.874: child pid 216: LOG:  failover or failback event detected
-2025-05-19 03:09:39.874: child pid 216: DETAIL:  restarting myself
-2025-05-19 03:09:39.876: child pid 175: LOG:  failover or failback event detected
-2025-05-19 03:09:39.876: child pid 175: DETAIL:  restarting myself
-2025-05-19 03:09:39.877: child pid 158: LOG:  failover or failback event detected
-2025-05-19 03:09:39.877: child pid 158: DETAIL:  restarting myself
-2025-05-19 03:09:39.881: child pid 155: LOG:  failover or failback event detected
-2025-05-19 03:09:39.881: child pid 155: DETAIL:  restarting myself
-2025-05-19 03:09:39.889: child pid 191: LOG:  failover or failback event detected
-2025-05-19 03:09:39.889: child pid 191: DETAIL:  restarting myself
-2025-05-19 03:09:39.894: child pid 215: LOG:  failover or failback event detected
-2025-05-19 03:09:39.894: child pid 215: DETAIL:  restarting myself
-2025-05-19 03:09:39.894: child pid 207: LOG:  failover or failback event detected
-2025-05-19 03:09:39.894: child pid 207: DETAIL:  restarting myself
-2025-05-19 03:09:39.896: child pid 201: LOG:  failover or failback event detected
-2025-05-19 03:09:39.896: child pid 201: DETAIL:  restarting myself
-2025-05-19 03:09:39.908: child pid 222: LOG:  failover or failback event detected
-2025-05-19 03:09:39.908: child pid 222: DETAIL:  restarting myself
-2025-05-19 03:09:39.914: child pid 210: LOG:  failover or failback event detected
-2025-05-19 03:09:39.914: child pid 210: DETAIL:  restarting myself
-2025-05-19 03:09:39.917: child pid 208: LOG:  failover or failback event detected
-2025-05-19 03:09:39.917: child pid 208: DETAIL:  restarting myself
-2025-05-19 03:09:39.920: child pid 199: LOG:  failover or failback event detected
-2025-05-19 03:09:39.920: child pid 199: DETAIL:  restarting myself
-2025-05-19 03:09:39.925: child pid 206: LOG:  failover or failback event detected
-2025-05-19 03:09:39.925: child pid 206: DETAIL:  restarting myself
-2025-05-19 03:09:39.926: child pid 153: LOG:  failover or failback event detected
-2025-05-19 03:09:39.926: child pid 153: DETAIL:  restarting myself
-2025-05-19 03:09:39.934: child pid 213: LOG:  failover or failback event detected
-2025-05-19 03:09:39.934: child pid 213: DETAIL:  restarting myself
-2025-05-19 03:09:39.936: child pid 189: LOG:  failover or failback event detected
-2025-05-19 03:09:39.936: child pid 189: DETAIL:  restarting myself
-2025-05-19 03:09:39.934: child pid 152: LOG:  failover or failback event detected
-2025-05-19 03:09:39.936: child pid 152: DETAIL:  restarting myself
-2025-05-19 03:09:39.953: child pid 203: LOG:  failover or failback event detected
-2025-05-19 03:09:39.953: child pid 203: DETAIL:  restarting myself
-2025-05-19 03:09:39.965: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:09:39.965: watchdog pid 11: LOG:  watchdog is informed of failover end by the main process
-2025-05-19 03:09:39.965: main pid 7: LOG:  === Failover done. shutdown host 192.168.1.5(5433) ===
-2025-05-19 03:09:39.971: child pid 202: LOG:  failover or failback event detected
-2025-05-19 03:09:39.971: child pid 202: DETAIL:  restarting myself
-2025-05-19 03:09:39.972: child pid 220: LOG:  failover or failback event detected
-2025-05-19 03:09:39.973: child pid 220: DETAIL:  restarting myself
-2025-05-19 03:09:39.972: child pid 182: LOG:  failover or failback event detected
-2025-05-19 03:09:39.973: child pid 182: DETAIL:  restarting myself
-2025-05-19 03:09:39.973: child pid 228: LOG:  failover or failback event detected
-2025-05-19 03:09:39.973: child pid 228: DETAIL:  restarting myself
-2025-05-19 03:09:39.973: child pid 186: LOG:  failover or failback event detected
-2025-05-19 03:09:39.973: child pid 186: DETAIL:  restarting myself
-2025-05-19 03:09:39.972: child pid 190: LOG:  failover or failback event detected
-2025-05-19 03:09:39.975: child pid 190: DETAIL:  restarting myself
-2025-05-19 03:09:39.975: child pid 183: LOG:  failover or failback event detected
-2025-05-19 03:09:39.975: child pid 183: DETAIL:  restarting myself
-2025-05-19 03:09:39.976: child pid 196: LOG:  failover or failback event detected
-2025-05-19 03:09:39.976: child pid 196: DETAIL:  restarting myself
-2025-05-19 03:09:39.973: child pid 209: LOG:  failover or failback event detected
-2025-05-19 03:09:39.977: child pid 209: DETAIL:  restarting myself
-2025-05-19 03:09:39.985: child pid 218: LOG:  failover or failback event detected
-2025-05-19 03:09:39.985: child pid 218: DETAIL:  restarting myself
-2025-05-19 03:09:39.985: child pid 185: LOG:  failover or failback event detected
-2025-05-19 03:09:39.985: child pid 185: DETAIL:  restarting myself
-2025-05-19 03:09:39.988: child pid 221: LOG:  failover or failback event detected
-2025-05-19 03:09:39.988: child pid 221: DETAIL:  restarting myself
-2025-05-19 03:09:39.992: child pid 195: LOG:  failover or failback event detected
-2025-05-19 03:09:39.992: child pid 195: DETAIL:  restarting myself
-2025-05-19 03:09:39.993: child pid 204: LOG:  failover or failback event detected
-2025-05-19 03:09:39.993: child pid 204: DETAIL:  restarting myself
-2025-05-19 03:09:39.994: child pid 192: LOG:  failover or failback event detected
-2025-05-19 03:09:39.994: child pid 192: DETAIL:  restarting myself
-2025-05-19 03:09:39.994: child pid 187: LOG:  failover or failback event detected
-2025-05-19 03:09:39.994: child pid 187: DETAIL:  restarting myself
-2025-05-19 03:09:40.009: child pid 243: LOG:  failover or failback event detected
-2025-05-19 03:09:40.009: child pid 243: DETAIL:  restarting myself
-2025-05-19 03:09:40.013: child pid 194: LOG:  failover or failback event detected
-2025-05-19 03:09:40.013: child pid 194: DETAIL:  restarting myself
-2025-05-19 03:09:40.013: child pid 242: LOG:  failover or failback event detected
-2025-05-19 03:09:40.013: child pid 242: DETAIL:  restarting myself
-2025-05-19 03:09:40.015: child pid 188: LOG:  failover or failback event detected
-2025-05-19 03:09:40.015: child pid 188: DETAIL:  restarting myself
-2025-05-19 03:09:40.036: child pid 184: LOG:  failover or failback event detected
-2025-05-19 03:09:40.038: child pid 184: DETAIL:  restarting myself
-2025-05-19 03:09:40.069: child pid 248: LOG:  failover or failback event detected
-2025-05-19 03:09:40.069: child pid 248: DETAIL:  restarting myself
-2025-05-19 03:09:40.069: child pid 233: LOG:  failover or failback event detected
-2025-05-19 03:09:40.069: child pid 233: DETAIL:  restarting myself
-2025-05-19 03:09:40.071: child pid 225: LOG:  failover or failback event detected
-2025-05-19 03:09:40.072: child pid 225: DETAIL:  restarting myself
-2025-05-19 03:09:40.072: child pid 234: LOG:  failover or failback event detected
-2025-05-19 03:09:40.072: child pid 234: DETAIL:  restarting myself
-2025-05-19 03:09:40.093: child pid 247: LOG:  failover or failback event detected
-2025-05-19 03:09:40.093: child pid 247: DETAIL:  restarting myself
-2025-05-19 03:09:40.093: child pid 232: LOG:  failover or failback event detected
-2025-05-19 03:09:40.093: child pid 232: DETAIL:  restarting myself
-2025-05-19 03:09:40.116: child pid 231: LOG:  failover or failback event detected
-2025-05-19 03:09:40.116: child pid 231: DETAIL:  restarting myself
-2025-05-19 03:09:40.116: child pid 226: LOG:  failover or failback event detected
-2025-05-19 03:09:40.116: child pid 226: DETAIL:  restarting myself
-2025-05-19 03:09:40.117: child pid 229: LOG:  failover or failback event detected
-2025-05-19 03:09:40.117: child pid 229: DETAIL:  restarting myself
-2025-05-19 03:09:40.117: child pid 230: LOG:  failover or failback event detected
-2025-05-19 03:09:40.117: child pid 230: DETAIL:  restarting myself
-2025-05-19 03:09:40.117: child pid 224: LOG:  failover or failback event detected
-2025-05-19 03:09:40.117: child pid 224: DETAIL:  restarting myself
-2025-05-19 03:09:40.118: child pid 249: LOG:  failover or failback event detected
-2025-05-19 03:09:40.118: child pid 249: DETAIL:  restarting myself
-2025-05-19 03:09:40.121: child pid 250: LOG:  failover or failback event detected
-2025-05-19 03:09:40.121: child pid 250: DETAIL:  restarting myself
-2025-05-19 03:09:40.123: child pid 235: LOG:  failover or failback event detected
-2025-05-19 03:09:40.123: child pid 235: DETAIL:  restarting myself
-2025-05-19 03:09:40.123: child pid 246: LOG:  failover or failback event detected
-2025-05-19 03:09:40.123: child pid 246: DETAIL:  restarting myself
-2025-05-19 03:09:40.123: child pid 239: LOG:  failover or failback event detected
-2025-05-19 03:09:40.123: child pid 239: DETAIL:  restarting myself
-2025-05-19 03:09:40.124: child pid 227: LOG:  failover or failback event detected
-2025-05-19 03:09:40.124: child pid 227: DETAIL:  restarting myself
-2025-05-19 03:09:40.125: child pid 245: LOG:  failover or failback event detected
-2025-05-19 03:09:40.125: child pid 245: DETAIL:  restarting myself
-2025-05-19 03:09:40.126: child pid 238: LOG:  failover or failback event detected
-2025-05-19 03:09:40.126: child pid 238: DETAIL:  restarting myself
-2025-05-19 03:09:40.127: child pid 251: LOG:  failover or failback event detected
-2025-05-19 03:09:40.127: child pid 251: DETAIL:  restarting myself
-2025-05-19 03:09:40.127: child pid 223: LOG:  failover or failback event detected
-2025-05-19 03:09:40.127: child pid 223: DETAIL:  restarting myself
-2025-05-19 03:09:40.127: child pid 241: LOG:  failover or failback event detected
-2025-05-19 03:09:40.127: child pid 241: DETAIL:  restarting myself
-2025-05-19 03:09:40.131: child pid 236: LOG:  failover or failback event detected
-2025-05-19 03:09:40.131: child pid 236: DETAIL:  restarting myself
-2025-05-19 03:09:40.133: child pid 244: LOG:  failover or failback event detected
-2025-05-19 03:09:40.133: child pid 244: DETAIL:  restarting myself
-2025-05-19 03:09:40.134: child pid 237: LOG:  failover or failback event detected
-2025-05-19 03:09:40.134: child pid 237: DETAIL:  restarting myself
-2025-05-19 03:09:40.135: child pid 240: LOG:  failover or failback event detected
-2025-05-19 03:09:40.135: child pid 240: DETAIL:  restarting myself
-2025-05-19 03:09:40.135: child pid 167: LOG:  failover or failback event detected
-2025-05-19 03:09:40.135: child pid 167: DETAIL:  restarting myself
-2025-05-19 03:09:40.968: pcp_main pid 133: LOG:  restart request received in pcp child process
-2025-05-19 03:09:40.970: main pid 7: LOG:  PCP child 133 exits with status 0 in failover()
-2025-05-19 03:09:40.970: main pid 7: LOG:  fork a new PCP child pid 252 in failover()
-2025-05-19 03:09:40.971: pcp_main pid 252: LOG:  PCP process: 252 started
-2025-05-19 03:09:40.971: sr_check_worker pid 253: LOG:  process started
-2025-05-19 03:09:41.311: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:33:05.275: main pid 8: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:33:05.275: main pid 8: LOG:  memory cache initialized
-2025-05-19 03:33:05.275: main pid 8: DETAIL:  memcache blocks :64
-2025-05-19 03:33:05.275: main pid 8: LOG:  allocating (2182364264) bytes of shared memory segment
-2025-05-19 03:33:05.275: main pid 8: LOG:  allocating shared memory segment of size: 2182364264 
-2025-05-19 03:33:08.236: main pid 8: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:33:08.236: main pid 8: LOG:  health_check_stats_shared_memory_size: requested size: 12288
-2025-05-19 03:33:08.236: main pid 8: LOG:  memory cache initialized
-2025-05-19 03:33:08.236: main pid 8: DETAIL:  memcache blocks :64
-2025-05-19 03:33:08.239: main pid 8: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
-2025-05-19 03:33:08.272: main pid 8: LOG:  waiting for watchdog to initialize
-2025-05-19 03:33:08.273: watchdog pid 12: LOG:  setting the local watchdog node name to "192.168.1.5:5430 Linux pgpool0"
-2025-05-19 03:33:08.273: watchdog pid 12: LOG:  watchdog cluster is configured with 1 remote nodes
-2025-05-19 03:33:08.273: watchdog pid 12: LOG:  watchdog remote node:0 on 192.168.1.5:9001
-2025-05-19 03:33:08.274: watchdog pid 12: LOG:  interface monitoring is disabled in watchdog
-2025-05-19 03:33:08.296: watchdog pid 12: LOG:  watchdog node state changed from [DEAD] to [LOADING]
-2025-05-19 03:33:13.590: watchdog pid 12: LOG:  watchdog node state changed from [LOADING] to [JOINING]
-2025-05-19 03:33:17.930: watchdog pid 12: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
-2025-05-19 03:33:18.931: watchdog pid 12: LOG:  I am the only alive node in the watchdog cluster
-2025-05-19 03:33:18.931: watchdog pid 12: HINT:  skipping stand for coordinator state
-2025-05-19 03:33:18.931: watchdog pid 12: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
-2025-05-19 03:33:18.931: watchdog pid 12: LOG:  Setting failover command timeout to 7
-2025-05-19 03:33:18.931: watchdog pid 12: LOG:  I am announcing my self as leader/coordinator watchdog node
-2025-05-19 03:33:22.935: watchdog pid 12: LOG:  I am the cluster leader node
-2025-05-19 03:33:22.935: watchdog pid 12: DETAIL:  our declare coordinator message is accepted by all nodes
-2025-05-19 03:33:22.935: watchdog pid 12: LOG:  setting the local node "192.168.1.5:5430 Linux pgpool0" as watchdog cluster leader
-2025-05-19 03:33:22.935: watchdog pid 12: LOG:  signal_user1_to_parent_with_reason(1)
-2025-05-19 03:33:22.935: watchdog pid 12: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
-2025-05-19 03:33:22.935: watchdog pid 12: DETAIL:  waiting for the quorum to start escalation process
-2025-05-19 03:33:22.935: main pid 8: LOG:  watchdog process is initialized
-2025-05-19 03:33:22.935: main pid 8: DETAIL:  watchdog messaging data version: 1.2
-2025-05-19 03:33:22.935: main pid 8: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:33:22.936: main pid 8: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
-2025-05-19 03:33:22.936: main pid 8: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
-2025-05-19 03:33:22.936: life_check pid 31: LOG:  2 watchdog nodes are configured for lifecheck
-2025-05-19 03:33:22.936: life_check pid 31: LOG:  watchdog nodes ID:0 Name:"192.168.1.5:5430 Linux pgpool0"
-2025-05-19 03:33:22.936: life_check pid 31: DETAIL:  Host:"192.168.1.5" WD Port:9000 pgpool-II port:5430
-2025-05-19 03:33:22.936: life_check pid 31: LOG:  watchdog nodes ID:1 Name:"Not_Set"
-2025-05-19 03:33:22.936: life_check pid 31: DETAIL:  Host:"192.168.1.5" WD Port:9001 pgpool-II port:5431
-2025-05-19 03:33:22.936: main pid 8: LOG:  listen address[0]: *
-2025-05-19 03:33:22.936: main pid 8: LOG:  Setting up socket for 0.0.0.0:5430
-2025-05-19 03:33:22.937: main pid 8: LOG:  Setting up socket for :::5430
-2025-05-19 03:33:23.261: main pid 8: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
-2025-05-19 03:33:23.407: main pid 8: LOG:  find_primary_node: primary node is 0
-2025-05-19 03:33:23.407: main pid 8: LOG:  find_primary_node: standby node is 1
-2025-05-19 03:33:23.407: main pid 8: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
-2025-05-19 03:33:23.408: main pid 8: LOG:  listen address[0]: *
-2025-05-19 03:33:23.408: main pid 8: LOG:  Setting up socket for 0.0.0.0:9898
-2025-05-19 03:33:23.408: main pid 8: LOG:  Setting up socket for :::9898
-2025-05-19 03:33:23.412: pcp_main pid 134: LOG:  PCP process: 134 started
-2025-05-19 03:33:23.414: sr_check_worker pid 135: LOG:  process started
-2025-05-19 03:33:23.417: health_check pid 136: LOG:  process started
-2025-05-19 03:33:23.419: health_check pid 137: LOG:  process started
-2025-05-19 03:33:23.424: main pid 8: LOG:  pgpool-II successfully started. version 4.6.0 (chirikoboshi)
-2025-05-19 03:33:23.425: main pid 8: LOG:  node status[0]: 1
-2025-05-19 03:33:23.425: main pid 8: LOG:  node status[1]: 2
-2025-05-19 03:33:23.444: health_check1 pid 137: LOG:  health check retrying on DB node: 1 (round:1)
-2025-05-19 03:33:23.445: health_check0 pid 136: LOG:  health check retrying on DB node: 0 (round:1)
-2025-05-19 03:33:23.937: heart_beat_receiver pid 32: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:33:23.937: heart_beat_receiver pid 32: LOG:  creating watchdog heartbeat receive socket.
-2025-05-19 03:33:23.937: heart_beat_receiver pid 32: DETAIL:  creating socket on ::1:9694
-2025-05-19 03:33:23.937: heart_beat_receiver pid 32: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:33:23.937: heart_beat_receiver pid 32: LOG:  creating watchdog heartbeat receive socket.
-2025-05-19 03:33:23.937: heart_beat_receiver pid 32: DETAIL:  creating socket on 127.0.0.1:9694
-2025-05-19 03:33:23.937: heart_beat_sender pid 33: LOG:  set SO_REUSEPORT option to the socket
-2025-05-19 03:33:23.937: heart_beat_sender pid 33: LOG:  creating socket for sending heartbeat
-2025-05-19 03:33:23.937: heart_beat_sender pid 33: DETAIL:  set SO_REUSEPORT
-2025-05-19 03:33:24.460: health_check1 pid 137: LOG:  health check retrying on DB node: 1 (round:2)
-2025-05-19 03:33:24.462: health_check0 pid 136: LOG:  health check retrying on DB node: 0 (round:2)
-2025-05-19 03:33:25.483: health_check1 pid 137: LOG:  health check failed on node 1 (timeout:0)
-2025-05-19 03:33:25.483: health_check1 pid 137: LOG:  received degenerate backend request for node_id: 1 from pid [137]
-2025-05-19 03:33:25.484: watchdog pid 12: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
-2025-05-19 03:33:25.484: watchdog pid 12: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
-2025-05-19 03:33:25.484: watchdog pid 12: LOG:  we do not need quorum to hold to proceed with failover
-2025-05-19 03:33:25.484: watchdog pid 12: DETAIL:  proceeding with the failover
-2025-05-19 03:33:25.484: watchdog pid 12: HINT:  failover_when_quorum_exists is set to false
-2025-05-19 03:33:25.484: health_check1 pid 137: LOG:  signal_user1_to_parent_with_reason(0)
-2025-05-19 03:33:25.484: main pid 8: LOG:  Pgpool-II parent process received SIGUSR1
-2025-05-19 03:33:25.484: main pid 8: LOG:  Pgpool-II parent process has received failover request
-2025-05-19 03:33:25.484: watchdog pid 12: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:33:25.484: watchdog pid 12: LOG:  watchdog is informed of failover start by the main process
-2025-05-19 03:33:25.484: main pid 8: LOG:  === Starting degeneration. shutdown host 192.168.1.5(5434) ===
-2025-05-19 03:33:25.495: health_check0 pid 136: LOG:  health check failed on node 0 (timeout:0)
-2025-05-19 03:33:25.495: health_check0 pid 136: LOG:  received degenerate backend request for node_id: 0 from pid [136]
-2025-05-19 03:33:25.495: watchdog pid 12: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
-2025-05-19 03:33:25.495: watchdog pid 12: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
-2025-05-19 03:33:25.495: watchdog pid 12: LOG:  we do not need quorum to hold to proceed with failover
-2025-05-19 03:33:25.495: watchdog pid 12: DETAIL:  proceeding with the failover
-2025-05-19 03:33:25.495: watchdog pid 12: HINT:  failover_when_quorum_exists is set to false
-2025-05-19 03:33:25.496: main pid 8: LOG:  Do not restart children because we are switching over node id 1 host: 192.168.1.5 port: 5434 and we are in streaming replication mode
-2025-05-19 03:33:25.508: main pid 8: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  1 192.168.1.5  5434  192.168.1.5 0 5433 
-2025-05-19 03:33:25.522: main pid 8: LOG:  failover: set new primary node: 0
-2025-05-19 03:33:25.522: main pid 8: LOG:  failover: set new main node: 0
-2025-05-19 03:33:25.537: sr_check_worker pid 135: LOG:  worker process received restart request
-2025-05-19 03:33:25.537: watchdog pid 12: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:33:25.537: watchdog pid 12: LOG:  watchdog is informed of failover end by the main process
-2025-05-19 03:33:25.537: main pid 8: LOG:  === Failover done. shutdown host 192.168.1.5(5434) ===
-2025-05-19 03:33:25.537: watchdog pid 12: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:33:25.537: watchdog pid 12: LOG:  watchdog is informed of failover start by the main process
-2025-05-19 03:33:25.537: main pid 8: LOG:  === Starting degeneration. shutdown host 192.168.1.5(5433) ===
-2025-05-19 03:33:25.537: main pid 8: WARNING:  All the DB nodes are in down status and skip writing status file.
-2025-05-19 03:33:25.537: main pid 8: LOG:  failover: no valid backend node found
-2025-05-19 03:33:25.537: main pid 8: LOG:  Restart all children
-2025-05-19 03:33:25.539: main pid 8: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  0 192.168.1.5  5433  "" 0 "" ""
-2025-05-19 03:33:25.608: main pid 8: LOG:  execute command: /bin/bash /etc/pgpool2/failover.sh  1 192.168.1.5  5434  "" 0 "" ""
-2025-05-19 03:33:25.616: main pid 8: LOG:  find_primary_node_repeatedly: all of the backends are down. Giving up finding primary node
-2025-05-19 03:33:25.616: main pid 8: LOG:  failover: set new primary node: -1
-2025-05-19 03:33:25.653: child pid 155: LOG:  failover or failback event detected
-2025-05-19 03:33:25.653: child pid 155: DETAIL:  restarting myself
-2025-05-19 03:33:25.656: child pid 156: LOG:  failover or failback event detected
-2025-05-19 03:33:25.656: child pid 156: DETAIL:  restarting myself
-2025-05-19 03:33:25.660: child pid 153: LOG:  failover or failback event detected
-2025-05-19 03:33:25.660: child pid 153: DETAIL:  restarting myself
-2025-05-19 03:33:25.671: child pid 157: LOG:  failover or failback event detected
-2025-05-19 03:33:25.671: child pid 157: DETAIL:  restarting myself
-2025-05-19 03:33:25.674: child pid 158: LOG:  failover or failback event detected
-2025-05-19 03:33:25.674: child pid 158: DETAIL:  restarting myself
-2025-05-19 03:33:25.678: child pid 163: LOG:  failover or failback event detected
-2025-05-19 03:33:25.678: child pid 163: DETAIL:  restarting myself
-2025-05-19 03:33:25.686: child pid 164: LOG:  failover or failback event detected
-2025-05-19 03:33:25.686: child pid 164: DETAIL:  restarting myself
-2025-05-19 03:33:25.686: child pid 172: LOG:  failover or failback event detected
-2025-05-19 03:33:25.687: child pid 172: DETAIL:  restarting myself
-2025-05-19 03:33:25.689: child pid 162: LOG:  failover or failback event detected
-2025-05-19 03:33:25.689: child pid 162: DETAIL:  restarting myself
-2025-05-19 03:33:25.689: child pid 161: LOG:  failover or failback event detected
-2025-05-19 03:33:25.689: child pid 161: DETAIL:  restarting myself
-2025-05-19 03:33:25.698: child pid 171: LOG:  failover or failback event detected
-2025-05-19 03:33:25.698: child pid 171: DETAIL:  restarting myself
-2025-05-19 03:33:25.698: child pid 168: LOG:  failover or failback event detected
-2025-05-19 03:33:25.698: child pid 168: DETAIL:  restarting myself
-2025-05-19 03:33:25.698: child pid 166: LOG:  failover or failback event detected
-2025-05-19 03:33:25.698: child pid 166: DETAIL:  restarting myself
-2025-05-19 03:33:25.701: child pid 170: LOG:  failover or failback event detected
-2025-05-19 03:33:25.701: child pid 170: DETAIL:  restarting myself
-2025-05-19 03:33:25.705: child pid 167: LOG:  failover or failback event detected
-2025-05-19 03:33:25.706: child pid 167: DETAIL:  restarting myself
-2025-05-19 03:33:25.717: child pid 154: LOG:  failover or failback event detected
-2025-05-19 03:33:25.717: child pid 154: DETAIL:  restarting myself
-2025-05-19 03:33:25.718: child pid 160: LOG:  failover or failback event detected
-2025-05-19 03:33:25.718: child pid 160: DETAIL:  restarting myself
-2025-05-19 03:33:25.738: child pid 193: LOG:  failover or failback event detected
-2025-05-19 03:33:25.738: child pid 193: DETAIL:  restarting myself
-2025-05-19 03:33:25.740: child pid 159: LOG:  failover or failback event detected
-2025-05-19 03:33:25.740: child pid 159: DETAIL:  restarting myself
-2025-05-19 03:33:25.759: child pid 174: LOG:  failover or failback event detected
-2025-05-19 03:33:25.759: child pid 174: DETAIL:  restarting myself
-2025-05-19 03:33:25.779: child pid 201: LOG:  failover or failback event detected
-2025-05-19 03:33:25.779: child pid 201: DETAIL:  restarting myself
-2025-05-19 03:33:25.812: child pid 175: LOG:  failover or failback event detected
-2025-05-19 03:33:25.812: child pid 175: DETAIL:  restarting myself
-2025-05-19 03:33:25.917: child pid 165: LOG:  failover or failback event detected
-2025-05-19 03:33:25.917: child pid 165: DETAIL:  restarting myself
-2025-05-19 03:33:25.954: child pid 178: LOG:  failover or failback event detected
-2025-05-19 03:33:25.954: child pid 178: DETAIL:  restarting myself
-2025-05-19 03:33:25.954: child pid 177: LOG:  failover or failback event detected
-2025-05-19 03:33:25.954: child pid 177: DETAIL:  restarting myself
-2025-05-19 03:33:25.954: child pid 199: LOG:  failover or failback event detected
-2025-05-19 03:33:25.954: child pid 199: DETAIL:  restarting myself
-2025-05-19 03:33:25.955: child pid 200: LOG:  failover or failback event detected
-2025-05-19 03:33:25.955: child pid 200: DETAIL:  restarting myself
-2025-05-19 03:33:25.957: child pid 187: LOG:  failover or failback event detected
-2025-05-19 03:33:25.957: child pid 187: DETAIL:  restarting myself
-2025-05-19 03:33:25.957: child pid 202: LOG:  failover or failback event detected
-2025-05-19 03:33:25.957: child pid 202: DETAIL:  restarting myself
-2025-05-19 03:33:25.957: child pid 215: LOG:  failover or failback event detected
-2025-05-19 03:33:25.957: child pid 215: DETAIL:  restarting myself
-2025-05-19 03:33:25.957: child pid 183: LOG:  failover or failback event detected
-2025-05-19 03:33:25.957: child pid 183: DETAIL:  restarting myself
-2025-05-19 03:33:25.958: child pid 173: LOG:  failover or failback event detected
-2025-05-19 03:33:25.958: child pid 173: DETAIL:  restarting myself
-2025-05-19 03:33:25.958: child pid 185: LOG:  failover or failback event detected
-2025-05-19 03:33:25.958: child pid 185: DETAIL:  restarting myself
-2025-05-19 03:33:25.958: child pid 192: LOG:  failover or failback event detected
-2025-05-19 03:33:25.959: child pid 192: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 189: LOG:  failover or failback event detected
-2025-05-19 03:33:25.959: child pid 189: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 195: LOG:  failover or failback event detected
-2025-05-19 03:33:25.959: child pid 195: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 169: LOG:  failover or failback event detected
-2025-05-19 03:33:25.959: child pid 169: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 211: LOG:  failover or failback event detected
-2025-05-19 03:33:25.959: child pid 211: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 224: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 224: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 198: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 198: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 209: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 209: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 207: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 207: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 225: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 225: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 213: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 213: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 219: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 219: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 214: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 214: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 216: LOG:  failover or failback event detected
-2025-05-19 03:33:25.960: child pid 216: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 203: LOG:  failover or failback event detected
-2025-05-19 03:33:25.961: child pid 203: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 181: LOG:  failover or failback event detected
-2025-05-19 03:33:25.961: child pid 181: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 226: LOG:  failover or failback event detected
-2025-05-19 03:33:25.961: child pid 226: DETAIL:  restarting myself
-2025-05-19 03:33:25.961: child pid 197: LOG:  failover or failback event detected
-2025-05-19 03:33:25.961: child pid 197: DETAIL:  restarting myself
-2025-05-19 03:33:25.962: child pid 220: LOG:  failover or failback event detected
-2025-05-19 03:33:25.962: child pid 220: DETAIL:  restarting myself
-2025-05-19 03:33:25.960: child pid 179: LOG:  failover or failback event detected
-2025-05-19 03:33:25.962: child pid 179: DETAIL:  restarting myself
-2025-05-19 03:33:25.973: child pid 204: LOG:  failover or failback event detected
-2025-05-19 03:33:25.973: child pid 204: DETAIL:  restarting myself
-2025-05-19 03:33:25.973: child pid 206: LOG:  failover or failback event detected
-2025-05-19 03:33:25.973: child pid 206: DETAIL:  restarting myself
-2025-05-19 03:33:25.976: child pid 210: LOG:  failover or failback event detected
-2025-05-19 03:33:25.976: child pid 210: DETAIL:  restarting myself
-2025-05-19 03:33:25.976: child pid 227: LOG:  failover or failback event detected
-2025-05-19 03:33:25.976: child pid 227: DETAIL:  restarting myself
-2025-05-19 03:33:25.976: child pid 218: LOG:  failover or failback event detected
-2025-05-19 03:33:25.976: child pid 218: DETAIL:  restarting myself
-2025-05-19 03:33:25.976: child pid 190: LOG:  failover or failback event detected
-2025-05-19 03:33:25.976: child pid 190: DETAIL:  restarting myself
-2025-05-19 03:33:25.978: child pid 205: LOG:  failover or failback event detected
-2025-05-19 03:33:25.978: child pid 205: DETAIL:  restarting myself
-2025-05-19 03:33:25.978: child pid 222: LOG:  failover or failback event detected
-2025-05-19 03:33:25.979: child pid 222: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 212: LOG:  failover or failback event detected
-2025-05-19 03:33:25.981: child pid 212: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 223: LOG:  failover or failback event detected
-2025-05-19 03:33:25.981: child pid 223: DETAIL:  restarting myself
-2025-05-19 03:33:25.959: child pid 176: LOG:  failover or failback event detected
-2025-05-19 03:33:25.981: child pid 176: DETAIL:  restarting myself
-2025-05-19 03:33:25.989: child pid 208: LOG:  failover or failback event detected
-2025-05-19 03:33:25.989: child pid 208: DETAIL:  restarting myself
-2025-05-19 03:33:25.961: child pid 188: LOG:  failover or failback event detected
-2025-05-19 03:33:26.004: child pid 188: DETAIL:  restarting myself
-2025-05-19 03:33:26.009: child pid 221: LOG:  failover or failback event detected
-2025-05-19 03:33:26.009: child pid 221: DETAIL:  restarting myself
-2025-05-19 03:33:26.019: watchdog pid 12: LOG:  received the failover indication from Pgpool-II on IPC interface
-2025-05-19 03:33:26.019: watchdog pid 12: LOG:  watchdog is informed of failover end by the main process
-2025-05-19 03:33:26.019: child pid 180: LOG:  failover or failback event detected
-2025-05-19 03:33:26.019: child pid 180: DETAIL:  restarting myself
-2025-05-19 03:33:26.019: child pid 191: LOG:  failover or failback event detected
-2025-05-19 03:33:26.019: child pid 191: DETAIL:  restarting myself
-2025-05-19 03:33:26.021: child pid 182: LOG:  failover or failback event detected
-2025-05-19 03:33:26.021: child pid 182: DETAIL:  restarting myself
-2025-05-19 03:33:26.022: child pid 231: LOG:  failover or failback event detected
-2025-05-19 03:33:26.022: child pid 231: DETAIL:  restarting myself
-2025-05-19 03:33:26.022: child pid 230: LOG:  failover or failback event detected
-2025-05-19 03:33:26.022: child pid 230: DETAIL:  restarting myself
-2025-05-19 03:33:26.022: main pid 8: LOG:  === Failover done. shutdown host 192.168.1.5(5433) ===
-2025-05-19 03:33:26.042: child pid 194: LOG:  failover or failback event detected
-2025-05-19 03:33:26.042: child pid 194: DETAIL:  restarting myself
-2025-05-19 03:33:26.064: child pid 186: LOG:  failover or failback event detected
-2025-05-19 03:33:26.064: child pid 186: DETAIL:  restarting myself
-2025-05-19 03:33:26.068: child pid 184: LOG:  failover or failback event detected
-2025-05-19 03:33:26.068: child pid 184: DETAIL:  restarting myself
-2025-05-19 03:33:26.069: child pid 217: LOG:  failover or failback event detected
-2025-05-19 03:33:26.069: child pid 217: DETAIL:  restarting myself
-2025-05-19 03:33:26.072: child pid 196: LOG:  failover or failback event detected
-2025-05-19 03:33:26.072: child pid 196: DETAIL:  restarting myself
-2025-05-19 03:33:26.082: child pid 229: LOG:  failover or failback event detected
-2025-05-19 03:33:26.082: child pid 229: DETAIL:  restarting myself
-2025-05-19 03:33:26.102: child pid 228: LOG:  failover or failback event detected
-2025-05-19 03:33:26.102: child pid 228: DETAIL:  restarting myself
-2025-05-19 03:33:26.117: child pid 232: LOG:  failover or failback event detected
-2025-05-19 03:33:26.117: child pid 232: DETAIL:  restarting myself
-2025-05-19 03:33:26.205: child pid 244: LOG:  failover or failback event detected
-2025-05-19 03:33:26.205: child pid 244: DETAIL:  restarting myself
-2025-05-19 03:33:26.205: child pid 236: LOG:  failover or failback event detected
-2025-05-19 03:33:26.205: child pid 236: DETAIL:  restarting myself
-2025-05-19 03:33:26.206: child pid 238: LOG:  failover or failback event detected
-2025-05-19 03:33:26.206: child pid 238: DETAIL:  restarting myself
-2025-05-19 03:33:26.206: child pid 241: LOG:  failover or failback event detected
-2025-05-19 03:33:26.206: child pid 241: DETAIL:  restarting myself
-2025-05-19 03:33:26.208: child pid 235: LOG:  failover or failback event detected
-2025-05-19 03:33:26.208: child pid 235: DETAIL:  restarting myself
-2025-05-19 03:33:26.211: child pid 242: LOG:  failover or failback event detected
-2025-05-19 03:33:26.212: child pid 242: DETAIL:  restarting myself
-2025-05-19 03:33:26.213: child pid 239: LOG:  failover or failback event detected
-2025-05-19 03:33:26.213: child pid 239: DETAIL:  restarting myself
-2025-05-19 03:33:26.214: child pid 243: LOG:  failover or failback event detected
-2025-05-19 03:33:26.214: child pid 243: DETAIL:  restarting myself
-2025-05-19 03:33:26.214: child pid 245: LOG:  failover or failback event detected
-2025-05-19 03:33:26.214: child pid 245: DETAIL:  restarting myself
-2025-05-19 03:33:26.215: child pid 250: LOG:  failover or failback event detected
-2025-05-19 03:33:26.215: child pid 250: DETAIL:  restarting myself
-2025-05-19 03:33:26.218: child pid 247: LOG:  failover or failback event detected
-2025-05-19 03:33:26.218: child pid 247: DETAIL:  restarting myself
-2025-05-19 03:33:26.219: child pid 240: LOG:  failover or failback event detected
-2025-05-19 03:33:26.219: child pid 240: DETAIL:  restarting myself
-2025-05-19 03:33:26.220: child pid 252: LOG:  failover or failback event detected
-2025-05-19 03:33:26.221: child pid 252: DETAIL:  restarting myself
-2025-05-19 03:33:26.221: child pid 237: LOG:  failover or failback event detected
-2025-05-19 03:33:26.221: child pid 237: DETAIL:  restarting myself
-2025-05-19 03:33:26.221: child pid 249: LOG:  failover or failback event detected
-2025-05-19 03:33:26.221: child pid 249: DETAIL:  restarting myself
-2025-05-19 03:33:26.224: child pid 233: LOG:  failover or failback event detected
-2025-05-19 03:33:26.224: child pid 233: DETAIL:  restarting myself
-2025-05-19 03:33:26.224: child pid 234: LOG:  failover or failback event detected
-2025-05-19 03:33:26.224: child pid 234: DETAIL:  restarting myself
-2025-05-19 03:33:26.224: child pid 248: LOG:  failover or failback event detected
-2025-05-19 03:33:26.224: child pid 248: DETAIL:  restarting myself
-2025-05-19 03:33:26.226: child pid 246: LOG:  failover or failback event detected
-2025-05-19 03:33:26.226: child pid 246: DETAIL:  restarting myself
-2025-05-19 03:33:26.226: child pid 251: LOG:  failover or failback event detected
-2025-05-19 03:33:26.226: child pid 251: DETAIL:  restarting myself
-2025-05-19 03:33:27.023: pcp_main pid 134: LOG:  restart request received in pcp child process
-2025-05-19 03:33:27.024: main pid 8: LOG:  PCP child 134 exits with status 0 in failover()
-2025-05-19 03:33:27.024: main pid 8: LOG:  fork a new PCP child pid 253 in failover()
-2025-05-19 03:33:27.024: pcp_main pid 253: LOG:  PCP process: 253 started
-2025-05-19 03:33:27.025: sr_check_worker pid 254: LOG:  process started
+2025-05-24 15:31:49.067: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:31:49.067: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:31:49.067: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:31:49.067: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:31:49.067: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:31:51.315: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:31:51.315: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:31:51.315: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:31:51.315: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:31:51.317: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:31:51.328: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 15:31:51.328: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 15:31:51.328: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:31:51.328: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 15:31:51.328: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:31:51.330: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:31:56.335: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:32:00.340: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:32:01.341: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:32:01.341: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 15:32:01.341: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:32:01.341: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 15:32:01.341: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:32:05.345: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 15:32:05.345: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:32:05.345: watchdog pid 11: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 15:32:05.345: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:32:05.345: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:32:05.345: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:32:05.345: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 15:32:05.345: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:32:05.346: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:32:05.346: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:32:05.346: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 15:32:05.347: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:32:05.347: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 15:32:05.347: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:32:05.347: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 15:32:05.347: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:32:05.354: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:32:05.354: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 15:32:05.354: main pid 7: LOG:  Setting up socket for :::5430
+2025-05-24 15:32:05.872: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:32:05.931: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:32:05.931: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:32:05.933: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:32:05.975: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:32:05.975: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:32:05.976: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 15:32:05.980: sr_check_worker pid 133: LOG:  process started
+2025-05-24 15:32:05.990: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-24 15:32:05.992: health_check pid 134: LOG:  process started
+2025-05-24 15:32:06.001: health_check pid 135: LOG:  process started
+2025-05-24 15:32:06.032: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:32:06.033: main pid 7: LOG:  node status[0]: 1
+2025-05-24 15:32:06.033: main pid 7: LOG:  node status[1]: 2
+2025-05-24 15:32:06.349: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:32:06.349: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:32:06.349: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9694
+2025-05-24 15:32:06.349: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:32:06.349: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:32:06.349: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 15:32:06.350: heart_beat_sender pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:32:06.350: heart_beat_sender pid 31: LOG:  creating socket for sending heartbeat
+2025-05-24 15:32:06.350: heart_beat_sender pid 31: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:43:58.149: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:43:58.149: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:43:58.149: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:43:58.149: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:43:58.149: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:44:00.833: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:44:00.833: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:44:00.833: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:44:00.833: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:44:00.836: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:44:00.854: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 15:44:00.854: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 15:44:00.855: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:44:00.855: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 15:44:00.855: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:44:00.857: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:44:05.862: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:44:09.867: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:44:10.868: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:44:10.868: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 15:44:10.868: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:44:10.868: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 15:44:10.868: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:44:14.872: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 15:44:14.872: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:44:14.872: watchdog pid 11: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 15:44:14.872: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:44:14.872: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:44:14.872: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:44:14.872: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 15:44:14.872: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:44:14.873: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:44:14.873: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:44:14.878: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:44:14.878: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 15:44:14.878: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:44:14.878: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 15:44:14.878: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:44:14.880: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 15:44:14.882: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:44:14.882: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 15:44:14.882: main pid 7: LOG:  Setting up socket for :::5430
+2025-05-24 15:44:15.434: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:44:15.487: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:44:15.487: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:44:15.487: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:44:15.495: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:44:15.495: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:44:15.495: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 15:44:15.496: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-24 15:44:15.496: sr_check_worker pid 133: LOG:  process started
+2025-05-24 15:44:15.497: health_check pid 134: LOG:  process started
+2025-05-24 15:44:15.497: health_check pid 135: LOG:  process started
+2025-05-24 15:44:15.498: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:44:15.498: main pid 7: LOG:  node status[0]: 1
+2025-05-24 15:44:15.498: main pid 7: LOG:  node status[1]: 2
+2025-05-24 15:44:15.880: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:44:15.881: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:44:15.881: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9694
+2025-05-24 15:44:15.881: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:44:15.881: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:44:15.881: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 15:44:15.883: heart_beat_sender pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:44:15.883: heart_beat_sender pid 31: LOG:  creating socket for sending heartbeat
+2025-05-24 15:44:15.883: heart_beat_sender pid 31: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:45:27.281: child pid 47: ERROR:  authentication failed
+2025-05-24 15:45:27.281: child pid 47: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:48:56.534: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:48:56.534: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:48:56.534: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:48:56.534: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:48:56.534: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:48:58.826: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:48:58.826: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:48:58.826: main pid 7: LOG:  memory cache initialized
+2025-05-24 15:48:58.826: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 15:48:58.828: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:48:58.838: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 15:48:58.839: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 15:48:58.839: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:48:58.839: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 15:48:58.839: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:48:58.840: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:49:03.845: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:49:07.850: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:49:08.852: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:49:08.852: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 15:49:08.852: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:49:08.852: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 15:49:08.852: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:49:12.855: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 15:49:12.855: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:49:12.855: watchdog pid 11: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 15:49:12.855: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:49:12.855: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:49:12.855: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:49:12.855: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 15:49:12.855: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:49:12.856: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:49:12.856: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:49:12.859: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:49:12.859: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 15:49:12.859: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:49:12.859: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 15:49:12.859: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:49:12.860: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 15:49:12.864: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:49:12.864: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 15:49:12.864: main pid 7: LOG:  Setting up socket for :::5430
+2025-05-24 15:49:13.521: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:49:13.610: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:49:13.610: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:49:13.610: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:49:13.619: main pid 7: LOG:  listen address[0]: *
+2025-05-24 15:49:13.619: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:49:13.619: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 15:49:13.621: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-24 15:49:13.622: sr_check_worker pid 133: LOG:  process started
+2025-05-24 15:49:13.623: health_check pid 134: LOG:  process started
+2025-05-24 15:49:13.623: health_check pid 135: LOG:  process started
+2025-05-24 15:49:13.625: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:49:13.625: main pid 7: LOG:  node status[0]: 1
+2025-05-24 15:49:13.625: main pid 7: LOG:  node status[1]: 2
+2025-05-24 15:49:13.861: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:49:13.861: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:49:13.861: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9694
+2025-05-24 15:49:13.861: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:49:13.861: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:49:13.861: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 15:49:13.865: heart_beat_sender pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:49:13.865: heart_beat_sender pid 31: LOG:  creating socket for sending heartbeat
+2025-05-24 15:49:13.865: heart_beat_sender pid 31: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:49:28.317: child pid 78: ERROR:  authentication failed
+2025-05-24 15:49:28.317: child pid 78: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 15:57:23.079: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:57:23.079: main pid 6: LOG:  memory cache initialized
+2025-05-24 15:57:23.079: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 15:57:23.079: main pid 6: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 15:57:23.079: main pid 6: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 15:57:25.218: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:57:25.218: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 15:57:25.218: main pid 6: LOG:  memory cache initialized
+2025-05-24 15:57:25.218: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 15:57:25.225: main pid 6: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 15:57:25.238: main pid 6: LOG:  waiting for watchdog to initialize
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 15:57:25.239: watchdog pid 10: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 15:57:25.240: watchdog pid 10: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 15:57:30.245: watchdog pid 10: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 15:57:34.250: watchdog pid 10: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 15:57:35.251: watchdog pid 10: HINT:  skipping stand for coordinator state
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  Setting failover command timeout to 7
+2025-05-24 15:57:35.251: watchdog pid 10: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  I am the cluster leader node
+2025-05-24 15:57:39.255: watchdog pid 10: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 15:57:39.255: watchdog pid 10: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 15:57:39.255: watchdog pid 10: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 15:57:39.255: main pid 6: LOG:  watchdog process is initialized
+2025-05-24 15:57:39.255: main pid 6: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 15:57:39.256: main pid 6: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 15:57:39.256: main pid 6: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 15:57:39.257: main pid 6: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 15:57:39.257: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 15:57:39.257: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 15:57:39.257: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 15:57:39.257: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 15:57:39.257: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 15:57:39.264: main pid 6: LOG:  listen address[0]: *
+2025-05-24 15:57:39.265: main pid 6: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 15:57:39.265: main pid 6: LOG:  Setting up socket for :::5430
+2025-05-24 15:57:39.768: main pid 6: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 15:57:39.849: main pid 6: LOG:  find_primary_node: primary node is 0
+2025-05-24 15:57:39.849: main pid 6: LOG:  find_primary_node: standby node is 1
+2025-05-24 15:57:39.857: main pid 6: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 15:57:39.868: main pid 6: LOG:  listen address[0]: *
+2025-05-24 15:57:39.868: main pid 6: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 15:57:39.868: main pid 6: LOG:  Setting up socket for :::9898
+2025-05-24 15:57:39.872: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-24 15:57:39.872: sr_check_worker pid 133: LOG:  process started
+2025-05-24 15:57:39.873: health_check pid 134: LOG:  process started
+2025-05-24 15:57:39.882: main pid 6: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 15:57:39.882: main pid 6: LOG:  node status[0]: 1
+2025-05-24 15:57:39.882: main pid 6: LOG:  node status[1]: 2
+2025-05-24 15:57:39.883: health_check pid 135: LOG:  process started
+2025-05-24 15:57:40.259: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:57:40.259: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:57:40.259: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9694
+2025-05-24 15:57:40.259: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:57:40.259: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 15:57:40.259: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 15:57:40.260: heart_beat_sender pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 15:57:40.261: heart_beat_sender pid 31: LOG:  creating socket for sending heartbeat
+2025-05-24 15:57:40.261: heart_beat_sender pid 31: DETAIL:  set SO_REUSEPORT
+2025-05-24 15:57:51.931: child pid 75: ERROR:  authentication failed
+2025-05-24 15:57:51.931: child pid 75: DETAIL:  username "postgres" or password does not exist in backend
+2025-05-24 16:06:28.587: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:06:28.587: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:06:28.587: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:06:28.587: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 16:06:28.587: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 16:06:30.927: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:06:30.927: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:06:30.927: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:06:30.927: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:06:30.936: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 16:06:30.950: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 16:06:30.950: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 16:06:30.951: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 16:06:30.951: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 16:06:30.951: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 16:06:30.953: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 16:06:35.957: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 16:06:39.961: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 16:06:40.962: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 16:06:40.962: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 16:06:40.962: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 16:06:40.962: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 16:06:40.962: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 16:06:44.966: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 16:06:44.966: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 16:06:44.966: watchdog pid 11: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 16:06:44.966: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 16:06:44.966: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 16:06:44.966: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 16:06:44.966: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 16:06:44.966: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 16:06:44.967: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 16:06:44.967: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 16:06:44.968: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 16:06:44.968: life_check pid 28: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 16:06:44.968: life_check pid 28: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 16:06:44.968: life_check pid 28: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 16:06:44.968: life_check pid 28: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 16:06:44.968: life_check pid 28: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 16:06:44.975: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:06:44.975: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 16:06:44.976: main pid 7: LOG:  Setting up socket for :::5430
+2025-05-24 16:06:45.577: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 16:06:45.729: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 16:06:45.729: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 16:06:45.732: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 16:06:45.742: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:06:45.742: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 16:06:45.742: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 16:06:45.744: pcp_main pid 131: LOG:  PCP process: 131 started
+2025-05-24 16:06:45.745: sr_check_worker pid 132: LOG:  process started
+2025-05-24 16:06:45.747: health_check pid 134: LOG:  process started
+2025-05-24 16:06:45.747: health_check pid 133: LOG:  process started
+2025-05-24 16:06:45.749: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 16:06:45.749: main pid 7: LOG:  node status[0]: 1
+2025-05-24 16:06:45.749: main pid 7: LOG:  node status[1]: 2
+2025-05-24 16:06:45.969: heart_beat_receiver pid 29: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:06:45.970: heart_beat_receiver pid 29: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:06:45.970: heart_beat_receiver pid 29: DETAIL:  creating socket on ::1:9694
+2025-05-24 16:06:45.970: heart_beat_receiver pid 29: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:06:45.970: heart_beat_receiver pid 29: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:06:45.970: heart_beat_receiver pid 29: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 16:06:45.971: heart_beat_sender pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:06:45.971: heart_beat_sender pid 30: LOG:  creating socket for sending heartbeat
+2025-05-24 16:06:45.971: heart_beat_sender pid 30: DETAIL:  set SO_REUSEPORT
+2025-05-24 16:10:23.083: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:10:23.083: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:10:23.083: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:10:23.083: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 16:10:23.083: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 16:10:25.261: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:10:25.261: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:10:25.261: main pid 7: LOG:  memory cache initialized
+2025-05-24 16:10:25.261: main pid 7: DETAIL:  memcache blocks :64
+2025-05-24 16:10:25.263: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 16:10:25.274: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-24 16:10:25.274: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 16:10:25.275: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 16:10:25.275: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 16:10:25.275: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 16:10:25.276: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 16:10:30.280: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 16:10:34.285: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 16:10:35.286: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 16:10:35.286: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-24 16:10:35.286: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 16:10:35.286: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-24 16:10:35.286: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 16:10:39.292: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-24 16:10:39.292: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 16:10:39.292: watchdog pid 11: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 16:10:39.292: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 16:10:39.292: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 16:10:39.292: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 16:10:39.294: main pid 7: LOG:  watchdog process is initialized
+2025-05-24 16:10:39.294: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 16:10:39.295: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 16:10:39.295: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 16:10:39.299: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 16:10:39.299: life_check pid 30: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 16:10:39.299: life_check pid 30: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 16:10:39.299: life_check pid 30: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 16:10:39.299: life_check pid 30: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 16:10:39.299: life_check pid 30: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 16:10:39.302: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:10:39.302: main pid 7: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 16:10:39.302: main pid 7: LOG:  Setting up socket for :::5430
+2025-05-24 16:10:39.835: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 16:10:39.890: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-24 16:10:39.891: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-24 16:10:39.891: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 16:10:39.893: main pid 7: LOG:  listen address[0]: *
+2025-05-24 16:10:39.893: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 16:10:39.893: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-24 16:10:39.895: sr_check_worker pid 134: LOG:  process started
+2025-05-24 16:10:39.895: pcp_main pid 133: LOG:  PCP process: 133 started
+2025-05-24 16:10:39.896: health_check pid 135: LOG:  process started
+2025-05-24 16:10:39.897: health_check pid 136: LOG:  process started
+2025-05-24 16:10:39.898: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 16:10:39.898: main pid 7: LOG:  node status[0]: 1
+2025-05-24 16:10:39.898: main pid 7: LOG:  node status[1]: 2
+2025-05-24 16:10:40.302: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:10:40.302: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:10:40.302: heart_beat_receiver pid 31: DETAIL:  creating socket on ::1:9694
+2025-05-24 16:10:40.302: heart_beat_receiver pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:10:40.302: heart_beat_receiver pid 31: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:10:40.302: heart_beat_receiver pid 31: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 16:10:40.303: heart_beat_sender pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:10:40.303: heart_beat_sender pid 32: LOG:  creating socket for sending heartbeat
+2025-05-24 16:10:40.303: heart_beat_sender pid 32: DETAIL:  set SO_REUSEPORT
+2025-05-24 16:11:49.556: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:11:49.556: main pid 6: LOG:  memory cache initialized
+2025-05-24 16:11:49.556: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 16:11:49.556: main pid 6: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-24 16:11:49.556: main pid 6: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-24 16:11:51.826: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:11:51.827: main pid 6: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-24 16:11:51.827: main pid 6: LOG:  memory cache initialized
+2025-05-24 16:11:51.827: main pid 6: DETAIL:  memcache blocks :64
+2025-05-24 16:11:51.828: main pid 6: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-24 16:11:51.838: main pid 6: LOG:  waiting for watchdog to initialize
+2025-05-24 16:11:51.839: watchdog pid 10: LOG:  setting the local watchdog node name to "postgresql0:5430 Linux pgpool0"
+2025-05-24 16:11:51.839: watchdog pid 10: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-24 16:11:51.839: watchdog pid 10: LOG:  watchdog remote node:0 on postgresql1:9001
+2025-05-24 16:11:51.839: watchdog pid 10: LOG:  interface monitoring is disabled in watchdog
+2025-05-24 16:11:51.840: watchdog pid 10: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-24 16:11:56.845: watchdog pid 10: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-24 16:12:00.850: watchdog pid 10: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-24 16:12:01.851: watchdog pid 10: LOG:  I am the only alive node in the watchdog cluster
+2025-05-24 16:12:01.851: watchdog pid 10: HINT:  skipping stand for coordinator state
+2025-05-24 16:12:01.851: watchdog pid 10: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-24 16:12:01.851: watchdog pid 10: LOG:  Setting failover command timeout to 7
+2025-05-24 16:12:01.851: watchdog pid 10: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-24 16:12:05.855: watchdog pid 10: LOG:  I am the cluster leader node
+2025-05-24 16:12:05.855: watchdog pid 10: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-24 16:12:05.855: watchdog pid 10: LOG:  setting the local node "postgresql0:5430 Linux pgpool0" as watchdog cluster leader
+2025-05-24 16:12:05.855: watchdog pid 10: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-24 16:12:05.855: watchdog pid 10: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-24 16:12:05.855: watchdog pid 10: DETAIL:  waiting for the quorum to start escalation process
+2025-05-24 16:12:05.858: main pid 6: LOG:  watchdog process is initialized
+2025-05-24 16:12:05.858: main pid 6: DETAIL:  watchdog messaging data version: 1.2
+2025-05-24 16:12:05.858: main pid 6: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-24 16:12:05.858: main pid 6: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-24 16:12:05.859: main pid 6: LOG:  create socket files[0]: /tmp/.s.PGSQL.5430
+2025-05-24 16:12:05.861: main pid 6: LOG:  listen address[0]: *
+2025-05-24 16:12:05.861: main pid 6: LOG:  Setting up socket for 0.0.0.0:5430
+2025-05-24 16:12:05.861: main pid 6: LOG:  Setting up socket for :::5430
+2025-05-24 16:12:05.861: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-24 16:12:05.861: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"postgresql0:5430 Linux pgpool0"
+2025-05-24 16:12:05.861: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-24 16:12:05.861: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"Not_Set"
+2025-05-24 16:12:05.861: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-24 16:12:06.469: main pid 6: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-24 16:12:06.669: main pid 6: LOG:  find_primary_node: primary node is 0
+2025-05-24 16:12:06.669: main pid 6: LOG:  find_primary_node: standby node is 1
+2025-05-24 16:12:06.669: main pid 6: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-24 16:12:06.677: main pid 6: LOG:  listen address[0]: *
+2025-05-24 16:12:06.677: main pid 6: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-24 16:12:06.677: main pid 6: LOG:  Setting up socket for :::9898
+2025-05-24 16:12:06.679: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-24 16:12:06.679: sr_check_worker pid 133: LOG:  process started
+2025-05-24 16:12:06.680: health_check pid 134: LOG:  process started
+2025-05-24 16:12:06.680: health_check pid 135: LOG:  process started
+2025-05-24 16:12:06.682: main pid 6: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-24 16:12:06.682: main pid 6: LOG:  node status[0]: 1
+2025-05-24 16:12:06.682: main pid 6: LOG:  node status[1]: 2
+2025-05-24 16:12:06.863: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:12:06.863: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:12:06.863: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9694
+2025-05-24 16:12:06.863: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:12:06.863: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-24 16:12:06.863: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9694
+2025-05-24 16:12:06.871: heart_beat_sender pid 33: LOG:  set SO_REUSEPORT option to the socket
+2025-05-24 16:12:06.871: heart_beat_sender pid 33: LOG:  creating socket for sending heartbeat
+2025-05-24 16:12:06.871: heart_beat_sender pid 33: DETAIL:  set SO_REUSEPORT
+2025-05-24 16:12:34.875: child pid 97: ERROR:  authentication failed
+2025-05-24 16:12:34.875: child pid 97: DETAIL:  username "postgres" or password does not exist in backend

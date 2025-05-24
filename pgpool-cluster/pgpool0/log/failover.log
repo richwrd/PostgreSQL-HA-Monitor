@@ -34,3 +34,11 @@
 - Nó falho: 1 (192.168.1.5:5434)
 - Novo primário:  (0)
 - Primário antigo: 
+2025-05-21 01:22:00 - Failover iniciado:
+- Nó falho: 0 (postgresql0:5433)
+- Novo primário: postgresql1 (0)
+- Primário antigo: 5434
+2025-05-23 03:27:06 - Failover iniciado:
+- Nó falho: 1 (postgresql1:5434)
+- Novo primário: postgresql0 (0)
+- Primário antigo: 5433

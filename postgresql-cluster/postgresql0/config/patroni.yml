@@ -3,7 +3,7 @@ namespace: /db/
 name: postgresql0
 restapi:
   listen: "0.0.0.0:8008"
-  connect_address: "192.168.1.5:8008"
+  connect_address: "postgresql0:8008"
   authentication:
     username: admin
     password: strongpassword
@@ -12,7 +12,7 @@ restapi:
   cafile: null
 
 etcd3:
-  hosts: 192.168.1.5:2379
+  hosts: etcd:2379
 
 # Somente pra inicializar o postgres
 bootstrap:
@@ -43,32 +43,28 @@ bootstrap:
         password: "m$$n3yt0r4"
     pg_hba:
       - local all all trust
-      - host all all 127.0.0.1/32 trust
-      - host all all 192.168.1.5/32 trust
       - host all all 0.0.0.0/0 md5
       - host replication replicator 0.0.0.0/0 scram-sha-256
+      - host all all 127.0.0.1/32 trust
   initdb:
     - encoding: "UTF8"
     - data-checksums
 
 postgresql:
   listen: "0.0.0.0:5433"
-  connect_address: "192.168.1.5:5433"
+  connect_address: "postgresql0:5433"
   data_dir: "/var/lib/postgresql/data/pgdata"
   bin_dir: "/usr/lib/postgresql/17/bin/"
   authentication:
     superuser:
       username: "postgres"
       password: "postgres"
-      scram-sha-256: true
     replication:
       username: "replicator"
       password: "r3pl1c4#2025!"
-      scram-sha-256: true
     monitoring:
       username: "monitor"
       password: "m$$n3yt0r4"
-      scram-sha-256: true
   parameters:
     use_slots: true
     max_replication_slots: 5
@@ -81,10 +77,9 @@ postgresql:
     archive_command: "/bin/true"
   pg_hba:
     - local all all trust
-    - host all all 127.0.0.1/32 trust
-    - host all all 192.168.1.5/32 trust
     - host all all 0.0.0.0/0 md5
     - host replication replicator 0.0.0.0/0 scram-sha-256
+    - host all all 127.0.0.1/32 trust
 
 healthcheck:
   enabled: true # Habilita o health check

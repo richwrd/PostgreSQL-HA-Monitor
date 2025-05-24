@@ -4,7 +4,7 @@ name: postgresql1
 
 restapi:
   listen: "0.0.0.0:8009"
-  connect_address: "192.168.1.5:8009"
+  connect_address: "postgresql1:8009"
   authentication:
     username: admin
     password: strongpassword
@@ -13,11 +13,11 @@ restapi:
   cafile: null
 
 etcd3:
-  hosts: 192.168.1.5:2379
+  hosts: etcd:2379
 
 postgresql:
   listen: "0.0.0.0:5434"
-  connect_address: "192.168.1.5:5434"
+  connect_address: "postgresql1:5434"
   data_dir: "/var/lib/postgresql/data/pgdata"
   bin_dir: "/usr/lib/postgresql/17/bin/"
   authentication:
@@ -30,7 +30,6 @@ postgresql:
     monitoring:
       username: "monitor"
       password: "m$$n3yt0r4"
-      scram-sha-256: true
   parameters:
     use_slots: true
     max_replication_slots: 5
@@ -44,7 +43,6 @@ postgresql:
   pg_hba:
     - local all all trust
     - host all all 127.0.0.1/32 trust
-    - host all all 192.168.1.5/32 trust
     - host all all 0.0.0.0/0 md5
     - host replication replicator 0.0.0.0/0 scram-sha-256
 
