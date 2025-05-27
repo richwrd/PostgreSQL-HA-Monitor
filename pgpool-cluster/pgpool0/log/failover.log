@@ -42,3 +42,7 @@
 - Nó falho: 1 (postgresql1:5434)
 - Novo primário: postgresql0 (0)
 - Primário antigo: 5433
+2025-05-24 19:12:34 - Failover iniciado:
+- Nó falho: 1 (postgresql1:5434)
+- Novo primário: postgresql0 (0)
+- Primário antigo: 5433

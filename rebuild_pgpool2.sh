@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define o nome da stack
-STACK_FILE="docker-compose.v3.yml"
+STACK_FILE="docker-compose.v5.yaml"
 
 # Caminho do docker-compose
 DOCKER_COMPOSE_CMD="sudo docker compose -f $STACK_FILE"

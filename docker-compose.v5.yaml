@@ -23,7 +23,6 @@ services:
       retries: 3
       start_period: 10s
 
-
   postgresql0:
     build:
       context: ./postgresql-cluster/postgresql0/
@@ -47,7 +46,6 @@ services:
     depends_on:
       etcd:
         condition: service_healthy
-
   postgresql1:
     build:
       context: ./postgresql-cluster/postgresql1/
@@ -58,7 +56,6 @@ services:
     volumes:
       - postgres-data1:/var/lib/postgresql/data
       - ./postgresql-cluster/postgresql1/logs:/var/log/patroni
-
     ports:
       - "5434:5434" # Porta do PostgreSQL
       - "8009:8009" # Porta da API REST do Patroni
@@ -74,6 +71,36 @@ services:
         condition: service_healthy
       postgresql0:
         condition: service_healthy
+
+  postgresql0-exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    hostname: postgresql0-exporter
+    container_name: postgresql0-exporter
+    environment:
+      - DATA_SOURCE_URI=${POSTGRES_EXPORTER_URI_0:-postgresql://postgres:postgres@postgresql0:5434/postgres?sslmode=disable}
+    ports:
+      - "9187:9187"
+    depends_on:
+      postgresql0:
+        condition: service_healthy
+    networks:
+      - postgresql_network
+      - grafana_network
+
+  postgresql1-exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    hostname: postgresql1-exporter
+    container_name: postgresql1-exporter
+    environment:
+      - DATA_SOURCE_URI=${POSTGRES_EXPORTER_URI_1:-postgresql://postgres:postgres@postgresql1:5434/postgres?sslmode=disable}
+    ports:
+      - "9188:9187"
+    depends_on:
+      postgresql1:
+        condition: service_healthy
+    networks:
+      - postgresql_network
+      - grafana_network
 
   pgpool0:
     hostname: pgpool0
@@ -99,7 +126,7 @@ services:
     networks:
       - postgresql_network
     healthcheck:
-      test: ["CMD", "pg_ping", "-h", "localhost", "-p", "5430", "-U", "postgres"]
+      test: ["CMD", "psql", "-h", "localhost", "-p", "5430", "-U", "monitor", "-d", "postgres", "-c", "SELECT 1"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -132,7 +159,7 @@ services:
       - ./pgpool-cluster/pgpool1/log/follow_master.log:/var/log/pgpool/follow_master.log
       - ./pgpool-cluster/pgpool1/log/failover.log:/var/log/pgpool/failover.log
     healthcheck:
-      test: ["CMD", "pg_ping", "-h", "localhost", "-p", "5431", "-U", "postgres"]
+      test: ["CMD", "psql", "-h", "localhost", "-p", "5431", "-U", "monitor", "-d", "postgres", "-c", "SELECT 1"]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -145,6 +172,25 @@ services:
       postgresql1:
         condition: service_healthy
 
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/stream_access.log:/var/log/nginx/stream-access.log
+    ports:
+      - "5432:5432" # Porta de entrada para o cliente
+    # restart: unless-stopped
+    networks:
+      - postgresql_network
+    depends_on:
+      pgpool0:
+        condition: service_healthy
+      pgpool1:
+        condition: service_healthy
+
 
 volumes:
   postgres-data0:
@@ -152,4 +198,6 @@ volumes:
   
 networks:
   postgresql_network:
+    driver: bridge
+  grafana_network:
     driver: bridge

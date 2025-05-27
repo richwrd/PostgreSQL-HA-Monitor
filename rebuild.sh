@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define o nome da stack
-STACK_FILE="docker-compose.v3.yml"
+STACK_FILE="docker-compose.v5.yaml"
 
 # Caminho do docker-compose
 DOCKER_COMPOSE_CMD="sudo docker compose"
@@ -17,6 +17,9 @@ PORTS=(
   "9000"  # Watchdog (pgpool0)
   "5431"  # Pgpool (pgpool1)
   "9001"  # Watchdog (pgpool1)
+  "9188"  # Pgpool (postgresql0-exporter)
+  "9187"  # Pgpool (postgresql0-exporter)
+  "5432"  # PostgreSQL CENTRAL (NGINX)
 )
 
 # Função para verificar se as portas estão em uso
@@ -82,37 +85,34 @@ initialize_watchdog() {
 
 # Função para criar a pasta watchdog
 create_watchdog_folder() {
-  WATCHDOG_DIR="./watchdog"
-  echo "Verificando a pasta watchdog..."
-  if [ ! -d "$WATCHDOG_DIR" ]; then
-    echo "Criando a pasta watchdog..."
-    mkdir -p "$WATCHDOG_DIR"
-    if [ $? -eq 0 ]; then
-      echo "Pasta watchdog criada com sucesso."
-      echo "Alterando permissões da pasta watchdog para 777..."
-      chmod 777 "$WATCHDOG_DIR"
+  WATCHDOG_DIR="/dev/watchdog"
+  echo "Verificando o dispositivo watchdog..."
+  
+  # Verifica se já existe como arquivo ou dispositivo
+  if [ -e "$WATCHDOG_DIR" ]; then
+    echo "O dispositivo watchdog já existe."
+    # Verifica permissões do dispositivo existente
+    PERMS=$(stat -c "%a" "$WATCHDOG_DIR")
+    if [ "$PERMS" != "777" ]; then
+      echo "Alterando permissões do dispositivo watchdog para 777..."
+      sudo chmod 777 "$WATCHDOG_DIR"
       if [ $? -eq 0 ]; then
-        echo "Permissões da pasta watchdog alteradas para 777 com sucesso."
+        echo "Permissões do dispositivo watchdog alteradas para 777 com sucesso."
       else
-        echo "Erro ao alterar permissões da pasta watchdog."
+        echo "Erro ao alterar permissões do dispositivo watchdog."
         exit 1
       fi
     else
-      echo "Erro ao criar a pasta watchdog."
-      exit 1
+      echo "Dispositivo watchdog já possui as permissões corretas."
     fi
   else
-    echo "Pasta watchdog já existe."
-    echo "Alterando permissões da pasta watchdog para 777..."
-    chmod 777 "$WATCHDOG_DIR"
-    if [ $? -eq 0 ]; then
-      echo "Permissões da pasta watchdog alteradas para 777 com sucesso."
-    else
-      echo "Erro ao alterar permissões da pasta watchdog."
-      exit 1
-    fi
+    # Se não existe, tenta criar como dispositivo
+    echo "Dispositivo watchdog não encontrado."
+    echo "O dispositivo watchdog deve ser criado pelo módulo do kernel."
+    exit 1
   fi
 }
+
 
 # Função para deletar a stack
 delete_stack() {

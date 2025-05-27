@@ -95,6 +95,7 @@ services:
     networks:
       - postgresql_network
       - grafana_network
+    
   postgresql1-exporter:
     build:
       context: ./postgres-exporter

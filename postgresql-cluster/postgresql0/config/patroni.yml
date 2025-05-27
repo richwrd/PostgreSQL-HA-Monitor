@@ -42,10 +42,9 @@ bootstrap:
         username: "monitor"
         password: "m$$n3yt0r4"
     pg_hba:
-      - local all all trust
-      - host all all 0.0.0.0/0 md5
-      - host replication replicator 0.0.0.0/0 scram-sha-256
-      - host all all 127.0.0.1/32 trust
+      - local all all md5
+      - host all all 0.0.0.0/0 md5 # (ouve local)
+      - host replication replicator 0.0.0.0/0 md5 # REMOVER EM PRODUCAO
   initdb:
     - encoding: "UTF8"
     - data-checksums
@@ -76,10 +75,9 @@ postgresql:
     archive_mode: on
     archive_command: "/bin/true"
   pg_hba:
-    - local all all trust
-    - host all all 0.0.0.0/0 md5
-    - host replication replicator 0.0.0.0/0 scram-sha-256
-    - host all all 127.0.0.1/32 trust
+    - local all all md5
+    - host all all 0.0.0.0/0 md5 # (ouve local)
+    - host replication replicator 0.0.0.0/0 md5 # REMOVER EM PRODUCAO
 
 healthcheck:
   enabled: true # Habilita o health check

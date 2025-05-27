@@ -40,8 +40,10 @@ RUN mkdir -p /home/pgpool && chown pgpool:pgpool /home/pgpool && chmod 750 /home
 
 # Copiar o .pcppass para o diretório home do usuário pgpool e para raiz
 COPY --chown=pgpool:pgpool ./config/.pcppass /home/pgpool/.pcppass
+COPY --chown=pgpool:pgpool ./config/.pgpass /home/pgpool/.pgpass
 # SOMENTE ESSA PERMISSAO (nao alterar)
 RUN chmod 600 /home/pgpool/.pcppass
+RUN chmod 600 /home/pgpool/.pgpass
 
 # Criar diretórios de configuração e log do pgpool2 com permissões corretas
 RUN mkdir -p /etc/pgpool2/tmp /etc/pgpool2/logs && \
