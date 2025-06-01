@@ -2,7 +2,7 @@
 
 echo "Aguardando o PostgreSQL iniciar..."
 until pg_isready -h localhost -p 5433 -U postgres; do
-    sleep 2
+    sleep 10
 done
 
 echo "PostgreSQL está pronto. Executando o script SQL..."

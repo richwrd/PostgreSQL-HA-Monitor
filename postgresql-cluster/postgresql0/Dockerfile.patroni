@@ -38,7 +38,4 @@ RUN chmod +x /scripts/init_db.sh
 
 EXPOSE 5433 8008
 
-# Definir o comando de inicialização
-# CMD ["/bin/bash", "-c", "/scripts/init_hosts.sh && su - postgres -c 'patroni /etc/patroni/patroni.yml'"]
-
 CMD ["/bin/bash", "/scripts/start.sh"]

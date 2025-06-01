@@ -46,6 +46,7 @@ services:
     depends_on:
       etcd:
         condition: service_healthy
+        
   postgresql1:
     build:
       context: ./postgresql-cluster/postgresql1/

@@ -1,2 +1,10 @@
 # Arquivos de ambiente
 .env
+
+
+pgpool-cluster/pgpool1/log/pgpool.log
+pgpool-cluster/pgpool0/log/pgpool.log
+pgpool-cluster/pgpool0/log/failover.log
+pgpool-cluster/pgpool1/log/failover.log
+postgresql-cluster/postgresql1/logs/patroni.log
+postgresql-cluster/postgresql0/logs/patroni.log

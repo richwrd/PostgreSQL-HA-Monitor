@@ -6734,3 +6734,780 @@
 2025-05-27 04:34:09.718: psql pid 4367: LOG:  using clear text authentication with frontend
 2025-05-27 04:34:09.718: psql pid 4367: DETAIL:  backend will still use SCRAM auth
 2025-05-27 04:34:09.718: psql pid 4367: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:23:31.079: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-28 02:23:31.079: main pid 7: LOG:  memory cache initialized
+2025-05-28 02:23:31.079: main pid 7: DETAIL:  memcache blocks :64
+2025-05-28 02:23:31.079: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-28 02:23:31.079: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-28 02:23:32.445: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-28 02:23:32.445: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-28 02:23:32.445: main pid 7: LOG:  memory cache initialized
+2025-05-28 02:23:32.445: main pid 7: DETAIL:  memcache blocks :64
+2025-05-28 02:23:32.446: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-28 02:23:32.460: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-28 02:23:32.461: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-28 02:23:32.461: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-28 02:23:32.461: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-28 02:23:32.461: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-28 02:23:32.464: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-28 02:23:37.470: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-28 02:23:41.474: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-28 02:23:42.474: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-28 02:23:42.475: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-28 02:23:42.475: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-28 02:23:42.475: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-28 02:23:42.475: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-28 02:23:46.478: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-28 02:23:46.478: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-28 02:23:46.478: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-28 02:23:46.478: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-28 02:23:46.478: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-28 02:23:46.478: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-28 02:23:46.478: main pid 7: LOG:  watchdog process is initialized
+2025-05-28 02:23:46.478: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-28 02:23:46.479: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-28 02:23:46.479: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-28 02:23:46.479: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-28 02:23:46.479: life_check pid 29: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-28 02:23:46.479: life_check pid 29: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-28 02:23:46.479: life_check pid 29: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-28 02:23:46.479: life_check pid 29: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-28 02:23:46.479: life_check pid 29: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-28 02:23:46.486: main pid 7: LOG:  listen address[0]: *
+2025-05-28 02:23:46.486: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-28 02:23:46.486: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-28 02:23:46.897: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-28 02:23:46.928: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-28 02:23:46.928: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-28 02:23:46.928: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-28 02:23:46.930: main pid 7: LOG:  listen address[0]: *
+2025-05-28 02:23:46.930: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-28 02:23:46.930: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-28 02:23:46.930: pcp_main pid 132: LOG:  PCP process: 132 started
+2025-05-28 02:23:46.931: sr_check_worker pid 133: LOG:  process started
+2025-05-28 02:23:46.931: health_check pid 134: LOG:  process started
+2025-05-28 02:23:46.931: health_check pid 135: LOG:  process started
+2025-05-28 02:23:46.932: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-28 02:23:46.932: main pid 7: LOG:  node status[0]: 1
+2025-05-28 02:23:46.932: main pid 7: LOG:  node status[1]: 2
+2025-05-28 02:23:47.480: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-28 02:23:47.480: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-28 02:23:47.480: heart_beat_receiver pid 30: DETAIL:  creating socket on ::1:9695
+2025-05-28 02:23:47.480: heart_beat_receiver pid 30: LOG:  set SO_REUSEPORT option to the socket
+2025-05-28 02:23:47.480: heart_beat_receiver pid 30: LOG:  creating watchdog heartbeat receive socket.
+2025-05-28 02:23:47.480: heart_beat_receiver pid 30: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-28 02:23:47.482: heart_beat_sender pid 31: LOG:  set SO_REUSEPORT option to the socket
+2025-05-28 02:23:47.482: heart_beat_sender pid 31: LOG:  creating socket for sending heartbeat
+2025-05-28 02:23:47.482: heart_beat_sender pid 31: DETAIL:  set SO_REUSEPORT
+2025-05-28 02:23:51.352: child pid 131: LOG:  using clear text authentication with frontend
+2025-05-28 02:23:51.352: child pid 131: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:23:51.352: child pid 131: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:24:01.429: psql pid 131: LOG:  using clear text authentication with frontend
+2025-05-28 02:24:01.429: psql pid 131: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:24:01.429: psql pid 131: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:24:11.492: child pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 02:24:11.492: child pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:24:11.492: child pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:24:21.557: child pid 125: LOG:  using clear text authentication with frontend
+2025-05-28 02:24:21.557: child pid 125: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:24:21.557: child pid 125: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:24:31.618: child pid 36: LOG:  using clear text authentication with frontend
+2025-05-28 02:24:31.618: child pid 36: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:24:31.618: child pid 36: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:24:41.681: child pid 44: LOG:  using clear text authentication with frontend
+2025-05-28 02:24:41.681: child pid 44: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:24:41.681: child pid 44: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:24:51.755: child pid 57: LOG:  using clear text authentication with frontend
+2025-05-28 02:24:51.755: child pid 57: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:24:51.755: child pid 57: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:25:01.816: child pid 62: LOG:  using clear text authentication with frontend
+2025-05-28 02:25:01.816: child pid 62: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:25:01.816: child pid 62: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:25:11.878: child pid 108: LOG:  using clear text authentication with frontend
+2025-05-28 02:25:11.878: child pid 108: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:25:11.878: child pid 108: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:25:21.946: child pid 53: LOG:  using clear text authentication with frontend
+2025-05-28 02:25:21.946: child pid 53: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:25:21.946: child pid 53: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:25:32.006: child pid 112: LOG:  using clear text authentication with frontend
+2025-05-28 02:25:32.006: child pid 112: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:25:32.006: child pid 112: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:25:42.079: child pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:25:42.079: child pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:25:42.079: child pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:25:52.144: psql pid 112: LOG:  using clear text authentication with frontend
+2025-05-28 02:25:52.144: psql pid 112: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:25:52.144: psql pid 112: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:26:02.204: psql pid 112: LOG:  using clear text authentication with frontend
+2025-05-28 02:26:02.204: psql pid 112: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:26:02.204: psql pid 112: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:26:12.260: child pid 121: LOG:  using clear text authentication with frontend
+2025-05-28 02:26:12.260: child pid 121: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:26:12.260: child pid 121: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:26:22.318: child pid 130: LOG:  using clear text authentication with frontend
+2025-05-28 02:26:22.318: child pid 130: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:26:22.318: child pid 130: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:26:32.378: child pid 71: LOG:  using clear text authentication with frontend
+2025-05-28 02:26:32.378: child pid 71: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:26:32.378: child pid 71: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:26:42.446: psql pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:26:42.446: psql pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:26:42.446: psql pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:26:52.511: psql pid 71: LOG:  using clear text authentication with frontend
+2025-05-28 02:26:52.511: psql pid 71: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:26:52.511: psql pid 71: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:27:02.565: psql pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:27:02.565: psql pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:27:02.565: psql pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:27:12.637: child pid 59: LOG:  using clear text authentication with frontend
+2025-05-28 02:27:12.637: child pid 59: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:27:12.637: child pid 59: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:27:22.698: child pid 127: LOG:  using clear text authentication with frontend
+2025-05-28 02:27:22.698: child pid 127: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:27:22.698: child pid 127: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:27:32.752: child pid 114: LOG:  using clear text authentication with frontend
+2025-05-28 02:27:32.752: child pid 114: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:27:32.752: child pid 114: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:27:42.831: child pid 64: LOG:  using clear text authentication with frontend
+2025-05-28 02:27:42.831: child pid 64: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:27:42.831: child pid 64: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:27:52.907: child pid 46: LOG:  using clear text authentication with frontend
+2025-05-28 02:27:52.907: child pid 46: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:27:52.907: child pid 46: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:28:02.980: psql pid 44: LOG:  using clear text authentication with frontend
+2025-05-28 02:28:02.980: psql pid 44: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:28:02.980: psql pid 44: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:28:13.043: psql pid 62: LOG:  using clear text authentication with frontend
+2025-05-28 02:28:13.044: psql pid 62: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:28:13.044: psql pid 62: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:28:23.099: psql pid 108: LOG:  using clear text authentication with frontend
+2025-05-28 02:28:23.099: psql pid 108: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:28:23.099: psql pid 108: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:28:33.149: child pid 113: LOG:  using clear text authentication with frontend
+2025-05-28 02:28:33.149: child pid 113: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:28:33.149: child pid 113: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:28:43.202: psql pid 71: LOG:  using clear text authentication with frontend
+2025-05-28 02:28:43.202: psql pid 71: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:28:43.202: psql pid 71: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:28:53.267: psql pid 71: LOG:  using clear text authentication with frontend
+2025-05-28 02:28:53.267: psql pid 71: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:28:53.267: psql pid 71: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:37:03.284: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-28 02:37:03.284: main pid 7: LOG:  memory cache initialized
+2025-05-28 02:37:03.284: main pid 7: DETAIL:  memcache blocks :64
+2025-05-28 02:37:03.284: main pid 7: LOG:  allocating (2182364264) bytes of shared memory segment
+2025-05-28 02:37:03.284: main pid 7: LOG:  allocating shared memory segment of size: 2182364264 
+2025-05-28 02:37:04.433: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-28 02:37:04.433: main pid 7: LOG:  health_check_stats_shared_memory_size: requested size: 12288
+2025-05-28 02:37:04.433: main pid 7: LOG:  memory cache initialized
+2025-05-28 02:37:04.433: main pid 7: DETAIL:  memcache blocks :64
+2025-05-28 02:37:04.441: main pid 7: LOG:  pool_discard_oid_maps: discarded memqcache oid maps
+2025-05-28 02:37:04.450: main pid 7: LOG:  waiting for watchdog to initialize
+2025-05-28 02:37:04.451: watchdog pid 11: LOG:  setting the local watchdog node name to "postgresql1:5431 Linux pgpool1"
+2025-05-28 02:37:04.451: watchdog pid 11: LOG:  watchdog cluster is configured with 1 remote nodes
+2025-05-28 02:37:04.451: watchdog pid 11: LOG:  watchdog remote node:0 on postgresql0:9000
+2025-05-28 02:37:04.451: watchdog pid 11: LOG:  interface monitoring is disabled in watchdog
+2025-05-28 02:37:04.452: watchdog pid 11: LOG:  watchdog node state changed from [DEAD] to [LOADING]
+2025-05-28 02:37:09.456: watchdog pid 11: LOG:  watchdog node state changed from [LOADING] to [JOINING]
+2025-05-28 02:37:13.460: watchdog pid 11: LOG:  watchdog node state changed from [JOINING] to [INITIALIZING]
+2025-05-28 02:37:14.461: watchdog pid 11: LOG:  I am the only alive node in the watchdog cluster
+2025-05-28 02:37:14.461: watchdog pid 11: HINT:  skipping stand for coordinator state
+2025-05-28 02:37:14.461: watchdog pid 11: LOG:  watchdog node state changed from [INITIALIZING] to [LEADER]
+2025-05-28 02:37:14.461: watchdog pid 11: LOG:  Setting failover command timeout to 7
+2025-05-28 02:37:14.461: watchdog pid 11: LOG:  I am announcing my self as leader/coordinator watchdog node
+2025-05-28 02:37:18.465: watchdog pid 11: LOG:  I am the cluster leader node
+2025-05-28 02:37:18.465: watchdog pid 11: DETAIL:  our declare coordinator message is accepted by all nodes
+2025-05-28 02:37:18.465: watchdog pid 11: LOG:  setting the local node "postgresql1:5431 Linux pgpool1" as watchdog cluster leader
+2025-05-28 02:37:18.465: watchdog pid 11: LOG:  signal_user1_to_parent_with_reason(1)
+2025-05-28 02:37:18.465: watchdog pid 11: LOG:  I am the cluster leader node but we do not have enough nodes in cluster
+2025-05-28 02:37:18.465: watchdog pid 11: DETAIL:  waiting for the quorum to start escalation process
+2025-05-28 02:37:18.465: main pid 7: LOG:  watchdog process is initialized
+2025-05-28 02:37:18.465: main pid 7: DETAIL:  watchdog messaging data version: 1.2
+2025-05-28 02:37:18.466: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-28 02:37:18.466: main pid 7: LOG:  Pgpool-II parent process received watchdog state change signal from watchdog
+2025-05-28 02:37:18.466: main pid 7: LOG:  create socket files[0]: /tmp/.s.PGSQL.5431
+2025-05-28 02:37:18.466: life_check pid 31: LOG:  2 watchdog nodes are configured for lifecheck
+2025-05-28 02:37:18.466: life_check pid 31: LOG:  watchdog nodes ID:1 Name:"postgresql1:5431 Linux pgpool1"
+2025-05-28 02:37:18.466: life_check pid 31: DETAIL:  Host:"postgresql1" WD Port:9001 pgpool-II port:5431
+2025-05-28 02:37:18.466: life_check pid 31: LOG:  watchdog nodes ID:0 Name:"Not_Set"
+2025-05-28 02:37:18.466: life_check pid 31: DETAIL:  Host:"postgresql0" WD Port:9000 pgpool-II port:5430
+2025-05-28 02:37:18.473: main pid 7: LOG:  listen address[0]: *
+2025-05-28 02:37:18.473: main pid 7: LOG:  Setting up socket for 0.0.0.0:5431
+2025-05-28 02:37:18.473: main pid 7: LOG:  Setting up socket for :::5431
+2025-05-28 02:37:18.689: main pid 7: LOG:  find_primary_node_repeatedly: waiting for finding a primary node
+2025-05-28 02:37:18.806: main pid 7: LOG:  find_primary_node: primary node is 0
+2025-05-28 02:37:18.806: main pid 7: LOG:  find_primary_node: standby node is 1
+2025-05-28 02:37:18.806: main pid 7: LOG:  create socket files[0]: /var/run/pgpool2/pcp/.s.PGSQL.9898
+2025-05-28 02:37:18.819: main pid 7: LOG:  listen address[0]: *
+2025-05-28 02:37:18.820: main pid 7: LOG:  Setting up socket for 0.0.0.0:9898
+2025-05-28 02:37:18.820: main pid 7: LOG:  Setting up socket for :::9898
+2025-05-28 02:37:18.826: pcp_main pid 134: LOG:  PCP process: 134 started
+2025-05-28 02:37:18.826: sr_check_worker pid 135: LOG:  process started
+2025-05-28 02:37:18.829: health_check pid 136: LOG:  process started
+2025-05-28 02:37:18.829: health_check pid 137: LOG:  process started
+2025-05-28 02:37:18.830: main pid 7: LOG:  pgpool-II successfully started. version 4.6.1 (chirikoboshi)
+2025-05-28 02:37:18.830: main pid 7: LOG:  node status[0]: 1
+2025-05-28 02:37:18.830: main pid 7: LOG:  node status[1]: 2
+2025-05-28 02:37:19.467: heart_beat_receiver pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-28 02:37:19.467: heart_beat_receiver pid 32: LOG:  creating watchdog heartbeat receive socket.
+2025-05-28 02:37:19.467: heart_beat_receiver pid 32: DETAIL:  creating socket on ::1:9695
+2025-05-28 02:37:19.467: heart_beat_receiver pid 32: LOG:  set SO_REUSEPORT option to the socket
+2025-05-28 02:37:19.467: heart_beat_receiver pid 32: LOG:  creating watchdog heartbeat receive socket.
+2025-05-28 02:37:19.467: heart_beat_receiver pid 32: DETAIL:  creating socket on 127.0.0.1:9695
+2025-05-28 02:37:19.467: heart_beat_sender pid 33: LOG:  set SO_REUSEPORT option to the socket
+2025-05-28 02:37:19.467: heart_beat_sender pid 33: LOG:  creating socket for sending heartbeat
+2025-05-28 02:37:19.467: heart_beat_sender pid 33: DETAIL:  set SO_REUSEPORT
+2025-05-28 02:37:23.512: child pid 36: LOG:  using clear text authentication with frontend
+2025-05-28 02:37:23.512: child pid 36: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:37:23.512: child pid 36: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:37:33.592: child pid 41: LOG:  using clear text authentication with frontend
+2025-05-28 02:37:33.592: child pid 41: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:37:33.592: child pid 41: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:37:43.667: child pid 48: LOG:  using clear text authentication with frontend
+2025-05-28 02:37:43.667: child pid 48: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:37:43.667: child pid 48: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:37:53.726: child pid 73: LOG:  using clear text authentication with frontend
+2025-05-28 02:37:53.726: child pid 73: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:37:53.726: child pid 73: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:38:03.785: child pid 131: LOG:  using clear text authentication with frontend
+2025-05-28 02:38:03.785: child pid 131: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:38:03.785: child pid 131: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:38:13.836: psql pid 131: LOG:  using clear text authentication with frontend
+2025-05-28 02:38:13.836: psql pid 131: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:38:13.836: psql pid 131: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:38:23.891: child pid 113: LOG:  using clear text authentication with frontend
+2025-05-28 02:38:23.891: child pid 113: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:38:23.891: child pid 113: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:38:33.946: child pid 81: LOG:  using clear text authentication with frontend
+2025-05-28 02:38:33.946: child pid 81: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:38:33.946: child pid 81: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:38:44.000: child pid 95: LOG:  using clear text authentication with frontend
+2025-05-28 02:38:44.000: child pid 95: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:38:44.000: child pid 95: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:38:54.055: child pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:38:54.055: child pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:38:54.055: child pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:39:04.106: child pid 127: LOG:  using clear text authentication with frontend
+2025-05-28 02:39:04.106: child pid 127: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:39:04.106: child pid 127: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:39:14.160: psql pid 81: LOG:  using clear text authentication with frontend
+2025-05-28 02:39:14.160: psql pid 81: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:39:14.160: psql pid 81: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:39:24.219: psql pid 127: LOG:  using clear text authentication with frontend
+2025-05-28 02:39:24.219: psql pid 127: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:39:24.219: psql pid 127: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:39:34.276: psql pid 127: LOG:  using clear text authentication with frontend
+2025-05-28 02:39:34.276: psql pid 127: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:39:34.276: psql pid 127: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:39:44.340: psql pid 113: LOG:  using clear text authentication with frontend
+2025-05-28 02:39:44.340: psql pid 113: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:39:44.340: psql pid 113: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:39:54.399: psql pid 81: LOG:  using clear text authentication with frontend
+2025-05-28 02:39:54.399: psql pid 81: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:39:54.399: psql pid 81: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:40:04.447: psql pid 81: LOG:  using clear text authentication with frontend
+2025-05-28 02:40:04.447: psql pid 81: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:40:04.447: psql pid 81: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:40:14.501: psql pid 127: LOG:  using clear text authentication with frontend
+2025-05-28 02:40:14.501: psql pid 127: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:40:14.501: psql pid 127: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:40:24.562: child pid 89: LOG:  using clear text authentication with frontend
+2025-05-28 02:40:24.562: child pid 89: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:40:24.562: child pid 89: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:40:34.616: psql pid 127: LOG:  using clear text authentication with frontend
+2025-05-28 02:40:34.616: psql pid 127: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:40:34.616: psql pid 127: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:40:44.663: psql pid 131: LOG:  using clear text authentication with frontend
+2025-05-28 02:40:44.663: psql pid 131: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:40:44.663: psql pid 131: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:40:54.720: psql pid 131: LOG:  using clear text authentication with frontend
+2025-05-28 02:40:54.720: psql pid 131: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:40:54.720: psql pid 131: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:41:04.778: child pid 49: LOG:  using clear text authentication with frontend
+2025-05-28 02:41:04.778: child pid 49: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:41:04.778: child pid 49: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:41:14.834: child pid 57: LOG:  using clear text authentication with frontend
+2025-05-28 02:41:14.834: child pid 57: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:41:14.834: child pid 57: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:41:24.886: psql pid 57: LOG:  using clear text authentication with frontend
+2025-05-28 02:41:24.886: psql pid 57: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:41:24.886: psql pid 57: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:41:34.946: child pid 65: LOG:  using clear text authentication with frontend
+2025-05-28 02:41:34.946: child pid 65: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:41:34.946: child pid 65: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:41:45.009: child pid 117: LOG:  using clear text authentication with frontend
+2025-05-28 02:41:45.009: child pid 117: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:41:45.009: child pid 117: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:41:55.061: child pid 116: LOG:  using clear text authentication with frontend
+2025-05-28 02:41:55.061: child pid 116: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:41:55.061: child pid 116: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:42:05.114: psql pid 116: LOG:  using clear text authentication with frontend
+2025-05-28 02:42:05.114: psql pid 116: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:42:05.114: psql pid 116: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:42:15.172: child pid 125: LOG:  using clear text authentication with frontend
+2025-05-28 02:42:15.172: child pid 125: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:42:15.172: child pid 125: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:42:25.230: child pid 133: LOG:  using clear text authentication with frontend
+2025-05-28 02:42:25.230: child pid 133: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:42:25.230: child pid 133: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:42:35.284: psql pid 125: LOG:  using clear text authentication with frontend
+2025-05-28 02:42:35.284: psql pid 125: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:42:35.284: psql pid 125: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:42:45.341: psql pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:42:45.341: psql pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:42:45.341: psql pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:42:55.391: psql pid 116: LOG:  using clear text authentication with frontend
+2025-05-28 02:42:55.391: psql pid 116: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:42:55.391: psql pid 116: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:43:05.441: psql pid 133: LOG:  using clear text authentication with frontend
+2025-05-28 02:43:05.441: psql pid 133: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:43:05.441: psql pid 133: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:43:15.490: psql pid 133: LOG:  using clear text authentication with frontend
+2025-05-28 02:43:15.490: psql pid 133: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:43:15.490: psql pid 133: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:43:25.547: child pid 101: LOG:  using clear text authentication with frontend
+2025-05-28 02:43:25.547: child pid 101: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:43:25.547: child pid 101: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:43:35.600: psql pid 133: LOG:  using clear text authentication with frontend
+2025-05-28 02:43:35.600: psql pid 133: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:43:35.600: psql pid 133: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:43:45.654: child pid 93: LOG:  using clear text authentication with frontend
+2025-05-28 02:43:45.654: child pid 93: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:43:45.654: child pid 93: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:43:55.701: child pid 115: LOG:  using clear text authentication with frontend
+2025-05-28 02:43:55.701: child pid 115: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:43:55.701: child pid 115: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:44:05.753: child pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 02:44:05.753: child pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:44:05.753: child pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:44:15.810: psql pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 02:44:15.810: psql pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:44:15.810: psql pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:44:25.864: psql pid 101: LOG:  using clear text authentication with frontend
+2025-05-28 02:44:25.864: psql pid 101: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:44:25.864: psql pid 101: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:44:35.920: psql pid 113: LOG:  using clear text authentication with frontend
+2025-05-28 02:44:35.920: psql pid 113: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:44:35.920: psql pid 113: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:44:45.969: child pid 119: LOG:  using clear text authentication with frontend
+2025-05-28 02:44:45.969: child pid 119: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:44:45.969: child pid 119: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:44:56.026: child pid 69: LOG:  using clear text authentication with frontend
+2025-05-28 02:44:56.026: child pid 69: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:44:56.026: child pid 69: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:45:06.075: child pid 64: LOG:  using clear text authentication with frontend
+2025-05-28 02:45:06.075: child pid 64: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:45:06.075: child pid 64: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:45:16.129: child pid 59: LOG:  using clear text authentication with frontend
+2025-05-28 02:45:16.129: child pid 59: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:45:16.129: child pid 59: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:45:26.180: child pid 79: LOG:  using clear text authentication with frontend
+2025-05-28 02:45:26.180: child pid 79: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:45:26.180: child pid 79: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:45:36.237: child pid 97: LOG:  using clear text authentication with frontend
+2025-05-28 02:45:36.237: child pid 97: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:45:36.237: child pid 97: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:45:46.289: psql pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:45:46.289: psql pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:45:46.289: psql pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:45:56.344: child pid 111: LOG:  using clear text authentication with frontend
+2025-05-28 02:45:56.344: child pid 111: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:45:56.344: child pid 111: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:46:06.402: psql pid 95: LOG:  using clear text authentication with frontend
+2025-05-28 02:46:06.402: psql pid 95: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:46:06.402: psql pid 95: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:46:16.458: child pid 106: LOG:  using clear text authentication with frontend
+2025-05-28 02:46:16.458: child pid 106: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:46:16.458: child pid 106: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:46:26.511: child pid 74: LOG:  using clear text authentication with frontend
+2025-05-28 02:46:26.511: child pid 74: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:46:26.511: child pid 74: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:46:36.563: psql pid 74: LOG:  using clear text authentication with frontend
+2025-05-28 02:46:36.563: psql pid 74: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:46:36.563: psql pid 74: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:46:46.617: psql pid 101: LOG:  using clear text authentication with frontend
+2025-05-28 02:46:46.617: psql pid 101: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:46:46.617: psql pid 101: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:46:56.667: psql pid 111: LOG:  using clear text authentication with frontend
+2025-05-28 02:46:56.668: psql pid 111: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:46:56.668: psql pid 111: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:47:06.715: child pid 80: LOG:  using clear text authentication with frontend
+2025-05-28 02:47:06.715: child pid 80: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:47:06.715: child pid 80: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:47:16.770: psql pid 101: LOG:  using clear text authentication with frontend
+2025-05-28 02:47:16.770: psql pid 101: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:47:16.770: psql pid 101: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:47:26.824: psql pid 101: LOG:  using clear text authentication with frontend
+2025-05-28 02:47:26.824: psql pid 101: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:47:26.824: psql pid 101: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:47:36.882: psql pid 101: LOG:  using clear text authentication with frontend
+2025-05-28 02:47:36.882: psql pid 101: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:47:36.882: psql pid 101: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:47:46.934: psql pid 116: LOG:  using clear text authentication with frontend
+2025-05-28 02:47:46.934: psql pid 116: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:47:46.934: psql pid 116: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:47:56.984: psql pid 93: LOG:  using clear text authentication with frontend
+2025-05-28 02:47:56.984: psql pid 93: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:47:56.984: psql pid 93: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:48:07.039: psql pid 116: LOG:  using clear text authentication with frontend
+2025-05-28 02:48:07.039: psql pid 116: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:48:07.039: psql pid 116: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:48:17.098: psql pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 02:48:17.098: psql pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:48:17.098: psql pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:48:27.156: psql pid 115: LOG:  using clear text authentication with frontend
+2025-05-28 02:48:27.156: psql pid 115: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:48:27.156: psql pid 115: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:48:37.206: psql pid 125: LOG:  using clear text authentication with frontend
+2025-05-28 02:48:37.206: psql pid 125: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:48:37.206: psql pid 125: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:48:47.260: child pid 61: LOG:  using clear text authentication with frontend
+2025-05-28 02:48:47.260: child pid 61: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:48:47.260: child pid 61: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:48:57.318: child pid 62: LOG:  using clear text authentication with frontend
+2025-05-28 02:48:57.318: child pid 62: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:48:57.318: child pid 62: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:49:07.377: psql pid 116: LOG:  using clear text authentication with frontend
+2025-05-28 02:49:07.377: psql pid 116: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:49:07.377: psql pid 116: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:49:17.428: child pid 130: LOG:  using clear text authentication with frontend
+2025-05-28 02:49:17.428: child pid 130: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:49:17.428: child pid 130: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:49:27.485: child pid 83: LOG:  using clear text authentication with frontend
+2025-05-28 02:49:27.485: child pid 83: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:49:27.485: child pid 83: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:49:37.537: child pid 123: LOG:  using clear text authentication with frontend
+2025-05-28 02:49:37.537: child pid 123: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:49:37.537: child pid 123: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:49:47.595: child pid 459: LOG:  using clear text authentication with frontend
+2025-05-28 02:49:47.595: child pid 459: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:49:47.595: child pid 459: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:49:57.646: child pid 452: LOG:  using clear text authentication with frontend
+2025-05-28 02:49:57.646: child pid 452: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:49:57.646: child pid 452: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:50:07.709: child pid 99: LOG:  using clear text authentication with frontend
+2025-05-28 02:50:07.709: child pid 99: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:50:07.709: child pid 99: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:50:17.769: child pid 78: LOG:  using clear text authentication with frontend
+2025-05-28 02:50:17.769: child pid 78: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:50:17.769: child pid 78: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:50:27.824: child pid 610: LOG:  using clear text authentication with frontend
+2025-05-28 02:50:27.824: child pid 610: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:50:27.824: child pid 610: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:50:37.877: psql pid 95: LOG:  using clear text authentication with frontend
+2025-05-28 02:50:37.877: psql pid 95: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:50:37.877: psql pid 95: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:50:47.927: psql pid 106: LOG:  using clear text authentication with frontend
+2025-05-28 02:50:47.928: psql pid 106: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:50:47.928: psql pid 106: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:50:57.985: child pid 114: LOG:  using clear text authentication with frontend
+2025-05-28 02:50:57.985: child pid 114: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:50:57.985: child pid 114: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:51:08.040: psql pid 80: LOG:  using clear text authentication with frontend
+2025-05-28 02:51:08.040: psql pid 80: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:51:08.040: psql pid 80: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:51:18.099: psql pid 74: LOG:  using clear text authentication with frontend
+2025-05-28 02:51:18.099: psql pid 74: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:51:18.099: psql pid 74: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:51:28.151: child pid 90: LOG:  using clear text authentication with frontend
+2025-05-28 02:51:28.151: child pid 90: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:51:28.151: child pid 90: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:51:38.201: psql pid 90: LOG:  using clear text authentication with frontend
+2025-05-28 02:51:38.201: psql pid 90: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:51:38.201: psql pid 90: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:51:48.258: child pid 84: LOG:  using clear text authentication with frontend
+2025-05-28 02:51:48.258: child pid 84: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:51:48.258: child pid 84: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:51:58.312: psql pid 80: LOG:  using clear text authentication with frontend
+2025-05-28 02:51:58.312: psql pid 80: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:51:58.312: psql pid 80: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:52:08.363: child pid 624: LOG:  using clear text authentication with frontend
+2025-05-28 02:52:08.363: child pid 624: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:52:08.363: child pid 624: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:52:18.411: child pid 70: LOG:  using clear text authentication with frontend
+2025-05-28 02:52:18.411: child pid 70: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:52:18.411: child pid 70: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:52:28.463: psql pid 114: LOG:  using clear text authentication with frontend
+2025-05-28 02:52:28.463: psql pid 114: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:52:28.463: psql pid 114: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:52:38.519: psql pid 114: LOG:  using clear text authentication with frontend
+2025-05-28 02:52:38.519: psql pid 114: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:52:38.519: psql pid 114: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:52:48.586: child pid 68: LOG:  using clear text authentication with frontend
+2025-05-28 02:52:48.586: child pid 68: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:52:48.586: child pid 68: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:52:58.644: child pid 112: LOG:  using clear text authentication with frontend
+2025-05-28 02:52:58.644: child pid 112: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:52:58.644: child pid 112: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:53:08.716: psql pid 128: LOG:  using clear text authentication with frontend
+2025-05-28 02:53:08.716: psql pid 128: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:53:08.716: psql pid 128: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:53:18.778: psql pid 83: LOG:  using clear text authentication with frontend
+2025-05-28 02:53:18.778: psql pid 83: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:53:18.778: psql pid 83: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:53:28.835: child pid 118: LOG:  using clear text authentication with frontend
+2025-05-28 02:53:28.835: child pid 118: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:53:28.835: child pid 118: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:53:38.895: psql pid 459: LOG:  using clear text authentication with frontend
+2025-05-28 02:53:38.895: psql pid 459: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:53:38.895: psql pid 459: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:53:48.949: child pid 105: LOG:  using clear text authentication with frontend
+2025-05-28 02:53:48.949: child pid 105: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:53:48.949: child pid 105: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:53:59.004: psql pid 123: LOG:  using clear text authentication with frontend
+2025-05-28 02:53:59.004: psql pid 123: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:53:59.004: psql pid 123: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:54:09.061: child pid 102: LOG:  using clear text authentication with frontend
+2025-05-28 02:54:09.061: child pid 102: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:54:09.061: child pid 102: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:54:19.120: child pid 98: LOG:  using clear text authentication with frontend
+2025-05-28 02:54:19.120: child pid 98: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:54:19.120: child pid 98: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:54:29.173: psql pid 452: LOG:  using clear text authentication with frontend
+2025-05-28 02:54:29.173: psql pid 452: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:54:29.173: psql pid 452: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:54:39.226: psql pid 452: LOG:  using clear text authentication with frontend
+2025-05-28 02:54:39.226: psql pid 452: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:54:39.226: psql pid 452: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:54:49.276: psql pid 123: LOG:  using clear text authentication with frontend
+2025-05-28 02:54:49.276: psql pid 123: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:54:49.276: psql pid 123: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:54:59.325: child pid 678: LOG:  using clear text authentication with frontend
+2025-05-28 02:54:59.325: child pid 678: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:54:59.325: child pid 678: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:55:09.379: psql pid 64: LOG:  using clear text authentication with frontend
+2025-05-28 02:55:09.379: psql pid 64: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:55:09.379: psql pid 64: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:55:19.429: child pid 60: LOG:  using clear text authentication with frontend
+2025-05-28 02:55:19.429: child pid 60: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:55:19.429: child pid 60: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:55:29.485: psql pid 93: LOG:  using clear text authentication with frontend
+2025-05-28 02:55:29.485: psql pid 93: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:55:29.485: psql pid 93: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:55:39.535: child pid 85: LOG:  using clear text authentication with frontend
+2025-05-28 02:55:39.535: child pid 85: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:55:39.535: child pid 85: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:55:49.593: psql pid 80: LOG:  using clear text authentication with frontend
+2025-05-28 02:55:49.593: psql pid 80: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:55:49.593: psql pid 80: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:55:59.646: child pid 37: LOG:  using clear text authentication with frontend
+2025-05-28 02:55:59.646: child pid 37: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:55:59.646: child pid 37: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:56:09.705: psql pid 62: LOG:  using clear text authentication with frontend
+2025-05-28 02:56:09.705: psql pid 62: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:56:09.705: psql pid 62: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:56:19.758: child pid 66: LOG:  using clear text authentication with frontend
+2025-05-28 02:56:19.758: child pid 66: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:56:19.758: child pid 66: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:56:29.807: child pid 94: LOG:  using clear text authentication with frontend
+2025-05-28 02:56:29.807: child pid 94: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:56:29.807: child pid 94: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:56:39.859: child pid 104: LOG:  using clear text authentication with frontend
+2025-05-28 02:56:39.859: child pid 104: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:56:39.859: child pid 104: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:56:49.907: psql pid 104: LOG:  using clear text authentication with frontend
+2025-05-28 02:56:49.907: psql pid 104: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:56:49.907: psql pid 104: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:56:59.964: psql pid 112: LOG:  using clear text authentication with frontend
+2025-05-28 02:56:59.964: psql pid 112: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:56:59.964: psql pid 112: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:57:10.010: child pid 67: LOG:  using clear text authentication with frontend
+2025-05-28 02:57:10.010: child pid 67: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:57:10.010: child pid 67: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:57:20.067: child pid 72: LOG:  using clear text authentication with frontend
+2025-05-28 02:57:20.067: child pid 72: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:57:20.067: child pid 72: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:57:30.120: child pid 806: LOG:  using clear text authentication with frontend
+2025-05-28 02:57:30.120: child pid 806: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:57:30.120: child pid 806: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:57:40.168: child pid 109: LOG:  using clear text authentication with frontend
+2025-05-28 02:57:40.168: child pid 109: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:57:40.168: child pid 109: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:57:50.219: child pid 96: LOG:  using clear text authentication with frontend
+2025-05-28 02:57:50.219: child pid 96: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:57:50.219: child pid 96: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:58:00.275: psql pid 68: LOG:  using clear text authentication with frontend
+2025-05-28 02:58:00.275: psql pid 68: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:58:00.275: psql pid 68: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:58:10.325: psql pid 68: LOG:  using clear text authentication with frontend
+2025-05-28 02:58:10.325: psql pid 68: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:58:10.325: psql pid 68: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:58:20.373: psql pid 99: LOG:  using clear text authentication with frontend
+2025-05-28 02:58:20.373: psql pid 99: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:58:20.373: psql pid 99: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:58:30.431: child pid 46: LOG:  using clear text authentication with frontend
+2025-05-28 02:58:30.431: child pid 46: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:58:30.431: child pid 46: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:58:40.490: child pid 82: LOG:  using clear text authentication with frontend
+2025-05-28 02:58:40.490: child pid 82: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:58:40.490: child pid 82: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:58:50.543: psql pid 82: LOG:  using clear text authentication with frontend
+2025-05-28 02:58:50.543: psql pid 82: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:58:50.543: psql pid 82: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:59:00.598: psql pid 452: LOG:  using clear text authentication with frontend
+2025-05-28 02:59:00.598: psql pid 452: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:59:00.598: psql pid 452: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:59:10.647: child pid 108: LOG:  using clear text authentication with frontend
+2025-05-28 02:59:10.647: child pid 108: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:59:10.647: child pid 108: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:59:20.699: child pid 589: LOG:  using clear text authentication with frontend
+2025-05-28 02:59:20.699: child pid 589: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:59:20.699: child pid 589: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:59:30.760: child pid 110: LOG:  using clear text authentication with frontend
+2025-05-28 02:59:30.760: child pid 110: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:59:30.760: child pid 110: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:59:40.813: child pid 707: LOG:  using clear text authentication with frontend
+2025-05-28 02:59:40.813: child pid 707: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:59:40.813: child pid 707: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 02:59:50.862: psql pid 80: LOG:  using clear text authentication with frontend
+2025-05-28 02:59:50.862: psql pid 80: DETAIL:  backend will still use SCRAM auth
+2025-05-28 02:59:50.862: psql pid 80: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:00:00.916: psql pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 03:00:00.916: psql pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:00:00.916: psql pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:00:10.972: child pid 590: LOG:  using clear text authentication with frontend
+2025-05-28 03:00:10.972: child pid 590: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:00:10.972: child pid 590: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:00:21.022: psql pid 590: LOG:  using clear text authentication with frontend
+2025-05-28 03:00:21.022: psql pid 590: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:00:21.022: psql pid 590: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:00:31.075: psql pid 85: LOG:  using clear text authentication with frontend
+2025-05-28 03:00:31.075: psql pid 85: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:00:31.075: psql pid 85: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:00:41.132: child pid 76: LOG:  using clear text authentication with frontend
+2025-05-28 03:00:41.132: child pid 76: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:00:41.132: child pid 76: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:00:51.186: psql pid 76: LOG:  using clear text authentication with frontend
+2025-05-28 03:00:51.186: psql pid 76: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:00:51.186: psql pid 76: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:01:01.234: psql pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 03:01:01.234: psql pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:01:01.234: psql pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:01:11.288: psql pid 112: LOG:  using clear text authentication with frontend
+2025-05-28 03:01:11.288: psql pid 112: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:01:11.288: psql pid 112: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:01:21.344: child pid 570: LOG:  using clear text authentication with frontend
+2025-05-28 03:01:21.344: child pid 570: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:01:21.344: child pid 570: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:01:31.395: psql pid 72: LOG:  using clear text authentication with frontend
+2025-05-28 03:01:31.395: psql pid 72: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:01:31.395: psql pid 72: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:01:41.447: psql pid 72: LOG:  using clear text authentication with frontend
+2025-05-28 03:01:41.448: psql pid 72: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:01:41.448: psql pid 72: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:01:51.505: psql pid 129: LOG:  using clear text authentication with frontend
+2025-05-28 03:01:51.505: psql pid 129: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:01:51.505: psql pid 129: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:02:01.557: child pid 122: LOG:  using clear text authentication with frontend
+2025-05-28 03:02:01.557: child pid 122: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:02:01.557: child pid 122: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:02:11.611: child pid 55: LOG:  using clear text authentication with frontend
+2025-05-28 03:02:11.611: child pid 55: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:02:11.611: child pid 55: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:02:21.671: psql pid 115: LOG:  using clear text authentication with frontend
+2025-05-28 03:02:21.671: psql pid 115: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:02:21.671: psql pid 115: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:02:31.728: child pid 334: LOG:  using clear text authentication with frontend
+2025-05-28 03:02:31.728: child pid 334: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:02:31.728: child pid 334: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:02:41.783: child pid 480: LOG:  using clear text authentication with frontend
+2025-05-28 03:02:41.783: child pid 480: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:02:41.783: child pid 480: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:02:51.838: psql pid 118: LOG:  using clear text authentication with frontend
+2025-05-28 03:02:51.838: psql pid 118: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:02:51.838: psql pid 118: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:03:01.899: child pid 120: LOG:  using clear text authentication with frontend
+2025-05-28 03:03:01.899: child pid 120: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:03:01.899: child pid 120: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:03:11.950: child pid 979: LOG:  using clear text authentication with frontend
+2025-05-28 03:03:11.950: child pid 979: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:03:11.950: child pid 979: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:03:22.011: psql pid 108: LOG:  using clear text authentication with frontend
+2025-05-28 03:03:22.011: psql pid 108: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:03:22.011: psql pid 108: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:03:32.066: child pid 844: LOG:  using clear text authentication with frontend
+2025-05-28 03:03:32.066: child pid 844: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:03:32.066: child pid 844: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:03:42.119: psql pid 844: LOG:  using clear text authentication with frontend
+2025-05-28 03:03:42.119: psql pid 844: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:03:42.119: psql pid 844: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:03:52.167: child pid 597: LOG:  using clear text authentication with frontend
+2025-05-28 03:03:52.167: child pid 597: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:03:52.167: child pid 597: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:04:02.215: child pid 450: LOG:  using clear text authentication with frontend
+2025-05-28 03:04:02.215: child pid 450: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:04:02.215: child pid 450: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:04:12.264: child pid 52: LOG:  using clear text authentication with frontend
+2025-05-28 03:04:12.264: child pid 52: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:04:12.264: child pid 52: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:04:22.317: psql pid 102: LOG:  using clear text authentication with frontend
+2025-05-28 03:04:22.317: psql pid 102: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:04:22.317: psql pid 102: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:04:32.367: child pid 54: LOG:  using clear text authentication with frontend
+2025-05-28 03:04:32.367: child pid 54: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:04:32.367: child pid 54: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:04:42.422: psql pid 85: LOG:  using clear text authentication with frontend
+2025-05-28 03:04:42.422: psql pid 85: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:04:42.422: psql pid 85: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:04:52.477: child pid 92: LOG:  using clear text authentication with frontend
+2025-05-28 03:04:52.477: child pid 92: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:04:52.477: child pid 92: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:05:02.530: psql pid 98: LOG:  using clear text authentication with frontend
+2025-05-28 03:05:02.530: psql pid 98: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:05:02.530: psql pid 98: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:05:12.583: psql pid 55: LOG:  using clear text authentication with frontend
+2025-05-28 03:05:12.583: psql pid 55: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:05:12.583: psql pid 55: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:05:22.639: psql pid 67: LOG:  using clear text authentication with frontend
+2025-05-28 03:05:22.639: psql pid 67: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:05:22.639: psql pid 67: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:05:32.691: psql pid 109: LOG:  using clear text authentication with frontend
+2025-05-28 03:05:32.691: psql pid 109: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:05:32.691: psql pid 109: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:05:42.749: psql pid 104: LOG:  using clear text authentication with frontend
+2025-05-28 03:05:42.749: psql pid 104: DETAIL:  backend will still use SCRAM auth
+2025-05-28 03:05:42.749: psql pid 104: HINT:  you can disable this behavior by setting allow_clear_text_frontend_auth to off
+2025-05-28 03:05:50.941: health_check1 pid 137: LOG:  failed to connect to PostgreSQL server on "postgresql1:5434", getsockopt() failed
+2025-05-28 03:05:50.941: health_check1 pid 137: DETAIL:  Operation now in progress
+2025-05-28 03:05:50.941: health_check1 pid 137: LOG:  health check retrying on DB node: 1 (round:1)
+2025-05-28 03:05:50.969: sr_check_worker pid 135: LOG:  failed to connect to PostgreSQL server on "postgresql1:5434", getsockopt() failed
+2025-05-28 03:05:50.969: sr_check_worker pid 135: DETAIL:  Operation now in progress
+2025-05-28 03:05:51.941: health_check1 pid 137: WARNING:  failed to connect to PostgreSQL server, getaddrinfo() failed with error "Temporary failure in name resolution"
+2025-05-28 03:05:51.941: health_check1 pid 137: LOG:  health check retrying on DB node: 1 (round:2)
+2025-05-28 03:05:52.808: psql pid 55: WARNING:  failed to connect to PostgreSQL server, getaddrinfo() failed with error "Temporary failure in name resolution"
+2025-05-28 03:05:52.808: psql pid 55: LOG:  received degenerate backend request for node_id: 1 from pid [55]
+2025-05-28 03:05:52.808: watchdog pid 11: LOG:  watchdog received the failover command from local pgpool-II on IPC interface
+2025-05-28 03:05:52.808: watchdog pid 11: LOG:  watchdog is processing the failover command [DEGENERATE_BACKEND_REQUEST] received from local pgpool-II on IPC interface
+2025-05-28 03:05:52.808: watchdog pid 11: LOG:  we do not need quorum to hold to proceed with failover
+2025-05-28 03:05:52.808: watchdog pid 11: DETAIL:  proceeding with the failover
+2025-05-28 03:05:52.808: watchdog pid 11: HINT:  failover_when_quorum_exists is set to false
+2025-05-28 03:05:52.808: psql pid 55: LOG:  signal_user1_to_parent_with_reason(0)
+2025-05-28 03:05:52.808: psql pid 55: FATAL:  failed to create a backend connection
+2025-05-28 03:05:52.808: psql pid 55: DETAIL:  executing failover on backend
+2025-05-28 03:05:52.808: main pid 7: LOG:  Pgpool-II parent process received SIGUSR1
+2025-05-28 03:05:52.808: main pid 7: LOG:  Pgpool-II parent process has received failover request
+2025-05-28 03:05:52.808: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
+2025-05-28 03:05:52.808: watchdog pid 11: LOG:  watchdog is informed of failover start by the main process
+2025-05-28 03:05:52.808: main pid 7: LOG:  === Starting degeneration. shutdown host postgresql1(5434) ===
+2025-05-28 03:05:52.942: health_check1 pid 137: WARNING:  failed to connect to PostgreSQL server, getaddrinfo() failed with error "Temporary failure in name resolution"
+2025-05-28 03:05:52.942: health_check1 pid 137: LOG:  health check failed on node 1 (timeout:0)
+2025-05-28 03:05:52.942: health_check1 pid 137: LOG:  invalid degenerate backend request, node id : 1 status: [3] is not valid for failover
+2025-05-28 03:05:53.254: main pid 7: LOG:  Do not restart children because we are switching over node id 1 host: postgresql1 port: 5434 and we are in streaming replication mode
+2025-05-28 03:05:53.257: main pid 7: LOG:  execute command: /etc/pgpool2/failover.sh  1 postgresql1  5434  postgresql0 0 5433 
+2025-05-28 03:05:53.261: main pid 7: LOG:  failover: set new primary node: 0
+2025-05-28 03:05:53.261: main pid 7: LOG:  failover: set new main node: 0
+2025-05-28 03:05:53.264: sr_check_worker pid 135: ERROR:  Failed to check replication time lag
+2025-05-28 03:05:53.264: sr_check_worker pid 135: DETAIL:  No persistent db connection for the node 1
+2025-05-28 03:05:53.264: sr_check_worker pid 135: HINT:  check sr_check_user and sr_check_password
+2025-05-28 03:05:53.264: sr_check_worker pid 135: CONTEXT:  while checking replication time lag
+2025-05-28 03:05:53.264: sr_check_worker pid 135: LOG:  worker process received restart request
+2025-05-28 03:05:53.264: watchdog pid 11: LOG:  received the failover indication from Pgpool-II on IPC interface
+2025-05-28 03:05:53.264: watchdog pid 11: LOG:  watchdog is informed of failover end by the main process
+2025-05-28 03:05:53.264: main pid 7: LOG:  === Failover done. shutdown host postgresql1(5434) ===
+2025-05-28 03:05:54.264: pcp_main pid 134: LOG:  restart request received in pcp child process
+2025-05-28 03:05:54.265: main pid 7: LOG:  PCP child 134 exits with status 0 in failover()
+2025-05-28 03:05:54.266: main pid 7: LOG:  fork a new PCP child pid 1196 in failover()
+2025-05-28 03:05:54.266: pcp_main pid 1196: LOG:  PCP process: 1196 started
+2025-05-28 03:05:54.266: sr_check_worker pid 1198: LOG:  process started
+2025-05-28 03:05:54.271: child pid 1197: LOG:  failover or failback event detected
+2025-05-28 03:05:54.271: child pid 1197: DETAIL:  restarting myself
