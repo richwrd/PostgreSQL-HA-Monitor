@@ -116,25 +116,32 @@ services:
       - postgresql_network
       - grafana_network
       
-  grafana-agent:
-    image: grafana/agent:latest
-    container_name: grafana-agent
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/agent/config.yaml
-    command:
-      - "--config.file=/etc/agent/config.yaml"
-    ports:
-      - "9090:9090"  # You might want to adjust this port based on your agent configuration
-    depends_on:
-      - etcd
-      - postgresql1
-      - postgresql2
-      - postgresql1-exporter
-      - postgresql2-exporter
-      - pgpool
-    networks:
-      - postgresql_network
-      - grafana_network
+grafana-agent:
+  image: grafana/agent:latest
+  container_name: grafana-agent
+  volumes:
+    - ./prometheus/prometheus.yml:/etc/agent/config.yaml
+  command:
+    - "--config.file=/etc/agent/config.yaml"
+  ports:
+    - "9090:9090"  # Prometheus UI port
+  depends_on:
+    postgresql0:
+      condition: service_healthy
+    postgresql1:
+      condition: service_healthy
+    postgresql0-exporter:
+      condition: service_started
+    postgresql1-exporter:
+      condition: service_started
+    pgpool0:
+      condition: service_healthy
+    pgpool1:
+      condition: service_healthy
+  networks:
+    - postgresql_network
+    - grafana_network
+
 
   mimir:
     image: grafana/mimir:latest

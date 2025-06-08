@@ -1,5 +1,5 @@
 #!/bin/bash
-# /etc/pgpool2/follow_master.sh (Versão 4.0)
+# /etc/pgpool2/follow_master.sh (Versão 4.1)
 # Script para sincronização automática entre Patroni e PgPool-II
 
 # ==================== CONFIGURAÇÕES ====================
@@ -10,13 +10,18 @@ LOCK_FILE="/tmp/pgpool_follow_master.lock"
 REQUEST_TIMEOUT=3                         # Timeout para consultas (segundos)
 MAX_RETRIES=3                            # Tentativas de conexão
 
+# Recuperação de Nós
+NODE_RECOVERY_TIMEOUT=10                 # Tempo máximo de espera em minutos
+NODE_CHECK_INTERVAL=10                   # Intervalo entre checagens em segundos
+
 # Nós Patroni (ajuste para seu ambiente)
-PATRONI_NODES=("192.168.1.5:8008" "192.168.1.5:8009")
+PATRONI_NODES=("postgresql0:8008" "postgresql1:8009" "postgresql2:8010")
 
 # Mapeamento nome Patroni -> ID PgPool (ajuste conforme seus nós)
 declare -A NODE_MAP=(
     ["postgresql0"]=0
     ["postgresql1"]=1
+    ["postgresql2"]=2
 )
 
 # ==================== FUNÇÕES ====================
@@ -43,6 +48,46 @@ check_patroni_node() {
     
     log "ERRO: Falha ao acessar nó $node após $MAX_RETRIES tentativas"
     echo ""
+    return 1
+}
+
+# Função para verificar se o nó está disponível
+check_node_availability() {
+    local node_host=$1
+    local node_port=$2
+    
+    nc -z -w3 "$node_host" "$node_port" &>/dev/null
+    return $?
+}
+
+# Função para aguardar recuperação do nó
+wait_for_node_recovery() {
+    local node_name=$1
+    local node_id=$2
+    local host_port=${node_name/:/ }
+    read -r host port <<< "$host_port"
+    
+    log "Aguardando recuperação do nó $node_name (ID: $node_id) por até $NODE_RECOVERY_TIMEOUT minutos..."
+    
+    local total_wait_time=0
+    local max_wait_seconds=$((NODE_RECOVERY_TIMEOUT * 60))
+    
+    while [ $total_wait_time -lt $max_wait_seconds ]; do
+        if check_node_availability "$host" "$port"; then
+            log "Nó $node_name está acessível após $((total_wait_time / 60)) minutos e $((total_wait_time % 60)) segundos"
+            return 0
+        fi
+        
+        sleep $NODE_CHECK_INTERVAL
+        total_wait_time=$((total_wait_time + NODE_CHECK_INTERVAL))
+        
+        # A cada minuto, registra progresso no log
+        if [ $((total_wait_time % 60)) -eq 0 ]; then
+            log "Ainda aguardando nó $node_name... ($((total_wait_time / 60)) de $NODE_RECOVERY_TIMEOUT minutos)"
+        fi
+    done
+    
+    log "TIMEOUT: Nó $node_name não respondeu após $NODE_RECOVERY_TIMEOUT minutos"
     return 1
 }
 
@@ -142,20 +187,45 @@ for node_name in "${!all_node_names[@]}"; do
     current_status=$(pcp_node_info -h localhost -U "$PGPOOL_USER" -p "$PGPOOL_PORT" -n "$NODE_ID" -w 2>/dev/null | awk '{print $5}')
 
     if [ "$current_status" != "up" ]; then
-        log "Nó $node_name ($NODE_ID) marcado como DOWN no Pgpool. Tentando reanexar..."
-
-        pcp_attach_node -h localhost -U "$PGPOOL_USER" -p "$PGPOOL_PORT" -n "$NODE_ID" -w >> "$LOG_FILE" 2>&1
-
-        if [ $? -eq 0 ]; then
-            log "Sucesso: Nó $node_name ($NODE_ID) reintegrado ao Pgpool"
+        log "Nó $node_name ($NODE_ID) marcado como DOWN no Pgpool."
+        
+        # Obter endereço e porta do nó a partir da configuração
+        node_address=""
+        for patroni_node in "${PATRONI_NODES[@]}"; do
+            if [[ $patroni_node == $node_name* ]]; then
+                node_address=$patroni_node
+                break
+            fi
+        done
+        
+        if [ -n "$node_address" ]; then
+            # Esperar pela recuperação do nó
+            host_port=(${node_address//:/ })
+            node_host=${host_port[0]}
+            node_port=${host_port[1]}
+            
+            log "Aguardando disponibilidade do nó $node_name ($node_host:$node_port)"
+            
+            if wait_for_node_recovery "$node_address" "$NODE_ID"; then
+                log "Tentando reintegrar nó $node_name ($NODE_ID) ao Pgpool..."
+                
+                pcp_attach_node -h localhost -U "$PGPOOL_USER" -p "$PGPOOL_PORT" -n "$NODE_ID" -w >> "$LOG_FILE" 2>&1
+                
+                if [ $? -eq 0 ]; then
+                    log "Sucesso: Nó $node_name ($NODE_ID) reintegrado ao Pgpool"
+                else
+                    log "ERRO: Falha ao reintegrar nó $node_name ($NODE_ID)"
+                fi
+            else
+                log "ERRO: Nó $node_name não ficou disponível dentro do timeout. Reintegração cancelada."
+            fi
         else
-            log "ERRO: Falha ao reintegrar nó $node_name ($NODE_ID)"
+            log "AVISO: Não foi possível identificar endereço para nó $node_name"
         fi
     else
         log "Nó $node_name ($NODE_ID) já está UP no Pgpool"
     fi
 done
-
 
 log "Failback concluído"
 exit 0

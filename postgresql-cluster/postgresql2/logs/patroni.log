@@ -1,406 +1,397 @@
-2025-06-08 23:09:39,067 DEBUG: New etcd client created for http://127.0.0.1:4001
-2025-06-08 23:09:39,111 DEBUG: Retrieved list of machines: ['http://etcd:2379']
-2025-06-08 23:09:39,111 INFO: Selected new etcd server http://etcd:2379
-2025-06-08 23:09:39,156 INFO: No PostgreSQL configuration items changed, nothing to reload.
-2025-06-08 23:09:39,196 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '9', 'raft_term': '2'}, 'created': True}}
-2025-06-08 23:09:39,202 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:09:39,244 INFO: trying to bootstrap from leader 'postgresql0'
-2025-06-08 23:09:39,244 DEBUG: calling: ['/usr/lib/postgresql/17/bin/pg_basebackup', '--pgdata=/var/lib/postgresql/data/pgdata', '-X', 'stream', '--dbname=dbname=postgres user=replicator host=postgresql0 port=5433']
-2025-06-08 23:09:39,292 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '11', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '9', 'version': '4', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjoyNDMwNzEyOCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}, {'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '10', 'version': '1', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJzdG9wcGVkIiwicm9sZSI6InVuaW5pdGlhbGl6ZWQiLCJ2ZXJzaW9uIjoiNC4wLjUifQ==', 'lease': '3029118601992208147'}}, {'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '11', 'version': '2', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJzdG9wcGVkIiwicm9sZSI6InVuaW5pdGlhbGl6ZWQiLCJ2ZXJzaW9uIjoiNC4wLjUifQ==', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:09:39,795 INFO: replica has been created using basebackup
-2025-06-08 23:09:39,796 INFO: bootstrapped from leader 'postgresql0'
-2025-06-08 23:09:39,811 WARNING: Removing unexpected parameter=use_slots value=True from the config
-2025-06-08 23:09:39,811 DEBUG: Starting postgres: /usr/lib/postgresql/17/bin/postgres -D /var/lib/postgresql/data/pgdata --config-file=/var/lib/postgresql/data/pgdata/postgresql.conf --listen_addresses=0.0.0.0 --port=5434 --cluster_name=pg-cluster --wal_level=replica --hot_standby=on --max_connections=100 --max_wal_senders=10 --max_prepared_transactions=0 --max_locks_per_transaction=64 --track_commit_timestamp=off --max_replication_slots=10 --max_worker_processes=8 --wal_log_hints=on
-2025-06-08 23:09:40,026 INFO: postmaster pid=21
-2025-06-08 23:09:40,571 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '12', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '12', 'version': '1', 'value': 'eyJvcHRpbWUiOjUwMzMxNjQ4LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMCI6NTAzMzE2NDh9LCJyZXRhaW5fc2xvdHMiOlsicG9zdGdyZXNxbDAiXX0='}}]}}
-2025-06-08 23:09:40,572 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from None to eyJvcHRpbWUiOjUwMzMxNjQ4LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMCI6NTAzMzE2NDh9LCJyZXRhaW5fc2xvdHMiOlsicG9zdGdyZXNxbDAiXX0=
-2025-06-08 23:09:40,572 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:09:40,614 INFO: bootstrap from leader 'postgresql0' in progress
-2025-06-08 23:09:40,614 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '13', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '13', 'version': '3', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJzdGFydGluZyIsInJvbGUiOiJyZXBsaWNhIiwidmVyc2lvbiI6IjQuMC41In0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:09:40,622 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '14', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '14', 'version': '5', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo1MDMzMTY0OCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
-2025-06-08 23:09:41,040 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:09:41,040 DEBUG: does not have lock
-2025-06-08 23:09:41,040 INFO: establishing a new patroni heartbeat connection to postgres
-2025-06-08 23:09:41,098 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '15', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '15', 'version': '4', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo1MDMzMTY0OCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:09:41,098 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:09:48,687 INFO: establishing a new patroni restapi connection to postgres
-2025-06-08 23:09:48,691 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 4.004 ms
+2025-06-08 23:09:49,915 DEBUG: New etcd client created for http://127.0.0.1:4001
+2025-06-08 23:09:49,959 DEBUG: Retrieved list of machines: ['http://etcd:2379']
+2025-06-08 23:09:49,959 INFO: Selected new etcd server http://etcd:2379
+2025-06-08 23:09:50,005 INFO: No PostgreSQL configuration items changed, nothing to reload.
+2025-06-08 23:09:50,045 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '15', 'raft_term': '2'}, 'created': True}}
+2025-06-08 23:09:50,049 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '15', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '15', 'version': '4', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo1MDMzMTY0OCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208147'}}]}}
 2025-06-08 23:09:50,051 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '16', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '16', 'version': '1', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJzdG9wcGVkIiwicm9sZSI6InVuaW5pdGlhbGl6ZWQiLCJ2ZXJzaW9uIjoiNC4wLjUifQ==', 'lease': '3029118601992208157'}}]}}
+2025-06-08 23:09:50,052 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:09:50,094 INFO: trying to bootstrap from leader 'postgresql0'
 2025-06-08 23:09:50,094 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '17', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '17', 'version': '2', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJzdG9wcGVkIiwicm9sZSI6InVuaW5pdGlhbGl6ZWQiLCJ2ZXJzaW9uIjoiNC4wLjUifQ==', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:09:50,572 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '18', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '18', 'version': '2', 'value': 'eyJvcHRpbWUiOjY3MTA4ODY0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6NjcxMDg4NjQsInBvc3RncmVzcWwwIjo2NzEwODg2NH0sInJldGFpbl9zbG90cyI6WyJwb3N0Z3Jlc3FsMCIsInBvc3RncmVzcWwxIl19'}}]}}
+2025-06-08 23:09:50,095 DEBUG: calling: ['/usr/lib/postgresql/17/bin/pg_basebackup', '--pgdata=/var/lib/postgresql/data/pgdata', '-X', 'stream', '--dbname=dbname=postgres user=replicator host=postgresql0 port=5433']
+2025-06-08 23:09:50,573 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '18', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '18', 'version': '2', 'value': 'eyJvcHRpbWUiOjY3MTA4ODY0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6NjcxMDg4NjQsInBvc3RncmVzcWwwIjo2NzEwODg2NH0sInJldGFpbl9zbG90cyI6WyJwb3N0Z3Jlc3FsMCIsInBvc3RncmVzcWwxIl19'}}]}}
 2025-06-08 23:09:50,573 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjUwMzMxNjQ4LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMCI6NTAzMzE2NDh9LCJyZXRhaW5fc2xvdHMiOlsicG9zdGdyZXNxbDAiXX0= to eyJvcHRpbWUiOjY3MTA4ODY0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6NjcxMDg4NjQsInBvc3RncmVzcWwwIjo2NzEwODg2NH0sInJldGFpbl9zbG90cyI6WyJwb3N0Z3Jlc3FsMCIsInBvc3RncmVzcWwxIl19
-2025-06-08 23:09:50,573 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:09:50,573 DEBUG: does not have lock
+2025-06-08 23:09:50,573 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:09:50,615 INFO: bootstrap from leader 'postgresql0' in progress
 2025-06-08 23:09:50,615 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '19', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '19', 'version': '3', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJjcmVhdGluZyByZXBsaWNhIiwicm9sZSI6InVuaW5pdGlhbGl6ZWQiLCJ2ZXJzaW9uIjoiNC4wLjUifQ==', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:09:50,625 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '20', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '20', 'version': '6', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo2NzEwODg2NCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
+2025-06-08 23:09:50,624 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '20', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '20', 'version': '6', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo2NzEwODg2NCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
 2025-06-08 23:09:50,667 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '21', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '21', 'version': '5', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo2NzEwODg2NCwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:09:50,667 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:09:51,170 INFO: replica has been created using basebackup
+2025-06-08 23:09:51,170 INFO: bootstrapped from leader 'postgresql0'
+2025-06-08 23:09:51,186 WARNING: Removing unexpected parameter=use_slots value=True from the config
+2025-06-08 23:09:51,187 DEBUG: Starting postgres: /usr/lib/postgresql/17/bin/postgres -D /var/lib/postgresql/data/pgdata --config-file=/var/lib/postgresql/data/pgdata/postgresql.conf --listen_addresses=0.0.0.0 --port=5435 --cluster_name=pg-cluster --wal_level=replica --hot_standby=on --max_connections=100 --max_wal_senders=10 --max_prepared_transactions=0 --max_locks_per_transaction=64 --track_commit_timestamp=off --max_replication_slots=10 --max_worker_processes=8 --wal_log_hints=on
+2025-06-08 23:09:51,436 INFO: postmaster pid=21
+2025-06-08 23:09:52,456 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:09:52,457 DEBUG: does not have lock
+2025-06-08 23:09:52,457 INFO: establishing a new patroni heartbeat connection to postgres
 2025-06-08 23:09:52,521 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '22', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '22', 'version': '4', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4Mzg4NjA4MCwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:09:58,723 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.708 ms
+2025-06-08 23:09:52,521 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:09:59,430 INFO: establishing a new patroni restapi connection to postgres
+2025-06-08 23:09:59,433 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 3.390 ms
 2025-06-08 23:10:00,572 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '23', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '23', 'version': '3', 'value': 'eyJvcHRpbWUiOjgzODg2MTc2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODM4ODYxNzYsInBvc3RncmVzcWwyIjo4Mzg4NjE3NiwicG9zdGdyZXNxbDAiOjgzODg2MTc2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:10:00,573 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjY3MTA4ODY0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6NjcxMDg4NjQsInBvc3RncmVzcWwwIjo2NzEwODg2NH0sInJldGFpbl9zbG90cyI6WyJwb3N0Z3Jlc3FsMCIsInBvc3RncmVzcWwxIl19 to eyJvcHRpbWUiOjgzODg2MTc2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODM4ODYxNzYsInBvc3RncmVzcWwyIjo4Mzg4NjE3NiwicG9zdGdyZXNxbDAiOjgzODg2MTc2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:10:00,573 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:10:00,573 DEBUG: does not have lock
+2025-06-08 23:10:00,575 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:10:00,575 DEBUG: does not have lock
 2025-06-08 23:10:00,622 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '24', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '24', 'version': '7', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4Mzg4NjE3NiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
-2025-06-08 23:10:00,622 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '25', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '25', 'version': '6', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4Mzg4NjE3NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:10:00,623 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:10:00,623 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '25', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '25', 'version': '6', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4Mzg4NjE3NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
+2025-06-08 23:10:00,666 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:10:00,666 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '26', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '26', 'version': '5', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4Mzg4NjE3NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:10:08,750 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.713 ms
-2025-06-08 23:10:11,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:10:11,073 DEBUG: does not have lock
-2025-06-08 23:10:11,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:10:18,793 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.476 ms
-2025-06-08 23:10:21,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:10:21,073 DEBUG: does not have lock
-2025-06-08 23:10:21,075 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:10:28,823 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.845 ms
-2025-06-08 23:10:31,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:10:31,073 DEBUG: does not have lock
-2025-06-08 23:10:31,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:10:38,853 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.826 ms
-2025-06-08 23:10:41,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:10:41,074 DEBUG: does not have lock
-2025-06-08 23:10:41,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:10:48,876 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.677 ms
-2025-06-08 23:10:51,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:10:51,073 DEBUG: does not have lock
-2025-06-08 23:10:51,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:10:58,896 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.715 ms
-2025-06-08 23:11:01,074 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:11:01,074 DEBUG: does not have lock
-2025-06-08 23:11:01,076 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:11:08,930 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.918 ms
-2025-06-08 23:11:11,075 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:10:09,467 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.747 ms
+2025-06-08 23:10:11,075 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:10:11,075 DEBUG: does not have lock
+2025-06-08 23:10:11,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:10:19,501 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.699 ms
+2025-06-08 23:10:21,075 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:10:21,075 DEBUG: does not have lock
+2025-06-08 23:10:21,076 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:10:29,531 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.662 ms
+2025-06-08 23:10:31,075 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:10:31,075 DEBUG: does not have lock
+2025-06-08 23:10:31,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:10:39,555 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.730 ms
+2025-06-08 23:10:41,075 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:10:41,075 DEBUG: does not have lock
+2025-06-08 23:10:41,075 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:10:49,578 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.958 ms
+2025-06-08 23:10:51,075 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:10:51,075 DEBUG: does not have lock
+2025-06-08 23:10:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:10:59,607 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.893 ms
+2025-06-08 23:11:01,078 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:11:01,079 DEBUG: does not have lock
+2025-06-08 23:11:01,080 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:11:09,660 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.443 ms
+2025-06-08 23:11:11,075 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:11:11,075 DEBUG: does not have lock
-2025-06-08 23:11:11,118 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:11:18,967 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.238 ms
-2025-06-08 23:11:21,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:11:21,073 DEBUG: does not have lock
-2025-06-08 23:11:21,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:11:29,006 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.788 ms
+2025-06-08 23:11:11,119 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:11:19,691 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.843 ms
+2025-06-08 23:11:21,075 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:11:21,075 DEBUG: does not have lock
+2025-06-08 23:11:21,076 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:11:29,723 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.700 ms
 2025-06-08 23:11:30,571 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '27', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '27', 'version': '4', 'value': 'eyJvcHRpbWUiOjg0MTg5MDk2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQxODkwOTYsInBvc3RncmVzcWwyIjo4NDE4OTA5NiwicG9zdGdyZXNxbDAiOjg0MTg5MDk2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:11:30,571 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjgzODg2MTc2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODM4ODYxNzYsInBvc3RncmVzcWwyIjo4Mzg4NjE3NiwicG9zdGdyZXNxbDAiOjgzODg2MTc2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MTg5MDk2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQxODkwOTYsInBvc3RncmVzcWwyIjo4NDE4OTA5NiwicG9zdGdyZXNxbDAiOjg0MTg5MDk2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:11:30,571 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:11:30,571 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:11:30,571 DEBUG: does not have lock
-2025-06-08 23:11:30,613 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '28', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '28', 'version': '8', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDE4OTA5NiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
+2025-06-08 23:11:30,612 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '28', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '28', 'version': '8', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDE4OTA5NiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
 2025-06-08 23:11:30,657 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '29', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '29', 'version': '6', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDE4OTA5NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:11:30,657 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:11:30,657 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:11:30,657 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '30', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '30', 'version': '7', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDE4OTA5NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:11:39,038 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.140 ms
-2025-06-08 23:11:41,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:11:39,751 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.686 ms
+2025-06-08 23:11:41,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:11:41,071 DEBUG: does not have lock
-2025-06-08 23:11:41,114 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:11:49,063 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.673 ms
-2025-06-08 23:11:51,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:11:41,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:11:49,780 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.769 ms
+2025-06-08 23:11:51,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:11:51,071 DEBUG: does not have lock
-2025-06-08 23:11:51,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:11:59,121 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.979 ms
-2025-06-08 23:12:01,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:11:51,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:11:59,805 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.739 ms
+2025-06-08 23:12:01,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:12:01,071 DEBUG: does not have lock
-2025-06-08 23:12:01,113 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:12:09,156 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.670 ms
-2025-06-08 23:12:11,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:12:01,113 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:12:09,830 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.864 ms
+2025-06-08 23:12:11,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:12:11,071 DEBUG: does not have lock
-2025-06-08 23:12:11,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:12:19,181 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.770 ms
-2025-06-08 23:12:21,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:12:11,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:12:19,855 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.636 ms
+2025-06-08 23:12:21,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:12:21,071 DEBUG: does not have lock
-2025-06-08 23:12:21,115 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:12:29,207 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.713 ms
+2025-06-08 23:12:21,115 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:12:29,884 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.763 ms
 2025-06-08 23:12:30,572 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '31', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '31', 'version': '5', 'value': 'eyJvcHRpbWUiOjg0MjExNjk2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTE2OTYsInBvc3RncmVzcWwyIjo4NDIxMTY5NiwicG9zdGdyZXNxbDAiOjg0MjExNjk2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:12:30,572 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MTg5MDk2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQxODkwOTYsInBvc3RncmVzcWwyIjo4NDE4OTA5NiwicG9zdGdyZXNxbDAiOjg0MTg5MDk2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MjExNjk2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTE2OTYsInBvc3RncmVzcWwyIjo4NDIxMTY5NiwicG9zdGdyZXNxbDAiOjg0MjExNjk2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:12:30,573 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:12:30,573 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:12:30,573 DEBUG: does not have lock
 2025-06-08 23:12:30,614 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '32', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '32', 'version': '9', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTY5NiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
-2025-06-08 23:12:30,615 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:12:30,616 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '33', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '33', 'version': '8', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTY5NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
+2025-06-08 23:12:30,615 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '33', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '33', 'version': '8', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTY5NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
 2025-06-08 23:12:30,616 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '34', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '34', 'version': '7', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTY5NiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:12:39,250 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.845 ms
-2025-06-08 23:12:41,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:12:30,616 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:12:39,920 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.826 ms
+2025-06-08 23:12:41,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:12:41,073 DEBUG: does not have lock
-2025-06-08 23:12:41,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:12:49,290 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.697 ms
-2025-06-08 23:12:51,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:12:41,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:12:49,947 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.680 ms
+2025-06-08 23:12:51,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:12:51,073 DEBUG: does not have lock
-2025-06-08 23:12:51,115 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
 2025-06-08 23:12:51,115 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '35', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '35', 'version': '9', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTc1MiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
+2025-06-08 23:12:51,121 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:12:51,121 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '36', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '36', 'version': '8', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTc1MiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:12:59,317 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.730 ms
+2025-06-08 23:12:59,980 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.831 ms
 2025-06-08 23:13:00,570 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '37', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '37', 'version': '6', 'value': 'eyJvcHRpbWUiOjg0MjExNzUyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTE3NTIsInBvc3RncmVzcWwyIjo4NDIxMTc1MiwicG9zdGdyZXNxbDAiOjg0MjExNzUyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:13:00,571 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MjExNjk2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTE2OTYsInBvc3RncmVzcWwyIjo4NDIxMTY5NiwicG9zdGdyZXNxbDAiOjg0MjExNjk2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MjExNzUyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTE3NTIsInBvc3RncmVzcWwyIjo4NDIxMTc1MiwicG9zdGdyZXNxbDAiOjg0MjExNzUyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:13:00,571 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:00,571 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:13:00,571 DEBUG: does not have lock
 2025-06-08 23:13:00,612 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '38', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '38', 'version': '10', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMTc1MiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
-2025-06-08 23:13:00,613 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:13:09,347 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.763 ms
-2025-06-08 23:13:11,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:00,613 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:13:10,007 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.786 ms
+2025-06-08 23:13:11,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:13:11,071 DEBUG: does not have lock
-2025-06-08 23:13:11,114 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:13:19,388 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.879 ms
-2025-06-08 23:13:21,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:11,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:13:20,042 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.938 ms
+2025-06-08 23:13:21,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:13:21,071 DEBUG: does not have lock
-2025-06-08 23:13:21,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:13:29,416 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.704 ms
-2025-06-08 23:13:31,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:21,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:13:30,069 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.690 ms
+2025-06-08 23:13:31,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:13:31,071 DEBUG: does not have lock
-2025-06-08 23:13:31,113 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:13:39,447 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.717 ms
-2025-06-08 23:13:41,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:31,113 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:13:40,093 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.722 ms
+2025-06-08 23:13:41,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:13:41,071 DEBUG: does not have lock
-2025-06-08 23:13:41,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:13:49,472 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.782 ms
-2025-06-08 23:13:51,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:41,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:13:50,138 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.140 ms
+2025-06-08 23:13:51,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:13:51,071 DEBUG: does not have lock
-2025-06-08 23:13:51,113 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:13:59,504 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.976 ms
-2025-06-08 23:14:01,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:13:51,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:14:00,172 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.056 ms
+2025-06-08 23:14:01,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:14:01,071 DEBUG: does not have lock
-2025-06-08 23:14:01,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:14:09,534 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.812 ms
-2025-06-08 23:14:11,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:14:01,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:14:10,206 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.907 ms
+2025-06-08 23:14:11,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:14:11,071 DEBUG: does not have lock
-2025-06-08 23:14:11,114 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:14:19,563 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.991 ms
-2025-06-08 23:14:21,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:14:11,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:14:20,241 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.045 ms
+2025-06-08 23:14:21,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:14:21,071 DEBUG: does not have lock
-2025-06-08 23:14:21,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:14:29,587 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.670 ms
-2025-06-08 23:14:31,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:14:21,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:14:30,266 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.747 ms
+2025-06-08 23:14:31,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:14:31,071 DEBUG: does not have lock
-2025-06-08 23:14:31,114 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:14:39,619 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.885 ms
-2025-06-08 23:14:41,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:14:31,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:14:40,301 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.027 ms
+2025-06-08 23:14:41,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:14:41,071 DEBUG: does not have lock
-2025-06-08 23:14:41,072 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:14:49,651 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.827 ms
-2025-06-08 23:14:51,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:14:41,072 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:14:50,327 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.665 ms
+2025-06-08 23:14:51,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:14:51,071 DEBUG: does not have lock
 2025-06-08 23:14:51,114 DEBUG: Retrieved list of machines: ['http://etcd:2379']
-2025-06-08 23:14:51,155 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:14:59,684 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.904 ms
+2025-06-08 23:14:51,155 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:15:00,357 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.810 ms
 2025-06-08 23:15:00,571 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '39', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '39', 'version': '7', 'value': 'eyJvcHRpbWUiOjg0MjEyMDE2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTIwMTYsInBvc3RncmVzcWwyIjo4NDIxMjAxNiwicG9zdGdyZXNxbDAiOjg0MjEyMDE2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:15:00,571 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MjExNzUyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTE3NTIsInBvc3RncmVzcWwyIjo4NDIxMTc1MiwicG9zdGdyZXNxbDAiOjg0MjExNzUyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MjEyMDE2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTIwMTYsInBvc3RncmVzcWwyIjo4NDIxMjAxNiwicG9zdGdyZXNxbDAiOjg0MjEyMDE2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:15:00,571 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:15:00,571 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:15:00,571 DEBUG: does not have lock
 2025-06-08 23:15:00,613 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '40', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '40', 'version': '11', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjAxNiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
 2025-06-08 23:15:00,613 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '41', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '41', 'version': '9', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjAxNiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
+2025-06-08 23:15:00,614 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:15:00,614 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '42', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '42', 'version': '10', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjAxNiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:15:00,614 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:15:09,717 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.873 ms
-2025-06-08 23:15:11,071 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:15:10,392 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.016 ms
+2025-06-08 23:15:11,071 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:15:11,071 DEBUG: does not have lock
-2025-06-08 23:15:11,114 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:15:19,754 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.871 ms
+2025-06-08 23:15:11,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:15:20,425 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.815 ms
 2025-06-08 23:15:20,572 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '43', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '43', 'version': '8', 'value': 'eyJvcHRpbWUiOjg0MjEyMDcyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTIwNzIsInBvc3RncmVzcWwyIjo4NDIxMjA3MiwicG9zdGdyZXNxbDAiOjg0MjEyMDcyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:15:20,572 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MjEyMDE2LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTIwMTYsInBvc3RncmVzcWwyIjo4NDIxMjAxNiwicG9zdGdyZXNxbDAiOjg0MjEyMDE2fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MjEyMDcyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTIwNzIsInBvc3RncmVzcWwyIjo4NDIxMjA3MiwicG9zdGdyZXNxbDAiOjg0MjEyMDcyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:15:20,572 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:15:20,572 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:15:20,572 DEBUG: does not have lock
 2025-06-08 23:15:20,615 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '44', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '44', 'version': '12', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjA3MiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
 2025-06-08 23:15:20,615 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '45', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '45', 'version': '10', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjA3MiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
 2025-06-08 23:15:20,615 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '46', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '46', 'version': '11', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjA3MiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:15:20,616 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:15:29,810 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.133 ms
-2025-06-08 23:15:31,072 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:15:31,072 DEBUG: does not have lock
-2025-06-08 23:15:31,120 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:15:39,856 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.872 ms
-2025-06-08 23:15:41,075 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:15:41,075 DEBUG: does not have lock
-2025-06-08 23:15:41,076 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:15:49,900 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.997 ms
-2025-06-08 23:15:51,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:15:20,616 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:15:30,483 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 2.131 ms
+2025-06-08 23:15:31,073 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:15:31,073 DEBUG: does not have lock
+2025-06-08 23:15:31,122 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:15:40,532 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.991 ms
+2025-06-08 23:15:41,074 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:15:41,074 DEBUG: does not have lock
+2025-06-08 23:15:41,076 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:15:50,588 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.112 ms
+2025-06-08 23:15:51,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:15:51,073 DEBUG: does not have lock
-2025-06-08 23:15:51,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:15:59,955 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.432 ms
-2025-06-08 23:16:01,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:15:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:16:00,653 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.544 ms
+2025-06-08 23:16:01,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:16:01,073 DEBUG: does not have lock
-2025-06-08 23:16:01,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:16:09,991 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 2.179 ms
-2025-06-08 23:16:11,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:16:01,075 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:16:10,693 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.243 ms
+2025-06-08 23:16:11,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:16:11,073 DEBUG: does not have lock
-2025-06-08 23:16:11,117 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:16:20,026 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.976 ms
-2025-06-08 23:16:21,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:16:11,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:16:20,730 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.874 ms
+2025-06-08 23:16:21,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:16:21,073 DEBUG: does not have lock
-2025-06-08 23:16:21,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:16:30,084 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 7.779 ms
-2025-06-08 23:16:31,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:16:21,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:16:30,761 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.806 ms
+2025-06-08 23:16:31,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:16:31,072 DEBUG: does not have lock
-2025-06-08 23:16:31,115 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:16:40,118 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.865 ms
-2025-06-08 23:16:41,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:16:31,115 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:16:40,795 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.819 ms
+2025-06-08 23:16:41,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:16:41,072 DEBUG: does not have lock
-2025-06-08 23:16:41,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:16:50,158 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 7.251 ms
-2025-06-08 23:16:51,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:16:41,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:16:50,824 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.854 ms
+2025-06-08 23:16:51,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:16:51,072 DEBUG: does not have lock
-2025-06-08 23:16:51,115 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:17:00,181 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.815 ms
-2025-06-08 23:17:01,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:16:51,115 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:17:00,850 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.655 ms
+2025-06-08 23:17:01,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:17:01,072 DEBUG: does not have lock
-2025-06-08 23:17:01,073 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:17:10,206 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.838 ms
-2025-06-08 23:17:11,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:17:01,073 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:17:10,881 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.678 ms
+2025-06-08 23:17:11,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:17:11,072 DEBUG: does not have lock
-2025-06-08 23:17:11,114 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:17:20,230 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.711 ms
-2025-06-08 23:17:21,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:17:11,114 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:17:20,904 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.671 ms
+2025-06-08 23:17:21,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:17:21,072 DEBUG: does not have lock
-2025-06-08 23:17:21,073 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:17:30,262 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 6.904 ms
-2025-06-08 23:17:31,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:17:21,073 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:17:30,935 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.618 ms
+2025-06-08 23:17:31,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:17:31,072 DEBUG: does not have lock
-2025-06-08 23:17:31,115 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:17:40,293 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 6.975 ms
-2025-06-08 23:17:41,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:17:31,115 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:17:40,970 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.685 ms
+2025-06-08 23:17:41,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:17:41,072 DEBUG: does not have lock
-2025-06-08 23:17:41,073 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:17:50,333 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.004 ms
-2025-06-08 23:17:51,073 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:17:51,073 DEBUG: does not have lock
-2025-06-08 23:17:51,122 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:18:00,373 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 7.031 ms
-2025-06-08 23:18:01,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:17:41,073 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:17:51,002 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.840 ms
+2025-06-08 23:17:51,072 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:17:51,072 DEBUG: does not have lock
+2025-06-08 23:17:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:01,042 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.817 ms
+2025-06-08 23:18:01,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:18:01,072 DEBUG: does not have lock
-2025-06-08 23:18:01,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:18:10,400 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.739 ms
-2025-06-08 23:18:11,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:18:01,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:11,066 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.730 ms
+2025-06-08 23:18:11,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:18:11,072 DEBUG: does not have lock
-2025-06-08 23:18:11,115 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:18:20,425 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.700 ms
-2025-06-08 23:18:21,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:18:11,115 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:21,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:18:21,072 DEBUG: does not have lock
-2025-06-08 23:18:21,073 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:18:30,455 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.702 ms
-2025-06-08 23:18:31,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:18:21,073 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:21,092 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.699 ms
+2025-06-08 23:18:31,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:18:31,072 DEBUG: does not have lock
-2025-06-08 23:18:31,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:18:40,493 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.238 ms
-2025-06-08 23:18:41,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:18:31,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:31,123 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.770 ms
+2025-06-08 23:18:41,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:18:41,072 DEBUG: does not have lock
-2025-06-08 23:18:41,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:18:50,544 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 7.393 ms
-2025-06-08 23:18:51,072 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:18:41,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:41,157 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.921 ms
+2025-06-08 23:18:51,072 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:18:51,072 DEBUG: does not have lock
-2025-06-08 23:18:51,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:19:00,571 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.909 ms
+2025-06-08 23:18:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:18:51,199 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.995 ms
 2025-06-08 23:19:00,579 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '47', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '47', 'version': '9', 'value': 'eyJvcHRpbWUiOjg0MjEyNDMyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTI0MzIsInBvc3RncmVzcWwyIjo4NDIxMjQzMiwicG9zdGdyZXNxbDAiOjg0MjEyNDMyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:19:00,579 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MjEyMDcyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTIwNzIsInBvc3RncmVzcWwyIjo4NDIxMjA3MiwicG9zdGdyZXNxbDAiOjg0MjEyMDcyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MjEyNDMyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTI0MzIsInBvc3RncmVzcWwyIjo4NDIxMjQzMiwicG9zdGdyZXNxbDAiOjg0MjEyNDMyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:19:00,580 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:19:00,580 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:19:00,580 DEBUG: does not have lock
 2025-06-08 23:19:00,623 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '48', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '48', 'version': '13', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjQzMiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
+2025-06-08 23:19:00,623 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:19:00,623 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '49', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '49', 'version': '11', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjQzMiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
 2025-06-08 23:19:00,623 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '50', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '50', 'version': '12', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDIxMjQzMiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
-2025-06-08 23:19:00,624 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:19:10,596 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.679 ms
-2025-06-08 23:19:11,080 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:19:01,226 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.780 ms
+2025-06-08 23:19:11,080 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:19:11,080 DEBUG: does not have lock
-2025-06-08 23:19:11,128 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:11,122 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:11,261 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.849 ms
 2025-06-08 23:19:20,573 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '51', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '51', 'version': '10', 'value': 'eyJvcHRpbWUiOjg0MzY0NDgwLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjQ0ODAsInBvc3RncmVzcWwyIjo4NDM2NDQ4MCwicG9zdGdyZXNxbDAiOjg0MzY0NDgwfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:19:20,573 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MjEyNDMyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQyMTI0MzIsInBvc3RncmVzcWwyIjo4NDIxMjQzMiwicG9zdGdyZXNxbDAiOjg0MjEyNDMyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MzY0NDgwLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjQ0ODAsInBvc3RncmVzcWwyIjo4NDM2NDQ4MCwicG9zdGdyZXNxbDAiOjg0MzY0NDgwfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:19:20,573 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:19:20,573 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:19:20,573 DEBUG: does not have lock
-2025-06-08 23:19:20,616 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
 2025-06-08 23:19:20,616 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '52', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '52', 'version': '13', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2NDQ4MCwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
 2025-06-08 23:19:20,616 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '53', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '53', 'version': '14', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2NDQ4MCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
 2025-06-08 23:19:20,617 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '54', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '54', 'version': '12', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2NDQ4MCwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:19:20,624 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.785 ms
-2025-06-08 23:19:30,655 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.867 ms
-2025-06-08 23:19:31,080 INFO: Lock owner: postgresql0; I am postgresql1
-2025-06-08 23:19:31,080 DEBUG: does not have lock
-2025-06-08 23:19:31,123 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:19:40,694 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 6.949 ms
-2025-06-08 23:19:41,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:19:20,617 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:21,296 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.854 ms
+2025-06-08 23:19:31,073 INFO: Lock owner: postgresql0; I am postgresql2
+2025-06-08 23:19:31,073 DEBUG: does not have lock
+2025-06-08 23:19:31,115 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:31,328 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.817 ms
+2025-06-08 23:19:41,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:19:41,073 DEBUG: does not have lock
-2025-06-08 23:19:41,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:19:50,716 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.889 ms
-2025-06-08 23:19:51,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:19:41,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:41,357 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.687 ms
+2025-06-08 23:19:51,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:19:51,073 DEBUG: does not have lock
-2025-06-08 23:19:51,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:19:51,382 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.732 ms
 2025-06-08 23:20:00,573 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '55', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '55', 'version': '11', 'value': 'eyJvcHRpbWUiOjg0MzY0NzQ0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjQ3NDQsInBvc3RncmVzcWwyIjo4NDM2NDc0NCwicG9zdGdyZXNxbDAiOjg0MzY0NzQ0fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:20:00,573 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MzY0NDgwLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjQ0ODAsInBvc3RncmVzcWwyIjo4NDM2NDQ4MCwicG9zdGdyZXNxbDAiOjg0MzY0NDgwfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MzY0NzQ0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjQ3NDQsInBvc3RncmVzcWwyIjo4NDM2NDc0NCwicG9zdGdyZXNxbDAiOjg0MzY0NzQ0fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:20:00,573 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:00,573 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:20:00,573 DEBUG: does not have lock
 2025-06-08 23:20:00,616 DEBUG: Retrieved list of machines: ['http://etcd:2379']
 2025-06-08 23:20:00,616 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '56', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '56', 'version': '15', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2NDc0NCwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
+2025-06-08 23:20:00,658 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:20:00,658 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '57', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '57', 'version': '14', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2NDc0NCwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
 2025-06-08 23:20:00,658 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '58', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '58', 'version': '13', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2NDc0NCwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
-2025-06-08 23:20:00,658 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:20:00,747 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.825 ms
-2025-06-08 23:20:10,778 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.867 ms
-2025-06-08 23:20:11,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:01,416 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.890 ms
+2025-06-08 23:20:11,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:20:11,073 DEBUG: does not have lock
-2025-06-08 23:20:11,122 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:20:20,810 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.664 ms
-2025-06-08 23:20:21,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:11,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:20:11,449 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.861 ms
+2025-06-08 23:20:21,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:20:21,073 DEBUG: does not have lock
-2025-06-08 23:20:21,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:20:30,847 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.839 ms
-2025-06-08 23:20:31,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:21,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:20:21,474 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.681 ms
+2025-06-08 23:20:31,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:20:31,073 DEBUG: does not have lock
-2025-06-08 23:20:31,158 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:20:31,158 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:20:31,158 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '59', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMQ==', 'create_revision': '10', 'mod_revision': '59', 'version': '15', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDE6NTQzNC9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDE6ODAwOS9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2ODA3MiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208147'}}]}}
 2025-06-08 23:20:31,158 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '60', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMg==', 'create_revision': '16', 'mod_revision': '60', 'version': '14', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDI6NTQzNS9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDI6ODAxMC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InJlcGxpY2EiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2ODA3MiwicmVwbGljYXRpb25fc3RhdGUiOiJzdHJlYW1pbmciLCJ0aW1lbGluZSI6MX0=', 'lease': '3029118601992208157'}}]}}
+2025-06-08 23:20:31,500 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.904 ms
 2025-06-08 23:20:40,573 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '61', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvc3RhdHVz', 'create_revision': '12', 'mod_revision': '61', 'version': '12', 'value': 'eyJvcHRpbWUiOjg0MzY4MDcyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjgwNzIsInBvc3RncmVzcWwyIjo4NDM2ODA3MiwicG9zdGdyZXNxbDAiOjg0MzY4MDcyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ=='}}]}}
 2025-06-08 23:20:40,573 DEBUG: L2RiL3BnLWNsdXN0ZXIvc3RhdHVz changed from eyJvcHRpbWUiOjg0MzY0NzQ0LCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjQ3NDQsInBvc3RncmVzcWwyIjo4NDM2NDc0NCwicG9zdGdyZXNxbDAiOjg0MzY0NzQ0fSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ== to eyJvcHRpbWUiOjg0MzY4MDcyLCJzbG90cyI6eyJwb3N0Z3Jlc3FsMSI6ODQzNjgwNzIsInBvc3RncmVzcWwyIjo4NDM2ODA3MiwicG9zdGdyZXNxbDAiOjg0MzY4MDcyfSwicmV0YWluX3Nsb3RzIjpbInBvc3RncmVzcWwwIiwicG9zdGdyZXNxbDEiLCJwb3N0Z3Jlc3FsMiJdfQ==
-2025-06-08 23:20:40,573 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:40,573 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:20:40,573 DEBUG: does not have lock
-2025-06-08 23:20:40,575 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
+2025-06-08 23:20:40,575 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
 2025-06-08 23:20:40,615 DEBUG: Received message: {'result': {'header': {'cluster_id': '2164113787556265017', 'member_id': '10602785869456026121', 'revision': '62', 'raft_term': '2'}, 'events': [{'kv': {'key': 'L2RiL3BnLWNsdXN0ZXIvbWVtYmVycy9wb3N0Z3Jlc3FsMA==', 'create_revision': '2', 'mod_revision': '62', 'version': '16', 'value': 'eyJjb25uX3VybCI6InBvc3RncmVzOi8vcG9zdGdyZXNxbDA6NTQzMy9wb3N0Z3JlcyIsImFwaV91cmwiOiJodHRwOi8vcG9zdGdyZXNxbDA6ODAwOC9wYXRyb25pIiwic3RhdGUiOiJydW5uaW5nIiwicm9sZSI6InByaW1hcnkiLCJ2ZXJzaW9uIjoiNC4wLjUiLCJ4bG9nX2xvY2F0aW9uIjo4NDM2ODA3MiwidGltZWxpbmUiOjF9', 'lease': '3029118601992208135'}}]}}
-2025-06-08 23:20:40,884 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.820 ms
-2025-06-08 23:20:50,921 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.855 ms
-2025-06-08 23:20:51,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:41,534 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.063 ms
+2025-06-08 23:20:51,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:20:51,073 DEBUG: does not have lock
-2025-06-08 23:20:51,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:21:00,942 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.744 ms
-2025-06-08 23:21:01,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:20:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:20:51,579 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.997 ms
+2025-06-08 23:21:01,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:21:01,073 DEBUG: does not have lock
-2025-06-08 23:21:01,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:21:10,969 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.671 ms
-2025-06-08 23:21:11,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:21:01,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:21:01,607 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.718 ms
+2025-06-08 23:21:11,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:21:11,073 DEBUG: does not have lock
-2025-06-08 23:21:11,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:21:21,000 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.058 ms
-2025-06-08 23:21:21,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:21:11,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:21:11,634 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.710 ms
+2025-06-08 23:21:21,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:21:21,073 DEBUG: does not have lock
-2025-06-08 23:21:21,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:21:31,035 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.867 ms
-2025-06-08 23:21:31,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:21:21,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:21:21,662 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.772 ms
+2025-06-08 23:21:31,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:21:31,073 DEBUG: does not have lock
-2025-06-08 23:21:31,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:21:41,066 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.887 ms
-2025-06-08 23:21:41,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:21:31,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:21:31,697 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.875 ms
+2025-06-08 23:21:41,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:21:41,073 DEBUG: does not have lock
-2025-06-08 23:21:41,075 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:21:51,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:21:41,075 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:21:41,733 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.839 ms
+2025-06-08 23:21:51,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:21:51,073 DEBUG: does not have lock
-2025-06-08 23:21:51,101 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 5.837 ms
-2025-06-08 23:21:51,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:01,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:21:51,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:21:51,762 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.682 ms
+2025-06-08 23:22:01,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:22:01,073 DEBUG: does not have lock
-2025-06-08 23:22:01,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:01,132 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.916 ms
-2025-06-08 23:22:11,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:22:01,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:22:01,791 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.714 ms
+2025-06-08 23:22:11,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:22:11,073 DEBUG: does not have lock
-2025-06-08 23:22:11,122 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:11,167 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.877 ms
-2025-06-08 23:22:21,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:22:11,117 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:22:11,816 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.777 ms
+2025-06-08 23:22:21,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:22:21,073 DEBUG: does not have lock
-2025-06-08 23:22:21,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:21,197 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.977 ms
-2025-06-08 23:22:31,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:22:21,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:22:21,879 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.075 ms
+2025-06-08 23:22:31,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:22:31,073 DEBUG: does not have lock
-2025-06-08 23:22:31,116 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:31,233 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.909 ms
-2025-06-08 23:22:41,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:22:31,116 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:22:31,912 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.797 ms
+2025-06-08 23:22:41,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:22:41,073 DEBUG: does not have lock
-2025-06-08 23:22:41,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:41,265 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 1.002 ms
-2025-06-08 23:22:51,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:22:41,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:22:41,948 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.891 ms
+2025-06-08 23:22:51,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:22:51,073 DEBUG: does not have lock
-2025-06-08 23:22:51,117 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:22:51,296 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.875 ms
-2025-06-08 23:23:01,073 INFO: Lock owner: postgresql0; I am postgresql1
+2025-06-08 23:22:51,117 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:22:51,978 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.697 ms
+2025-06-08 23:23:01,073 INFO: Lock owner: postgresql0; I am postgresql2
 2025-06-08 23:23:01,073 DEBUG: does not have lock
-2025-06-08 23:23:01,074 INFO: no action. I am (postgresql1), a secondary, and following a leader (postgresql0)
-2025-06-08 23:23:01,319 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.715 ms
+2025-06-08 23:23:01,074 INFO: no action. I am (postgresql2), a secondary, and following a leader (postgresql0)
+2025-06-08 23:23:02,008 DEBUG: API thread: 127.0.0.1 - - "GET /health HTTP/1.1" 200 - latency: 0.656 ms

@@ -1,0 +1,47 @@
+global:
+  scrape_interval: 5s # Coleta a cada 5 segundos
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: "pgpool0"
+    static_configs:
+      - targets: ["pgpool0-exporter:9719"] # Pgpool-II metrics endpoint
+
+  - job_name: "pgpool1"
+    static_configs:
+      - targets: ["pgpool1-exporter:9720"] # Pgpool-II metrics endpoint
+
+  - job_name: "postgresql0"
+    static_configs:
+      - targets:
+          - "postgresql0:8008" # Patroni API
+          - "postgresql0-exporter:9187" # PostgreSQL-Exporter
+
+  - job_name: "postgresql1"
+    static_configs:
+      - targets:
+          - "postgresql1:8009" # Patroni API
+          - "postgresql1-exporter:9188" # PostgreSQL-Exporter
+
+  - job_name: "postgresql2"
+    static_configs:
+      - targets:
+          - "postgresql2:8010" # Patroni API
+          - "postgresql2-exporter:9189" # PostgreSQL-Exporter
+
+  - job_name: "etcd"
+    static_configs:
+      - targets: ["etcd:2379"] # Etcd metrics endpoint
+
+  - job_name: "nginx"
+    static_configs:
+      - targets: ["nginx:9113"] # Nginx exporter metrics
+
+  # Node exporter metrics
+  - job_name: "node"
+    static_configs:
+      - targets:
+          - "postgresql0:9100"
+          - "postgresql1:9100"
+          - "pgpool0:9100"
+          - "pgpool1:9100"

@@ -22,7 +22,6 @@ RUN apt-get update && apt-get install -y \
 COPY config/patroni.yml     /etc/patroni/patroni.yml
 COPY config/pgbackrest.conf /etc/pgbackrest.conf
 
-
 COPY config/create_role.sql /docker-entrypoint-initdb.d/create_role.sql
 
 RUN mkdir -p /var/log/patroni && \
@@ -33,8 +32,6 @@ COPY scripts/  /scripts/
 
 RUN chmod +x /scripts/start.sh
 RUN chmod +x /scripts/init_db.sh
-# RUN chmod +x /scripts/init_hosts.sh && 
-# \ chmod +x /scripts/boot_pgbackrest.sh
 
 EXPOSE 5433 8008
 

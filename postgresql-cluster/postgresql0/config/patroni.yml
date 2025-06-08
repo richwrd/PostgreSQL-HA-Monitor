@@ -17,17 +17,29 @@ etcd3:
 # Somente pra inicializar o postgres
 bootstrap:
   dcs:
+    failover_priority: true # Habilitar failback automático com base na prioridade
     ttl: 30
     loop_wait: 10
     retry_timeout: 10
     maximum_lag_on_failover: 1048576
   parameters:
+    password_encryption: "md5"
     wal_level: replica
     hot_standby: "on"
-    wal_keep_segments: 128MB
-    max_wal_senders: 5
-    max_replication_slots: 5
-    checkpoint_timeout: 30
+    max_worker_processes: 40
+    wal_keep_segments: 64
+    max_wal_senders: 10
+    max_wal_size: 16GB
+    min_wal_size: 2GB
+    max_replication_slots: 10
+    checkpoint_timeout: 15min
+    checkpoint_completion_target: 0.9
+    shared_buffers: 2GB
+    work_mem: 128MB
+    maintenance_work_mem: 512MB
+    effective_cache_size: 4GB
+    random_page_cost: 1.1 # Se estiver usando SSD
+    effective_io_concurrency: 200
   postgresql:
     use_slots: true
     use_pg_rewind: true
@@ -65,10 +77,22 @@ postgresql:
       username: "monitor"
       password: "m$$n3yt0r4"
   parameters:
+    password_encryption: "md5"
     use_slots: true
     max_replication_slots: 5
     wal_level: replica
     max_wal_senders: 10
+    max_wal_size: 16GB
+    min_wal_size: 2GB
+    max_replication_slots: 10
+    wal_keep_segments: 64
+    max_worker_processes: 40
+    shared_buffers: 2GB
+    work_mem: 128MB
+    maintenance_work_mem: 512MB
+    effective_cache_size: 4GB
+    random_page_cost: 1.1 # Se estiver usando SSD
+    effective_io_concurrency: 200
     synchronous_commit: on
     synchronous_standby_names: "*"
     hot_standby: on

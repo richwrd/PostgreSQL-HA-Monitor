@@ -26,6 +26,6 @@ RUN mkdir -p /var/log/patroni && \
     chown postgres:postgres /var/log/patroni && \
     chmod 755 /var/log/patroni
 
-EXPOSE 5434 8009
+EXPOSE 5435 8010
 
 CMD ["/bin/bash", "-c", "su - postgres -c 'patroni /etc/patroni/patroni.yml'"]

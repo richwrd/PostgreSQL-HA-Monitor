@@ -1,6 +1,0 @@
-2025-05-23 02:00:42 - Iniciando sincronização PgPool2-Patroni
-2025-05-23 02:00:42 - Consultando nó Patroni: 192.168.1.5:8008
-2025-05-23 02:00:54 - ERRO: Falha ao acessar nó 192.168.1.5:8008 após 3 tentativas
-2025-05-23 02:00:54 - Consultando nó Patroni: 192.168.1.5:8009
-2025-05-23 02:01:06 - ERRO: Falha ao acessar nó 192.168.1.5:8009 após 3 tentativas
-2025-05-23 02:01:06 - ERRO: Todos os nós Patroni offline

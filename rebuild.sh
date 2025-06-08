@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define o nome da stack
-STACK_FILE="docker-compose.v5.yaml"
+STACK_FILE="docker-compose.v7.yaml"
 
 # Caminho do docker-compose
 DOCKER_COMPOSE_CMD="sudo docker compose"
@@ -11,14 +11,17 @@ PORTS=(
   "2379"  # etcd
   "5433"  # PostgreSQL (postgresql0)
   "8008"  # Patroni API (postgresql0)
+  "9187"  # PostgreSQL (postgresql0-exporter)
   "5434"  # PostgreSQL (postgresql1)
   "8009"  # Patroni API (postgresql1)
+  "9188"  # PostgreSQL (postgresql1-exporter)
+  "5435"  # PostgreSQL (postgresql2)
+  "8010"  # Patroni API (postgresql12)
+  "9189"  # PostgreSQL (postgresql2-exporter)
   "5430"  # Pgpool (pgpool0)
   "9000"  # Watchdog (pgpool0)
   "5431"  # Pgpool (pgpool1)
   "9001"  # Watchdog (pgpool1)
-  "9188"  # Pgpool (postgresql0-exporter)
-  "9187"  # Pgpool (postgresql0-exporter)
   "5432"  # PostgreSQL CENTRAL (NGINX)
 )
 
@@ -126,6 +129,7 @@ reset_patroni_logs() {
   LOG_DIRS=(
     "./postgresql-cluster/postgresql0/logs"
     "./postgresql-cluster/postgresql1/logs"
+    "./postgresql-cluster/postgresql2/logs"
   )
 
   for LOG_DIR in "${LOG_DIRS[@]}"; do
@@ -157,7 +161,7 @@ reset_patroni_logs() {
 # Função para deletar a stack
 delete_stack() {
   echo -e "\n🗑️ Deletando a stack definida em $STACK_FILE..."
-  $DOCKER_COMPOSE_CMD -f $STACK_FILE down
+  $DOCKER_COMPOSE_CMD -f $STACK_FILE down -v
 }
 
 # Função para subir a stack novamente
