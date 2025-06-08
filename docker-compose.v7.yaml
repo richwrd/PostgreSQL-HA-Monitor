@@ -285,3 +285,4 @@ networks:
     driver: bridge
   grafana_network:
     driver: bridge
+    external: true 
